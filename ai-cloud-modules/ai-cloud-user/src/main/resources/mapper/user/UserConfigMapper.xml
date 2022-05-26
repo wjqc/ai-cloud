@@ -18,14 +18,14 @@
     
     <sql id="selectConfigVo">
         select *
-        from sys_config
+        from user_config
     </sql>
     
     <!-- 查询条件 -->
     <sql id="sqlwhereSearch">
         <where>
-            <if test="configId !=null">
-                and config_id = #{configId}
+            <if test="id !=null">
+                and id = #{id}
             </if>
             <if test="configKey !=null and configKey != ''">
                 and config_key = #{configKey}
