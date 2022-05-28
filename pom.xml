@@ -17,14 +17,14 @@
         <spring-cloud.version>2021.0.1</spring-cloud.version>
         <spring-cloud-alibaba.version>2021.0.1.0</spring-cloud-alibaba.version>
         <alibaba.nacos.version>2.0.4</alibaba.nacos.version>
-        <spring-boot.mybatis-plus>3.4.2</spring-boot.mybatis-plus>
+        <spring-boot.mybatis-plus>3.5.1</spring-boot.mybatis-plus>
         <tobato.version>1.27.2</tobato.version>
         <minio.version>8.2.2</minio.version>
         <kaptcha.version>2.3.2</kaptcha.version>
         <commons.io.version>2.11.0</commons.io.version>
         <commons-collections.version>3.2.2</commons-collections.version>
         <pagehelper.boot.version>1.4.1</pagehelper.boot.version>
-        <fastjson.version>1.2.79</fastjson.version>
+        <fastjson.version>2.0.4</fastjson.version>
         <jjwt.version>0.9.1</jjwt.version>
         <transmittable-thread-local.version>2.12.2</transmittable-thread-local.version>
         <swagger.fox.version>3.0.0</swagger.fox.version>
