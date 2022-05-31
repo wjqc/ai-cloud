@@ -2,7 +2,7 @@ package com.cloud.auth.api.service;
 
 import com.cloud.auth.api.domain.User;
 import com.cloud.auth.api.factory.RemoteUserFallbackFactory;
-import com.cloud.auth.api.domain.vo.LoginUser;
+import com.cloud.auth.api.domain.model.LoginUser;
 import com.cloud.common.constant.SecurityConstants;
 import com.cloud.common.constant.ServiceNameConstants;
 import com.cloud.common.model.Response;

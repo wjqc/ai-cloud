@@ -119,19 +119,5 @@ public class UserLoginLog{
         return loginTime;
     }
 
-    @Override
-    public String toString() {
-        return new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)
-            .append("id", getId())
-            .append("userName", getUserName())
-            .append("ipaddr", getIpaddr())
-            .append("loginLocation", getLoginLocation())
-            .append("uuid", getUuid())
-            .append("deviceId", getDeviceId())
-            .append("type", getType())
-            .append("status", getStatus())
-            .append("msg", getMsg())
-            .append("loginTime", getLoginTime())
-            .toString();
-    }
+
 }

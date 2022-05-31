@@ -6,6 +6,7 @@ import com.cloud.common.constant.UserConstants;
 import com.cloud.common.utils.StringUtils;
 import com.cloud.security.utils.SecurityUtils;
 import com.cloud.user.dto.UserInfoDto;
+import com.cloud.user.param.UserParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.cloud.user.mapper.UserMapper;

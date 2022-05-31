@@ -2,7 +2,7 @@ package com.cloud.auth.service.impl;
 
 import com.cloud.auth.api.domain.User;
 import com.cloud.auth.api.domain.UserLoginLog;
-import com.cloud.auth.api.domain.vo.LoginUser;
+import com.cloud.auth.api.domain.model.LoginUser;
 import com.cloud.auth.api.service.RemoteLogService;
 import com.cloud.auth.api.service.RemoteUserService;
 import com.cloud.auth.service.LoginService;

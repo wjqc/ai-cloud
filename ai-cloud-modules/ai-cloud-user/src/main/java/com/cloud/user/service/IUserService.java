@@ -2,6 +2,7 @@ package com.cloud.user.service;
 
 import com.cloud.auth.api.domain.User;
 import com.cloud.user.dto.UserInfoDto;
+import com.cloud.user.param.UserParam;
 
 import java.util.List;
 
@@ -54,5 +55,12 @@ public interface IUserService {
      * @return 用户对象信息
      */
     public UserInfoDto selectByUserInfo();
+
+
+
+
+
+
+
 
 }

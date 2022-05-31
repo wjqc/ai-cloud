@@ -1,6 +1,6 @@
 package com.cloud.security.service;
 
-import com.cloud.auth.api.domain.vo.LoginUser;
+import com.cloud.auth.api.domain.model.LoginUser;
 import com.cloud.common.constant.CacheConstants;
 import com.cloud.common.constant.SecurityConstants;
 import com.cloud.common.redis.service.RedisService;

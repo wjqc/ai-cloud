@@ -1,14 +1,10 @@
 package com.cloud.auth.controller;
 
 
-import com.cloud.auth.api.domain.User;
-import com.cloud.auth.api.domain.vo.LoginUser;
+import com.cloud.auth.api.domain.model.LoginUser;
 import com.cloud.auth.param.LoginParam;
 import com.cloud.auth.param.RegisterParam;
 import com.cloud.auth.service.impl.LoginServiceImpl;
-import com.cloud.common.constant.SecurityConstants;
-import com.cloud.common.constant.UserConstants;
-import com.cloud.common.exception.ServiceException;
 import com.cloud.common.model.Response;
 import com.cloud.common.utils.JwtUtils;
 import com.cloud.common.utils.StringUtils;
@@ -29,6 +25,7 @@ import javax.servlet.http.HttpServletRequest;
  *
  * @author
  */
+@Api(tags = "认证授权")
 @RestController
 public class LoginApi {
 
@@ -43,6 +40,7 @@ public class LoginApi {
      * 用户账号密码登录
      */
     @PostMapping("login")
+    @ApiOperation("账号密码登录")
     public Response<?> login(@RequestBody LoginParam param) {
         // 用户登录
         LoginUser userInfo = loginService.login(param.getUsername(), param.getPassword());
@@ -54,6 +52,7 @@ public class LoginApi {
      * 退出登录
      */
     @PostMapping("logout")
+    @ApiOperation("退出登录")
     public Response<?> logout(HttpServletRequest request) {
         String token = SecurityUtils.getToken(request);
         if (StringUtils.isNotEmpty(token)) {
@@ -70,6 +69,7 @@ public class LoginApi {
      * 刷新令牌有效期
      */
     @PostMapping("refresh")
+    @ApiOperation("刷新令牌有效期")
     public Response<?> refresh(HttpServletRequest request) {
         LoginUser loginUser = tokenService.getLoginUser(request);
         if (StringUtils.isNotNull(loginUser)) {
@@ -85,6 +85,7 @@ public class LoginApi {
      * 用户注册
      */
     @PostMapping("register")
+    @ApiOperation("新用户注册")
     public Response<?> register(@RequestBody RegisterParam param) {
         // 用户注册
         loginService.register(param.getUsername(), param.getPassword());

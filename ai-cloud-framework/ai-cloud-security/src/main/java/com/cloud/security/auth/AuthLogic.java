@@ -1,16 +1,10 @@
 package com.cloud.security.auth;
 
-import com.cloud.auth.api.domain.vo.LoginUser;
+import com.cloud.auth.api.domain.model.LoginUser;
 import com.cloud.common.exception.auth.NotLoginException;
 import com.cloud.common.utils.SpringUtils;
-import com.cloud.common.utils.StringUtils;
 import com.cloud.security.service.TokenService;
 import com.cloud.security.utils.SecurityUtils;
-import org.springframework.util.PatternMatchUtils;
-
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * Token 权限验证，逻辑实现类

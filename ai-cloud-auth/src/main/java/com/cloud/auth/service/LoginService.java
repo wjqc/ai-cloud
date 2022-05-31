@@ -1,9 +1,7 @@
 package com.cloud.auth.service;
 
 
-import com.cloud.auth.api.domain.vo.LoginUser;
-
-import javax.servlet.http.HttpServletRequest;
+import com.cloud.auth.api.domain.model.LoginUser;
 
 public interface LoginService {
 

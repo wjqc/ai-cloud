@@ -38,8 +38,8 @@ public class UserAccount extends BaseEntity {
     @ApiModelProperty(value = "设备唯一标识",example = "String")
     private String uuid;
 
-    /** 账户类型；1：余额账户 2：源力账户 3：kb账户 */
-    @ApiModelProperty(value = "账户类型；1：余额账户 2：源力账户 3：kb账户",example = "String")
+    /** 账户类型；1：余额账户 2：kb账户 */
+    @ApiModelProperty(value = "账户类型；1：余额账户 2：kb账户",example = "String")
     private String type;
 
     /** 用户类型；1：个人  2：商家 */
@@ -199,31 +199,4 @@ public class UserAccount extends BaseEntity {
         return deleteFlag;
     }
 
-    @Override
-    public String toString() {
-        return new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)
-            .append("id", getId())
-            .append("number", getNumber())
-            .append("password", getPassword())
-            .append("userId", getUserId())
-            .append("uuid", getUuid())
-            .append("type", getType())
-            .append("userType", getUserType())
-            .append("grade", getGrade())
-            .append("dealCommissionRatio", getDealCommissionRatio())
-            .append("withdrawalCommissionRatio", getWithdrawalCommissionRatio())
-            .append("dailyTradingLimit", getDailyTradingLimit())
-            .append("monthTradingLimit", getMonthTradingLimit())
-            .append("dailyWithdrawalLimit", getDailyWithdrawalLimit())
-            .append("monthWithdrawalLimit", getMonthWithdrawalLimit())
-            .append("availableBalance", getAvailableBalance())
-            .append("frozenAmount", getFrozenAmount())
-            .append("statusFlag", getStatusFlag())
-            .append("deleteFlag", getDeleteFlag())
-            .append("createBy", getCreateBy())
-            .append("createTime", getCreateTime())
-            .append("updateBy", getUpdateBy())
-            .append("updateTime", getUpdateTime())
-            .toString();
-    }
 }

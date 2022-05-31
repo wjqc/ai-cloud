@@ -1,4 +1,4 @@
-package com.cloud.auth.api.domain.vo;
+package com.cloud.auth.api.domain.model;
 
 
 import com.cloud.auth.api.domain.User;

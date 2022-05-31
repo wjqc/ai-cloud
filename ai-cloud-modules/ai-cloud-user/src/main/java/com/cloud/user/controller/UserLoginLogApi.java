@@ -35,7 +35,7 @@ public class UserLoginLogApi {
      */
     @InnerAuth
     @PostMapping("add")
-    @ApiOperation(value = "新增用户登录记录", notes = "新增用户登录记录")
+    @ApiOperation("新增用户登录记录")
     public AjaxResult add(@RequestBody UserLoginLog userLoginLog) {
         return AjaxResult.success(userLoginLogService.insertUserLoginLog(userLoginLog));
     }

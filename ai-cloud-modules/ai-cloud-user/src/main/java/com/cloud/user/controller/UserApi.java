@@ -2,7 +2,7 @@ package com.cloud.user.controller;
 
 
 import com.cloud.auth.api.domain.User;
-import com.cloud.auth.api.domain.vo.LoginUser;
+import com.cloud.auth.api.domain.model.LoginUser;
 import com.cloud.common.constant.UserConstants;
 import com.cloud.common.model.Response;
 import com.cloud.security.annotation.InnerAuth;
@@ -35,7 +35,7 @@ public class UserApi {
      */
     @InnerAuth
     @PostMapping("/register")
-    @ApiOperation(value = "注册用户信息", notes = "注册用户信息")
+    @ApiOperation("注册用户信息")
     public Response<Boolean> register(@RequestBody User user) {
         String username = user.getUserName();
         if (!("true".equals(userConfigService.selectConfigByKey("user.account.registerUser")))) {
@@ -55,7 +55,7 @@ public class UserApi {
      */
     @InnerAuth
     @PostMapping("/info/{username}")
-    @ApiOperation(value = "通过用户名查询用户", notes = "通过用户名查询用户")
+    @ApiOperation("通过用户名查询用户")
     public Response<LoginUser> info(@PathVariable("username") String username) {
         User user = userService.selectByUserName(username);
         LoginUser userVo = new LoginUser();
@@ -70,7 +70,7 @@ public class UserApi {
      * @return 用户对象信息
      */
     @PostMapping(value = "/userInfo")
-    @ApiOperation(value = "查询用户信息", notes = "查询用户信息")
+    @ApiOperation("查询用户信息")
     public Response userInfo() {
         return Response.ok(userService.selectByUserInfo(), "请求成功");
     }

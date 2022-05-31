@@ -71,4 +71,5 @@ ai-cloud-app
 <img src="https://lawcontract.oss-cn-beijing.aliyuncs.com/3d6qj57lwc1zwdn6rlzt.png"/>
 
 ## 微服务交流群
-QQ群： ![加入QQ群](https://img.shields.io/badge/679033812-blue.svg)
+QQ群: [![加入QQ群](https://img.shields.io/badge/679033812-blue.svg)](https://jq.qq.com/?_wv=1027&k=eW62TFzU) 点击按钮入群。
+

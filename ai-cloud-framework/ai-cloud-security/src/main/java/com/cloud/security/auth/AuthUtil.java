@@ -1,7 +1,7 @@
 package com.cloud.security.auth;
 
 
-import com.cloud.auth.api.domain.vo.LoginUser;
+import com.cloud.auth.api.domain.model.LoginUser;
 
 /**
  * Token 验证工具类

@@ -1,7 +1,7 @@
 package com.cloud.auth.api.factory;
 
 import com.cloud.auth.api.domain.User;
-import com.cloud.auth.api.domain.vo.LoginUser;
+import com.cloud.auth.api.domain.model.LoginUser;
 import com.cloud.auth.api.service.RemoteUserService;
 import com.cloud.common.model.Response;
 import org.slf4j.Logger;

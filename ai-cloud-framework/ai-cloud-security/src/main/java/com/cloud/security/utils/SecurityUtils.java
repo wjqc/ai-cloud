@@ -1,6 +1,6 @@
 package com.cloud.security.utils;
 
-import com.cloud.auth.api.domain.vo.LoginUser;
+import com.cloud.auth.api.domain.model.LoginUser;
 import com.cloud.common.constant.SecurityConstants;
 import com.cloud.common.constant.TokenConstants;
 import com.cloud.common.context.SecurityContextHolder;
