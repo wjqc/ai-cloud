@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.cloud.security.config.WebMvcConfig,\
+  com.cloud.security.service.TokenService,\
+  com.cloud.security.aspect.InnerAuthAspect,\
+  com.cloud.security.handler.GlobalExceptionHandler
