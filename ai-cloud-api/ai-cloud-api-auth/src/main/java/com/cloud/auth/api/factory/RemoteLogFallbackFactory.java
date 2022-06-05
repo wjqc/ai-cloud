@@ -1,6 +1,7 @@
 package com.cloud.auth.api.factory;
 
 import com.cloud.auth.api.domain.UserLoginLog;
+import com.cloud.auth.api.domain.UserOperLog;
 import com.cloud.auth.api.service.RemoteLogService;
 import com.cloud.common.model.Response;
 import org.slf4j.Logger;
@@ -11,7 +12,7 @@ import org.springframework.stereotype.Component;
 /**
  * 日志服务降级处理
  *
- * @author
+ * @author ai-cloud
  */
 @Component
 public class RemoteLogFallbackFactory implements FallbackFactory<RemoteLogService> {
@@ -24,6 +25,12 @@ public class RemoteLogFallbackFactory implements FallbackFactory<RemoteLogServic
 
             @Override
             public Response<Boolean> saveUserLoginLog(UserLoginLog userLoginLog, String source) {
+                return null;
+            }
+
+            @Override
+            public Response<Boolean> saveUserOperLog(UserOperLog userOperLog, String source)
+            {
                 return null;
             }
 

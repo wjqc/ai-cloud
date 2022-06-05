@@ -3,22 +3,26 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>ai-cloud-app</artifactId>
+        <artifactId>ai-cloud-framework</artifactId>
         <groupId>com.cloud</groupId>
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     
-    <artifactId>ai-cloud-framework</artifactId>
+    <artifactId>ai-cloud-log</artifactId>
     
-    <packaging>pom</packaging>
+    <description>
+        ai-cloud-log日志记录
+    </description>
     
-    <modules>
-        <module>ai-cloud-common</module>
-        <module>ai-cloud-swagger</module>
-        <module>ai-cloud-datasource</module>
-        <module>ai-cloud-security</module>
-        <module>ai-cloud-log</module>
-    </modules>
+    <dependencies>
+    
+        <!-- 安全模块 -->
+        <dependency>
+            <groupId>com.cloud</groupId>
+            <artifactId>ai-cloud-security</artifactId>
+        </dependency>
+    
+    </dependencies>
 
 </project>

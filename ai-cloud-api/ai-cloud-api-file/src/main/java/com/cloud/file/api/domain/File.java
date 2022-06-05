@@ -35,11 +35,4 @@ public class File {
         this.url = url;
     }
 
-    @Override
-    public String toString() {
-        return new ToStringBuilder(this, ToStringStyle.MULTI_LINE_STYLE)
-                .append("name", getName())
-                .append("url", getUrl())
-                .toString();
-    }
 }

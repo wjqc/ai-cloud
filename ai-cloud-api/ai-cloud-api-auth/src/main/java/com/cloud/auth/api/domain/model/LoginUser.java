@@ -9,7 +9,7 @@ import java.io.Serializable;
 /**
  * 用户信息
  *
- * @author
+ * @author ai-cloud
  */
 public class LoginUser implements Serializable {
     private static final long serialVersionUID = 1L;

@@ -4,6 +4,7 @@ package com.cloud.user.service.impl;
 import com.cloud.auth.api.domain.User;
 import com.cloud.common.constant.UserConstants;
 import com.cloud.common.utils.StringUtils;
+import com.cloud.common.utils.uuid.IdUtils;
 import com.cloud.security.utils.SecurityUtils;
 import com.cloud.user.dto.UserInfoDto;
 import com.cloud.user.param.UserParam;
@@ -65,6 +66,7 @@ public class UserServiceImpl implements IUserService {
      */
     @Override
     public boolean registerUser(User user) {
+        user.setId(IdUtils.fastSimpleUUID());
         return userMapper.insert(user) > 0;
     }
 

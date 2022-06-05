@@ -1,16 +1,13 @@
 package com.cloud.user.service.impl;
 
-import java.util.List;
-
 import com.cloud.common.constant.Constants;
 import com.cloud.common.redis.service.RedisService;
 import com.cloud.common.text.Convert;
-import com.cloud.common.utils.DateUtils;
 import com.cloud.common.utils.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.cloud.user.mapper.UserConfigMapper;
-import com.cloud.user.domain.UserConfig;
+import com.cloud.auth.api.domain.UserConfig;
 import com.cloud.user.service.IUserConfigService;
 
 /**

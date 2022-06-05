@@ -70,11 +70,11 @@
             <groupId>com.cloud</groupId>
             <artifactId>ai-cloud-swagger</artifactId>
         </dependency>
-
-        <!-- 安全模块 -->
+    
+        <!-- 日志记录 -->
         <dependency>
             <groupId>com.cloud</groupId>
-            <artifactId>ai-cloud-security</artifactId>
+            <artifactId>ai-cloud-log</artifactId>
         </dependency>
 
     </dependencies>

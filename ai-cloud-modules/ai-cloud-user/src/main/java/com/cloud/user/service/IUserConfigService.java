@@ -1,9 +1,5 @@
 package com.cloud.user.service;
 
-import java.util.List;
-
-import com.cloud.user.domain.UserConfig;
-
 /**
  * 参数配置Service接口
  *

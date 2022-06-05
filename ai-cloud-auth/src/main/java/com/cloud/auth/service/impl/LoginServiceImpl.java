@@ -116,10 +116,8 @@ public class LoginServiceImpl implements LoginService {
         // 注册用户信息
         User user = new User();
         user.setUserName(username);
-        user.setNickName(username);
         user.setPassword(SecurityUtils.encryptPassword(password));
         Response<?> registerResult = remoteUserService.registerUserInfo(user, SecurityConstants.INNER);
-
         if (Response.FAIL == registerResult.getCode()) {
             throw new ServiceException(registerResult.getMsg());
         }

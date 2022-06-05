@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 /**
  * 用户服务
  *
- * @author
+ * @author ai-cloud
  */
 @FeignClient(contextId = "remoteUserService", value = ServiceNameConstants.USER_SERVICE, fallbackFactory = RemoteUserFallbackFactory.class)
 public interface RemoteUserService {

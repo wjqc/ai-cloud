@@ -5,6 +5,8 @@ import com.cloud.auth.api.domain.User;
 import com.cloud.auth.api.domain.model.LoginUser;
 import com.cloud.common.constant.UserConstants;
 import com.cloud.common.model.Response;
+import com.cloud.log.annotation.Log;
+import com.cloud.log.enums.BusinessType;
 import com.cloud.security.annotation.InnerAuth;
 import com.cloud.user.service.IUserConfigService;
 import com.cloud.user.service.IUserService;
@@ -69,10 +71,11 @@ public class UserApi {
      * @param
      * @return 用户对象信息
      */
+    @Log(title = "查询用户信息", businessType = BusinessType.QUERY)
     @PostMapping(value = "/userInfo")
     @ApiOperation("查询用户信息")
     public Response userInfo() {
-        return Response.ok(userService.selectByUserInfo(), "请求成功");
+        return Response.ok(userService.selectByUserInfo(), "查询成功");
     }
 
 }

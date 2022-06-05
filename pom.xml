@@ -201,7 +201,14 @@
                 <artifactId>ai-cloud-datasource</artifactId>
                 <version>${ai-cloud.version}</version>
             </dependency>
-
+    
+            <!-- 日志记录 -->
+            <dependency>
+                <groupId>com.cloud</groupId>
+                <artifactId>ai-cloud-log</artifactId>
+                <version>${ai-cloud.version}</version>
+            </dependency>
+            
             <!-- 安全模块 -->
             <dependency>
                 <groupId>com.cloud</groupId>
