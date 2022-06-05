@@ -21,11 +21,11 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * token 控制
+ * 登录接口 token控制
  *
  * @author
  */
-@Api(tags = "认证授权")
+@Api(tags = "登录接口")
 @RestController
 public class LoginApi {
 
@@ -41,29 +41,13 @@ public class LoginApi {
      */
     @PostMapping("login")
     @ApiOperation("账号密码登录")
-    public Response<?> login(@RequestBody LoginParam param) {
+    public Response<?> login(@RequestBody LoginParam param,HttpServletRequest request) {
         // 用户登录
-        LoginUser userInfo = loginService.login(param.getUsername(), param.getPassword());
+        LoginUser userInfo = loginService.login(param.getUsername(), param.getPassword(),request);
         // 获取登录token
         return Response.ok(tokenService.createToken(userInfo), "登录成功");
     }
 
-    /**
-     * 退出登录
-     */
-    @PostMapping("logout")
-    @ApiOperation("退出登录")
-    public Response<?> logout(HttpServletRequest request) {
-        String token = SecurityUtils.getToken(request);
-        if (StringUtils.isNotEmpty(token)) {
-            String username = JwtUtils.getUserName(token);
-            // 删除用户缓存记录
-            AuthUtil.logoutByToken(token);
-            // 记录用户退出日志
-            loginService.logout(username);
-        }
-        return Response.ok("", "退出成功");
-    }
 
     /**
      * 刷新令牌有效期
@@ -79,18 +63,5 @@ public class LoginApi {
         }
         return Response.ok();
     }
-
-
-    /**
-     * 用户注册
-     */
-    @PostMapping("register")
-    @ApiOperation("新用户注册")
-    public Response<?> register(@RequestBody RegisterParam param) {
-        // 用户注册
-        loginService.register(param.getUsername(), param.getPassword());
-        return Response.ok("", "注册成功");
-    }
-
 
 }

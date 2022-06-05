@@ -31,7 +31,7 @@ public interface IUserService {
     public String checkPhoneUnique(User user);
 
     /**
-     * 注册用户信息
+     * 注册用户信息：新用户创建账号和账户
      *
      * @param user 用户信息
      * @return 结果
@@ -55,11 +55,6 @@ public interface IUserService {
      * @return 用户对象信息
      */
     public UserInfoDto selectByUserInfo();
-
-
-
-
-
 
 
 

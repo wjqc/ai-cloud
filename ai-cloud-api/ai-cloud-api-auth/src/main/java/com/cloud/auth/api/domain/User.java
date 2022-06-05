@@ -7,14 +7,12 @@ import com.cloud.common.web.domain.BaseEntity;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
  * 用户信息对象 user
  * 
  * @author ai-cloud
- * @date 2022-05-10
+ * @date 2022-06-05
  */
 @ApiModel("用户信息")
 public class User extends BaseEntity {
@@ -25,7 +23,7 @@ public class User extends BaseEntity {
     private String id;
 
     /** 用户账号 */
-    @ApiModelProperty(value = "用户账号",example = "String")
+    @ApiModelProperty(value = "用户账号",example = "Long")
     private String userName;
 
     /** 用户密码 */

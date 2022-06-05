@@ -16,7 +16,7 @@ public class UserOperLog{
 
     private static final long serialVersionUID = 1L;
 
-    /** 操作日志id */
+    /** 日志主键 */
     private String id;
 
     /** 模块标题 */
@@ -80,8 +80,12 @@ public class UserOperLog{
     @ApiModelProperty(value ="操作时间",example = "Date")
     private Date operTime;
 
-    public String getId() {return id;}
-    public void setId(String id) {this.id = id;}
+    public void setId(String id){
+        this.id = id;
+    }
+    public String getId(){
+        return id;
+    }
     public void setTitle(String title){
         this.title = title;
     }
@@ -172,6 +176,5 @@ public class UserOperLog{
     public Date getOperTime(){
         return operTime;
     }
-
 
 }

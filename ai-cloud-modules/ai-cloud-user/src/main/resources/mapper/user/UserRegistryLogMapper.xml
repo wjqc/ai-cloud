@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cloud.user.mapper.UserRegistryLogMapper">
+    
+    <resultMap type="com.cloud.auth.api.domain.UserRegistryLog" id="UserRegistryLogResult">
+        <result property="id" column="id"/>
+        <result property="userName" column="user_name"/>
+        <result property="uuid" column="uuid"/>
+        <result property="deviceId" column="device_id"/>
+        <result property="type" column="type"/>
+        <result property="source" column="source"/>
+        <result property="bindPhone" column="bind_phone"/>
+        <result property="invitationCode" column="invitation_code"/>
+        <result property="msg" column="msg"/>
+        <result property="registryTime" column="registry_time"/>
+    </resultMap>
+
+
+</mapper>

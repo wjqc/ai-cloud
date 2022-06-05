@@ -2,12 +2,14 @@ package com.cloud.auth.param;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 
 /**
  * 用户登录对象
  *
  * @author
  */
+@Data
 @ApiModel("用户登录参数")
 public class LoginParam {
 

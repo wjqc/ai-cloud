@@ -16,7 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * 用户账户信息api接口
+ * 用户账户信息api
  *
  * @author ai-cloud
  * @date 2022-05-10

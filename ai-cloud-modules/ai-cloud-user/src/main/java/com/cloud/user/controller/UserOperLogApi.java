@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 操作日志记录Controller
+ * 操作日志记录api
  *
  * @author ai-cloud
  * @date 2022-06-05

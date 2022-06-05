@@ -2,6 +2,7 @@ package com.cloud.auth.api.factory;
 
 import com.cloud.auth.api.domain.UserLoginLog;
 import com.cloud.auth.api.domain.UserOperLog;
+import com.cloud.auth.api.domain.UserRegistryLog;
 import com.cloud.auth.api.service.RemoteLogService;
 import com.cloud.common.model.Response;
 import org.slf4j.Logger;
@@ -29,8 +30,12 @@ public class RemoteLogFallbackFactory implements FallbackFactory<RemoteLogServic
             }
 
             @Override
-            public Response<Boolean> saveUserOperLog(UserOperLog userOperLog, String source)
-            {
+            public Response<Boolean> saveUserRegistryLog(UserRegistryLog userRegistryLog, String source) {
+                return null;
+            }
+
+            @Override
+            public Response<Boolean> saveUserOperLog(UserOperLog userOperLog, String source) {
                 return null;
             }
 

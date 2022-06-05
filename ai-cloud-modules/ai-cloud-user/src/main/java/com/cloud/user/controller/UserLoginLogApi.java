@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 用户登录记录Controller
+ * 用户登录记录api
  *
  * @author ai-cloud
  * @date 2022-05-18

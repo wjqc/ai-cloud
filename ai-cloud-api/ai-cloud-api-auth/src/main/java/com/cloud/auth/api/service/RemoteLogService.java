@@ -2,6 +2,7 @@ package com.cloud.auth.api.service;
 
 import com.cloud.auth.api.domain.UserLoginLog;
 import com.cloud.auth.api.domain.UserOperLog;
+import com.cloud.auth.api.domain.UserRegistryLog;
 import com.cloud.auth.api.factory.RemoteLogFallbackFactory;
 import com.cloud.common.constant.SecurityConstants;
 import com.cloud.common.constant.ServiceNameConstants;
@@ -20,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 public interface RemoteLogService {
 
     /**
-     * 保存访问记录
+     * 保存登录记录
      *
      * @param userLoginLog 访问实体
      * @param source       请求来源
@@ -28,6 +29,17 @@ public interface RemoteLogService {
      */
     @PostMapping("/loginlog")
     public Response<Boolean> saveUserLoginLog(@RequestBody UserLoginLog userLoginLog, @RequestHeader(SecurityConstants.FROM_SOURCE) String source);
+
+
+    /**
+     * 保存注册记录
+     *
+     * @param userRegistryLog 访问实体
+     * @param source       请求来源
+     * @return 结果
+     */
+    @PostMapping("/registrylog")
+    public Response<Boolean> saveUserRegistryLog(@RequestBody UserRegistryLog userRegistryLog, @RequestHeader(SecurityConstants.FROM_SOURCE) String source);
 
 
     /**

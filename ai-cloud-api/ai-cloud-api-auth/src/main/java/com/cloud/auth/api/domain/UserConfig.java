@@ -3,12 +3,11 @@ package com.cloud.auth.api.domain;
 import com.cloud.common.web.domain.BaseEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-
 /**
  * 参数配置对象 user_config
- *
+ * 
  * @author ai-cloud
- * @date 2022-05-20
+ * @date 2022-06-05
  */
 @ApiModel("参数配置")
 public class UserConfig extends BaseEntity {
@@ -33,7 +32,6 @@ public class UserConfig extends BaseEntity {
     /** 系统内置（Y是 N否） */
     @ApiModelProperty(value = "系统内置",example = "String")
     private String configType;
-
 
     public void setId(String id){
         this.id = id;

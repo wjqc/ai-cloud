@@ -3,26 +3,45 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cloud.user.mapper.UserAccountMapper">
-
+    
+    <resultMap type="com.cloud.auth.api.domain.UserAccount" id="UserAccountResult">
+        <result property="id" column="id"/>
+        <result property="number" column="number"/>
+        <result property="password" column="password"/>
+        <result property="userId" column="user_id"/>
+        <result property="uuid" column="uuid"/>
+        <result property="type" column="type"/>
+        <result property="userType" column="user_type"/>
+        <result property="grade" column="grade"/>
+        <result property="dealCommissionRatio" column="deal_commission_ratio"/>
+        <result property="withdrawalCommissionRatio" column="withdrawal_commission_ratio"/>
+        <result property="dailyTradingLimit" column="daily_trading_limit"/>
+        <result property="monthTradingLimit" column="month_trading_limit"/>
+        <result property="dailyWithdrawalLimit" column="daily_withdrawal_limit"/>
+        <result property="monthWithdrawalLimit" column="month_withdrawal_limit"/>
+        <result property="availableBalance" column="available_balance"/>
+        <result property="frozenAmount" column="frozen_amount"/>
+        <result property="statusFlag" column="status_flag"/>
+        <result property="deleteFlag" column="delete_flag"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateBy" column="update_by"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+    
     <select id="selectAvailableBalanceByUserIdAndType" resultType="java.math.BigDecimal">
-        SELECT
-            available_balance
-        FROM
-            user_account
-        WHERE
-            user_id = #{userId}
+        SELECT available_balance
+        FROM user_account
+        WHERE user_id = #{userId}
           AND type = #{type}
           AND status_flag = 0
           AND delete_flag = 0
     </select>
-
+    
     <select id="selectCountByUserId" resultType="java.lang.Integer">
-        SELECT
-            COUNT( 1 )
-        FROM
-            user_account
-        WHERE
-            status_flag = 0
+        SELECT COUNT(1)
+        FROM user_account
+        WHERE status_flag = 0
           AND delete_flag = 0
           AND user_id = #{userId}
     </select>

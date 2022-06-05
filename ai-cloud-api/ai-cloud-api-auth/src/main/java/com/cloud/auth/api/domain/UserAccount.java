@@ -1,18 +1,15 @@
 package com.cloud.auth.api.domain;
 
 import java.math.BigDecimal;
-
 import com.cloud.common.web.domain.BaseEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
  * 用户账户信息对象 user_account
  * 
  * @author ai-cloud
- * @date 2022-05-10
+ * @date 2022-06-05
  */
 @ApiModel("用户账户信息")
 public class UserAccount extends BaseEntity {
@@ -89,6 +86,10 @@ public class UserAccount extends BaseEntity {
     /** 删除：0：未删除，2：已删除 */
     @ApiModelProperty(value = "删除：0：未删除，2：已删除",example = "Long")
     private Long deleteFlag;
+
+
+
+
 
     public void setId(String id){
         this.id = id;

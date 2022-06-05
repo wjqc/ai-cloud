@@ -22,7 +22,8 @@ public class AsyncLogService {
      * 保存系统日志记录
      */
     @Async
-    public void saveUserOperLog(UserOperLog sysOperLog) {
-        remoteLogService.saveUserOperLog(sysOperLog, SecurityConstants.INNER);
+    public void saveUserOperLog(UserOperLog userOperLog) {
+        remoteLogService.saveUserOperLog(userOperLog, SecurityConstants.INNER);
     }
+
 }
