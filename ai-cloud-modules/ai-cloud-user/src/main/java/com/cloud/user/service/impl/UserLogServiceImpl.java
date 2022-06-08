@@ -50,6 +50,7 @@ public class UserLogServiceImpl implements IUserLogService {
      */
     @Override
     public int insertUserRegistryLog(UserRegistryLog userRegistryLog) {
+        userRegistryLog.setRegistryTime(DateUtils.getNowDate());
         return userRegistryLogMapper.insert(userRegistryLog);
     }
 

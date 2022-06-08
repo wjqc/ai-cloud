@@ -16,7 +16,7 @@ public class UserLoginLog{
 
     private static final long serialVersionUID = 1L;
 
-    /** 登录记录id */
+    /** 登录记录ID */
     private String id;
 
     /** 用户账号 */

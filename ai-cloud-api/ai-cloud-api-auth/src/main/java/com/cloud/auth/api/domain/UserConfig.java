@@ -14,7 +14,7 @@ public class UserConfig extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
 
-    /** 参数id */
+    /** 参数ID */
     private String id;
 
     /** 参数名称 */

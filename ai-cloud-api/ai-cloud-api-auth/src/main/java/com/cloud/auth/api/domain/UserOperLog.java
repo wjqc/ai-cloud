@@ -16,7 +16,7 @@ public class UserOperLog{
 
     private static final long serialVersionUID = 1L;
 
-    /** 日志主键 */
+    /** 操作日志记录ID */
     private String id;
 
     /** 模块标题 */

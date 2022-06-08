@@ -16,7 +16,7 @@ public class UserAccount extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
 
-    /** 账户id */
+    /** 账户ID */
     private String id;
 
     /** 账户号 */

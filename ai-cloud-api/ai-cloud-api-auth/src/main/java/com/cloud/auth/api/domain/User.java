@@ -19,7 +19,7 @@ public class User extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
 
-    /** 用户id */
+    /** 用户ID */
     private String id;
 
     /** 用户账号 */
