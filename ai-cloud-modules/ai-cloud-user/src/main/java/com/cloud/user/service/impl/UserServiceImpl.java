@@ -2,13 +2,17 @@ package com.cloud.user.service.impl;
 
 
 import com.cloud.auth.api.domain.User;
+import com.cloud.auth.api.domain.UserAccount;
+import com.cloud.common.constant.UserAccountConstants;
 import com.cloud.common.constant.UserConstants;
+import com.cloud.common.utils.DateUtils;
 import com.cloud.common.utils.StringUtils;
 import com.cloud.common.utils.uuid.IdUtils;
 import com.cloud.security.utils.SecurityUtils;
 import com.cloud.user.dto.UserInfoDto;
 import com.cloud.user.mapper.UserAccountMapper;
 import com.cloud.user.param.UserParam;
+import com.cloud.user.service.IUserAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.cloud.user.mapper.UserMapper;
@@ -18,7 +22,6 @@ import com.cloud.user.service.IUserService;
  * 用户信息Service业务层处理
  *
  * @author ai-cloud
- * @date 2022-05-10
  */
 @Service
 public class UserServiceImpl implements IUserService {
@@ -27,7 +30,8 @@ public class UserServiceImpl implements IUserService {
     @Autowired
     private UserMapper userMapper;
 
-    private UserAccountMapper userAccountMapper;
+    @Autowired
+    private IUserAccountService userAccountService;
 
     /**
      * 校验用户名称是否唯一
@@ -69,7 +73,13 @@ public class UserServiceImpl implements IUserService {
      */
     @Override
     public boolean registerUser(User user) {
+        //创建用户
         user.setId(IdUtils.fastSimpleUUID());
+        user.setCreateBy(user.getId());
+        user.setCreateTime(DateUtils.getNowDate());
+        //创建账户
+        userAccountService.createAccount(user.getId(),user.getUuid(), UserAccountConstants.ACCOUNT_TYPE_余额账户);
+        userAccountService.createAccount(user.getId(),user.getUuid(), UserAccountConstants.ACCOUNT_TYPE_KB币账户);
         return userMapper.insert(user) > 0;
     }
 

@@ -9,7 +9,6 @@ import com.cloud.auth.api.domain.UserRegistryLog;
  * 用户日志记录Service接口
  *
  * @author ai-cloud
- * @date 2022-05-18
  */
 public interface IUserLogService {
 

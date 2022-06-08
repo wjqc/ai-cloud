@@ -12,7 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 /**
  * FastDFS 文件存储
  *
- * @author
+ * @author ai-cloud
  */
 @Service
 public class FastDfsIFileServiceImpl implements IFileService {

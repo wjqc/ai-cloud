@@ -4,6 +4,12 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
+/**
+ * 秒验登录请求参数
+ *
+ * @author ai-cloud
+ */
+
 @Data
 @ApiModel("秒验登录请求参数")
 public class VerifyPhoneParam extends BaseParam{

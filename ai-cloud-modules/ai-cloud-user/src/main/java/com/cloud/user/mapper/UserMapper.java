@@ -10,7 +10,6 @@ import org.apache.ibatis.annotations.Param;
  * 用户信息Mapper接口
  * 
  * @author ai-cloud
- * @date 2022-05-10
  */
 @Mapper
 public interface UserMapper extends BaseMapper<User> {

@@ -1,6 +1,7 @@
 package com.cloud.auth.service.impl;
 
 import com.cloud.auth.api.domain.User;
+import com.cloud.auth.api.domain.UserAccount;
 import com.cloud.auth.api.domain.UserLoginLog;
 import com.cloud.auth.api.domain.UserRegistryLog;
 import com.cloud.auth.api.service.RemoteLogService;
@@ -21,6 +22,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+/**
+ * 注册校验方法
+ *
+ * @author ai-cloud
+ */
+
 @Service
 @Component
 public class RegisterServiceImpl implements RegisterService {
@@ -34,22 +41,23 @@ public class RegisterServiceImpl implements RegisterService {
     /**
      * 账号密码注册
      */
-    public void register(String username, String password) {
+    public void register(String username, String password, String uuid) {
         // 用户名或密码为空 错误
         if (StringUtils.isAnyBlank(username, password)) {
             throw new ServiceException("用户/密码必须填写");
         }
         if (username.length() < UserConstants.USERNAME_MIN_LENGTH
                 || username.length() > UserConstants.USERNAME_MAX_LENGTH) {
-            throw new ServiceException("账户长度必须在2到20个字符之间");
+            throw new ServiceException("账户长度必须在6到12个字符之间");
         }
         if (password.length() < UserConstants.PASSWORD_MIN_LENGTH
                 || password.length() > UserConstants.PASSWORD_MAX_LENGTH) {
-            throw new ServiceException("密码长度必须在5到20个字符之间");
+            throw new ServiceException("密码长度必须在6到18个字符之间");
         }
         // 注册用户信息
         User user = new User();
         user.setUserName(username);
+        user.setUuid(uuid);
         user.setPassword(SecurityUtils.encryptPassword(password));
         Response<?> registerResult = remoteUserService.registerUserInfo(user, SecurityConstants.INNER);
         if (Response.FAIL == registerResult.getCode()) {
@@ -81,7 +89,6 @@ public class RegisterServiceImpl implements RegisterService {
         }
         remoteLogService.saveUserRegistryLog(userRegistryLog, SecurityConstants.INNER);
     }
-
 
 
 }

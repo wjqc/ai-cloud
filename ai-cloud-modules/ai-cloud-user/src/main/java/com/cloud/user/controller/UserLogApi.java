@@ -3,6 +3,7 @@ package com.cloud.user.controller;
 import com.cloud.auth.api.domain.UserLoginLog;
 import com.cloud.auth.api.domain.UserOperLog;
 import com.cloud.auth.api.domain.UserRegistryLog;
+import com.cloud.common.model.Response;
 import com.cloud.common.web.domain.AjaxResult;
 import com.cloud.security.annotation.InnerAuth;
 import com.cloud.user.service.IUserLogService;
@@ -17,7 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
  * 用户登录记录api
  *
  * @author ai-cloud
- * @date 2022-05-18
  */
 @Api(tags = "用户日志记录")
 @RestController
@@ -35,8 +35,8 @@ public class UserLogApi {
     @InnerAuth
     @PostMapping("/loginlog")
     @ApiOperation("新增用户登录记录")
-    public AjaxResult add(@RequestBody UserLoginLog userLoginLog) {
-        return AjaxResult.success(userLogService.insertUserLoginLog(userLoginLog));
+    public Response add(@RequestBody UserLoginLog userLoginLog) {
+        return Response.ok(userLogService.insertUserLoginLog(userLoginLog));
     }
 
 
@@ -49,8 +49,8 @@ public class UserLogApi {
     @InnerAuth
     @PostMapping("/registrylog")
     @ApiOperation("新增用户注册记录")
-    public AjaxResult add(@RequestBody UserRegistryLog userRegistryLog) {
-        return AjaxResult.success(userLogService.insertUserRegistryLog(userRegistryLog));
+    public Response add(@RequestBody UserRegistryLog userRegistryLog) {
+        return Response.ok(userLogService.insertUserRegistryLog(userRegistryLog));
     }
 
     /**
@@ -62,8 +62,8 @@ public class UserLogApi {
     @InnerAuth
     @PostMapping("/operlog")
     @ApiOperation("新增操作日志记录")
-    public AjaxResult add(@RequestBody UserOperLog userOperLog) {
-        return AjaxResult.success(userLogService.insertUserOperLog(userOperLog));
+    public Response add(@RequestBody UserOperLog userOperLog) {
+        return Response.ok(userLogService.insertUserOperLog(userOperLog));
     }
 
 

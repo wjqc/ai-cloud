@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * Minio 配置信息
  *
- * @author
+ * @author ai-cloud
  */
 @Configuration
 @ConfigurationProperties(prefix = "minio")

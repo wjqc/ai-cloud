@@ -12,7 +12,6 @@ import io.swagger.annotations.ApiModelProperty;
  * 用户信息对象 user
  * 
  * @author ai-cloud
- * @date 2022-06-05
  */
 @ApiModel("用户信息")
 public class User extends BaseEntity {
@@ -30,13 +29,13 @@ public class User extends BaseEntity {
     @ApiModelProperty(value = "用户密码",example = "String")
     private String password;
 
-    /** 设备唯一标识 */
-    @ApiModelProperty(value = "设备唯一标识",example = "String")
-    private String uuid;
-
     /** 用户设备id */
     @ApiModelProperty(value = "用户设备id",example = "String")
     private String deviceId;
+
+    /** 设备唯一标识 */
+    @ApiModelProperty(value = "设备唯一标识",example = "String")
+    private String uuid;
 
     /** 用户绑定手机号 */
     @ApiModelProperty(value = "用户绑定手机号",example = "String")

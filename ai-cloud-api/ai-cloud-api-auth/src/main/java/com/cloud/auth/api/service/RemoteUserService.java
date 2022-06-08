@@ -1,6 +1,7 @@
 package com.cloud.auth.api.service;
 
 import com.cloud.auth.api.domain.User;
+import com.cloud.auth.api.domain.UserAccount;
 import com.cloud.auth.api.factory.RemoteUserFallbackFactory;
 import com.cloud.auth.api.domain.model.LoginUser;
 import com.cloud.common.constant.SecurityConstants;
@@ -35,4 +36,5 @@ public interface RemoteUserService {
      */
     @PostMapping("/user/register")
     public Response<Boolean> registerUserInfo(@RequestBody User user, @RequestHeader(SecurityConstants.FROM_SOURCE) String source);
+
 }

@@ -32,7 +32,7 @@ ai-cloud-app
 │       └── ai-cloud-pay             --支付服务 [8803]
 │       └── ai-cloud-user            --用户服务 [8802]
 ├──ai-cloud-web         --前端模块
-│       └── ai-cloud-h5              --h5
+│       └── ai-cloud-h5              --h5[]
 │       └── ai-cloud-wx              --微信小程序[]
 ├──pom.xml              --公共依赖
 ~~~

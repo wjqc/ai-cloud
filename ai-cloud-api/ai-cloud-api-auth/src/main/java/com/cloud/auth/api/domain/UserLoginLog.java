@@ -9,7 +9,6 @@ import io.swagger.annotations.ApiModelProperty;
  * 用户登录记录对象 user_login_log
  * 
  * @author ai-cloud
- * @date 2022-06-05
  */
 @ApiModel("用户登录记录")
 public class UserLoginLog{

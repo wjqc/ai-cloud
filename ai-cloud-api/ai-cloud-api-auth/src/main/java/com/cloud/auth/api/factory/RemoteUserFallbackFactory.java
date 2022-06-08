@@ -1,6 +1,7 @@
 package com.cloud.auth.api.factory;
 
 import com.cloud.auth.api.domain.User;
+import com.cloud.auth.api.domain.UserAccount;
 import com.cloud.auth.api.domain.model.LoginUser;
 import com.cloud.auth.api.service.RemoteUserService;
 import com.cloud.common.model.Response;
@@ -31,6 +32,7 @@ public class RemoteUserFallbackFactory implements FallbackFactory<RemoteUserServ
             public Response<Boolean> registerUserInfo(User user, String source) {
                 return Response.fail("注册用户失败:" + throwable.getMessage());
             }
+
         };
     }
 }

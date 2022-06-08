@@ -8,7 +8,6 @@ import org.apache.ibatis.annotations.Mapper;
  * 操作日志记录Mapper接口
  * 
  * @author ai-cloud
- * @date 2022-06-05
  */
 @Mapper
 public interface UserOperLogMapper extends BaseMapper<UserOperLog> {

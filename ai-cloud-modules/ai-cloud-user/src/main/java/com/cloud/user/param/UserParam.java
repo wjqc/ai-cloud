@@ -2,7 +2,9 @@ package com.cloud.user.param;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 
+@Data
 @ApiModel("修改我的信息参数")
 public class UserParam {
 

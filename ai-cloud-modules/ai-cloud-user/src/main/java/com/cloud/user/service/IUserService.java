@@ -10,7 +10,6 @@ import java.util.List;
  * 用户信息Service接口
  *
  * @author ai-cloud
- * @date 2022-05-10
  */
 public interface IUserService {
 
@@ -55,6 +54,7 @@ public interface IUserService {
      * @return 用户对象信息
      */
     public UserInfoDto selectByUserInfo();
+
 
 
 

@@ -25,13 +25,13 @@ public class RegisterApi {
     private RegisterService registerService;
 
     /**
-     * 用户注册
+     * 账号密码注册
      */
     @PostMapping("register")
     @ApiOperation("新用户注册")
     public Response<?> register(@RequestBody RegisterParam param) {
         //用户注册
-        registerService.register(param.getUsername(), param.getPassword());
+        registerService.register(param.getUsername(), param.getPassword(), param.getUuid());
         return Response.ok();
     }
 

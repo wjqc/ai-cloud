@@ -7,7 +7,6 @@ import io.swagger.annotations.ApiModelProperty;
  * 参数配置对象 user_config
  * 
  * @author ai-cloud
- * @date 2022-06-05
  */
 @ApiModel("参数配置")
 public class UserConfig extends BaseEntity {
