@@ -7,7 +7,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 /**
  * 拦截器配置
  *
- * @author
+ * @author ai-cloud
  */
 public class WebMvcConfig implements WebMvcConfigurer {
     /**

@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * 支付中心
  *
- * @author
+ * @author ai-cloud
  */
 @SpringBootApplication
 public class CloudPayApplication {

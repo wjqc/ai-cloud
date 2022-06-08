@@ -3,7 +3,7 @@ package com.cloud.common.utils.file;
 /**
  * 媒体类型工具类
  *
- * @author
+ * @author ai-cloud
  */
 public class MimeTypeUtils {
     public static final String IMAGE_PNG = "image/png";

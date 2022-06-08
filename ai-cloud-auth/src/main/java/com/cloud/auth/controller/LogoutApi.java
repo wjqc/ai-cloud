@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * 退出登录接口
  *
- * @author
+ * @author ai-cloud
  */
 @Api(tags = "退出登录接口")
 @RestController

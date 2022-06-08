@@ -28,7 +28,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * 登录校验方法
  *
- * @author
+ * @author ai-cloud
  */
 
 @Service

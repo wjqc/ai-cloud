@@ -23,7 +23,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 验证码实现处理
  *
- * @author
+ * @author ai-cloud
  */
 @Service
 public class ValidateCodeServiceImpl implements ValidateCodeService {

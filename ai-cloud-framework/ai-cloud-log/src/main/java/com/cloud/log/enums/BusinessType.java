@@ -3,7 +3,7 @@ package com.cloud.log.enums;
 /**
  * 业务操作类型
  *
- * @author
+ * @author ai-cloud
  */
 public enum BusinessType {
     /**

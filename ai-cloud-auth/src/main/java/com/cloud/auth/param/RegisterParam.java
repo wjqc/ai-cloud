@@ -8,7 +8,7 @@ import lombok.Data;
 /**
  * 用户注册对象
  *
- * @author
+ * @author ai-cloud
  */
 @Data
 @ApiModel("新用户创建账号和账户参数")

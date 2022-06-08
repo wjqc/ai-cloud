@@ -9,7 +9,7 @@ import com.cloud.security.utils.SecurityUtils;
 /**
  * Token 权限验证，逻辑实现类
  *
- * @author
+ * @author ai-cloud
  */
 public class AuthLogic {
 

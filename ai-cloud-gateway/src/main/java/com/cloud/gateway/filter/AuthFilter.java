@@ -24,7 +24,7 @@ import reactor.core.publisher.Mono;
 /**
  * 网关鉴权
  *
- * @author
+ * @author ai-cloud
  */
 @Component
 public class AuthFilter implements GlobalFilter, Ordered {

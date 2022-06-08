@@ -3,7 +3,7 @@ package com.cloud.common.constant;
 /**
  * Token的Key常量
  *
- * @author
+ * @author ai-cloud
  */
 public class TokenConstants {
     /**

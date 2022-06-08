@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 /**
  * 网关启动程序
  *
- * @author
+ * @author ai-cloud
  */
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 public class CloudGatewayApplication {

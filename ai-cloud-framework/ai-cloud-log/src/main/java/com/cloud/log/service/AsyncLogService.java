@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 /**
  * 异步调用日志服务
  *
- * @author
+ * @author ai-cloud
  */
 @Service
 public class AsyncLogService {

@@ -3,7 +3,7 @@ package com.cloud.common.exception;
 /**
  * 检查异常
  *
- * @author
+ * @author ai-cloud
  */
 public class CheckedException extends RuntimeException {
     private static final long serialVersionUID = 1L;

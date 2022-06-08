@@ -6,7 +6,7 @@ import com.cloud.auth.api.domain.model.LoginUser;
 /**
  * Token 验证工具类
  *
- * @author
+ * @author ai-cloud
  */
 public class AuthUtil {
     /**

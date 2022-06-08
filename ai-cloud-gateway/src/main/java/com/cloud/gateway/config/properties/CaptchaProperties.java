@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * 验证码配置
  *
- * @author
+ * @author ai-cloud
  */
 @Configuration
 @RefreshScope

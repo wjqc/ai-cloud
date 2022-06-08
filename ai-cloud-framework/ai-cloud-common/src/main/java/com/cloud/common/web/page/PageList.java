@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * 分页数据对象
  *
- * @author
+ * @author ai-cloud
  */
 public class PageList implements Serializable {
     private static final long serialVersionUID = 1L;

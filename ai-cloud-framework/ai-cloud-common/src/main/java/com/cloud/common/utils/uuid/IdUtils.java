@@ -3,7 +3,7 @@ package com.cloud.common.utils.uuid;
 /**
  * ID生成器工具类
  *
- * @author
+ * @author ai-cloud
  */
 public class IdUtils {
     /**

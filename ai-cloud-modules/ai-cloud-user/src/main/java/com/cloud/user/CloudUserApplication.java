@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * 用户中心
  *
- * @author
+ * @author ai-cloud
  */
 @EnableCustomConfig
 @EnableRyFeignClients

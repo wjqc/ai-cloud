@@ -7,7 +7,7 @@ import lombok.Data;
 /**
  * 用户登录对象
  *
- * @author
+ * @author ai-cloud
  */
 @Data
 @ApiModel("用户登录参数")

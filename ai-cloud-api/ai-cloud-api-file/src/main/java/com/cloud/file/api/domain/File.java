@@ -8,7 +8,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 /**
  * 文件信息
  *
- * @author
+ * @author ai-cloud
  */
 @ApiModel("文件信息")
 public class File {

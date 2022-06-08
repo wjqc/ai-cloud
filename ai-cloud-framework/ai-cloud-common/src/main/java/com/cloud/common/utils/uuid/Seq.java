@@ -6,7 +6,8 @@ import com.cloud.common.utils.StringUtils;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * @author 序列生成类
+ * 序列生成类
+ * @author ai-cloud 
  */
 public class Seq {
     // 通用序列类型

@@ -5,7 +5,7 @@ import com.cloud.common.exception.base.BaseException;
 /**
  * 文件信息异常类
  *
- * @author
+ * @author ai-cloud
  */
 public class FileException extends BaseException {
     private static final long serialVersionUID = 1L;

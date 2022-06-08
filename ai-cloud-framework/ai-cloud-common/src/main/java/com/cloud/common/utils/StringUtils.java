@@ -11,7 +11,7 @@ import java.util.Map;
 /**
  * 字符串工具类
  *
- * @author
+ * @author ai-cloud
  */
 public class StringUtils extends org.apache.commons.lang3.StringUtils {
     /**

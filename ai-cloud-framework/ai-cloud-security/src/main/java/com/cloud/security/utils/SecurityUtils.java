@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * 用户获取工具类
  *
- * @author
+ * @author ai-cloud
  */
 public class SecurityUtils {
     /**

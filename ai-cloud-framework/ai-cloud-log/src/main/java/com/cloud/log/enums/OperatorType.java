@@ -3,7 +3,7 @@ package com.cloud.log.enums;
 /**
  * 操作人类别
  *
- * @author
+ * @author ai-cloud
  */
 public enum OperatorType {
 
