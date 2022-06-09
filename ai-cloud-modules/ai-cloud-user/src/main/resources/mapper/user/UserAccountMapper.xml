@@ -9,7 +9,7 @@
         <result property="number" column="number"/>
         <result property="password" column="password"/>
         <result property="userId" column="user_id"/>
-        <result property="uuid" column="uuid"/>
+        <result property="deviceId" column="device_id"/>
         <result property="type" column="type"/>
         <result property="userType" column="user_type"/>
         <result property="grade" column="grade"/>

@@ -6,12 +6,12 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 /**
- * 用户注册对象
+ * 用户注册参数
  *
  * @author ai-cloud
  */
 @Data
-@ApiModel("用户注册对象")
+@ApiModel("用户注册参数")
 public class RegisterParam extends LoginParam{
 
     /** 用户手机号 */

@@ -10,12 +10,12 @@ public interface LoginService {
     /**
      * 账号密码登录
      */
-    public LoginUser login(String username, String password, HttpServletRequest request);
+    public LoginUser login(String username, String password, String deviceId, HttpServletRequest request);
 
 
     /**
      * 退出登录
      */
-    public void logout(String loginName);
+    public void logout(String loginName,String deviceId);
 
 }

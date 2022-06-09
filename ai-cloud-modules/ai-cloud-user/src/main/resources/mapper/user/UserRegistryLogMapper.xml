@@ -7,7 +7,6 @@
     <resultMap type="com.cloud.auth.api.domain.UserRegistryLog" id="UserRegistryLogResult">
         <result property="id" column="id"/>
         <result property="userName" column="user_name"/>
-        <result property="uuid" column="uuid"/>
         <result property="deviceId" column="device_id"/>
         <result property="type" column="type"/>
         <result property="source" column="source"/>

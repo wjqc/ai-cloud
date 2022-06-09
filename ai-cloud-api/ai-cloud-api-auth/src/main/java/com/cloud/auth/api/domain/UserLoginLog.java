@@ -24,10 +24,6 @@ public class UserLoginLog{
 
     /** 登录设备唯一标识 */
     @ApiModelProperty(value = "登录设备唯一标识",example = "String")
-    private String uuid;
-
-    /** 设备记录id */
-    @ApiModelProperty(value = "设备记录id",example = "String")
     private String deviceId;
 
     /** 登录方式；1：手机快捷登录 2：账号密码登录 */
@@ -66,12 +62,6 @@ public class UserLoginLog{
     }
     public String getUserName(){
         return userName;
-    }
-    public void setUuid(String uuid){
-        this.uuid = uuid;
-    }
-    public String getUuid(){
-        return uuid;
     }
     public void setDeviceId(String deviceId){
         this.deviceId = deviceId;

@@ -24,10 +24,6 @@ public class UserRegistryLog{
 
     /** 注册设备唯一标识 */
     @ApiModelProperty(value = "注册设备唯一标识",example = "String")
-    private String uuid;
-
-    /** 注册设备记录id */
-    @ApiModelProperty(value = "注册设备记录id",example = "String")
     private String deviceId;
 
     /** 注册方式；1：手机快捷注册 2：手机短信注册 3：微信注册 4：支付宝注册 5：新浪微博注册 */
@@ -69,10 +65,6 @@ public class UserRegistryLog{
 
     public String getUserName() {
         return userName;
-    }
-
-    public String getUuid() {
-        return uuid;
     }
 
     public String getDeviceId() {
@@ -117,10 +109,6 @@ public class UserRegistryLog{
 
     public void setUserName(String userName) {
         this.userName = userName;
-    }
-
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
     }
 
     public void setDeviceId(String deviceId) {

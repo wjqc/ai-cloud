@@ -9,7 +9,6 @@
         <result property="userName" column="user_name"/>
         <result property="ipaddr" column="ipaddr"/>
         <result property="loginLocation" column="login_location"/>
-        <result property="uuid" column="uuid"/>
         <result property="deviceId" column="device_id"/>
         <result property="type" column="type"/>
         <result property="status" column="status"/>

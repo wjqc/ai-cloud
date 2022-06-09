@@ -43,10 +43,11 @@ public class LoginApi {
     @ApiOperation("账号密码登录")
     public Response<?> login(@RequestBody LoginParam param,HttpServletRequest request) {
         // 用户登录
-        LoginUser userInfo = loginService.login(param.getUsername(), param.getPassword(),request);
+        LoginUser userInfo = loginService.login(param.getUsername(), param.getPassword(),param.getDeviceId(),request);
         // 获取登录token
         return Response.ok(tokenService.createToken(userInfo), "登录成功");
     }
+
 
 
     /**

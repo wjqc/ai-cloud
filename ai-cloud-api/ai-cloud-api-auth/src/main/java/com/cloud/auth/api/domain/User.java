@@ -29,13 +29,9 @@ public class User extends BaseEntity {
     @ApiModelProperty(value = "用户密码",example = "String")
     private String password;
 
-    /** 用户设备id */
-    @ApiModelProperty(value = "用户设备id",example = "String")
+    /** 用户设备唯一标识 */
+    @ApiModelProperty(value = "用户设备唯一标识",example = "String")
     private String deviceId;
-
-    /** 设备唯一标识 */
-    @ApiModelProperty(value = "设备唯一标识",example = "String")
-    private String uuid;
 
     /** 用户绑定手机号 */
     @ApiModelProperty(value = "用户绑定手机号",example = "String")
@@ -222,12 +218,6 @@ public class User extends BaseEntity {
     }
     public String getPassword(){
         return password;
-    }
-    public void setUuid(String uuid){
-        this.uuid = uuid;
-    }
-    public String getUuid(){
-        return uuid;
     }
     public void setDeviceId(String deviceId){
         this.deviceId = deviceId;

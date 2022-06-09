@@ -17,6 +17,11 @@ public class SecurityConstants {
     public static final String DETAILS_USERNAME = "username";
 
     /**
+     * 用户设备唯一标识
+     */
+    public static final String DETAILS_DEVICEID = "deviceId";
+
+    /**
      * 授权信息字段
      */
     public static final String AUTHORIZATION_HEADER = "authorization";

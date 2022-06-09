@@ -24,16 +24,37 @@ public class RemoteLogFallbackFactory implements FallbackFactory<RemoteLogServic
         log.error("日志服务调用失败:{}", throwable.getMessage());
         return new RemoteLogService() {
 
+            /**
+             * 保存登录记录
+             *
+             * @param userLoginLog 访问实体
+             * @param source       请求来源
+             * @return 结果
+             */
             @Override
             public Response<Boolean> saveUserLoginLog(UserLoginLog userLoginLog, String source) {
                 return null;
             }
 
+            /**
+             * 保存注册记录
+             *
+             * @param userRegistryLog 访问实体
+             * @param source       请求来源
+             * @return 结果
+             */
             @Override
             public Response<Boolean> saveUserRegistryLog(UserRegistryLog userRegistryLog, String source) {
                 return null;
             }
 
+            /**
+             * 保存操作日志
+             *
+             * @param userOperLog 日志实体
+             * @param source      请求来源
+             * @return 结果
+             */
             @Override
             public Response<Boolean> saveUserOperLog(UserOperLog userOperLog, String source) {
                 return null;

@@ -46,9 +46,11 @@ public class TokenService {
         String token = IdUtils.fastUUID();
         String userId = loginUser.getUser().getId();
         String userName = loginUser.getUser().getUserName();
+        String deviceId = loginUser.getUser().getDeviceId();
         loginUser.setToken(token);
         loginUser.setUserid(userId);
         loginUser.setUsername(userName);
+        loginUser.setDeviceId(deviceId);
         loginUser.setIpaddr(IpUtils.getIpAddr(ServletUtils.getRequest()));
         refreshToken(loginUser);
 
@@ -57,6 +59,7 @@ public class TokenService {
         claimsMap.put(SecurityConstants.USER_KEY, token);
         claimsMap.put(SecurityConstants.DETAILS_USER_ID, userId);
         claimsMap.put(SecurityConstants.DETAILS_USERNAME, userName);
+        claimsMap.put(SecurityConstants.DETAILS_DEVICEID, deviceId);
 
         // 接口返回信息
         Map<String, Object> rspMap = new HashMap<String, Object>();

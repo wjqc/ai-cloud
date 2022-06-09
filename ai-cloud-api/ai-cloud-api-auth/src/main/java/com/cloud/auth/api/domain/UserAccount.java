@@ -30,9 +30,9 @@ public class UserAccount extends BaseEntity {
     @ApiModelProperty(value = "用户id",example = "String")
     private String userId;
 
-    /** 设备唯一标识 */
-    @ApiModelProperty(value = "设备唯一标识",example = "String")
-    private String uuid;
+    /** 用户设备唯一标识 */
+    @ApiModelProperty(value = "用户设备唯一标识",example = "String")
+    private String deviceId;
 
     /** 账户类型；1：余额账户 2：kb账户 */
     @ApiModelProperty(value = "账户类型；1：余额账户 2：kb账户",example = "String")
@@ -114,12 +114,8 @@ public class UserAccount extends BaseEntity {
     public String getUserId(){
         return userId;
     }
-    public void setUuid(String uuid){
-        this.uuid = uuid;
-    }
-    public String getUuid(){
-        return uuid;
-    }
+    public void setDeviceId(String deviceId) {this.deviceId = deviceId;}
+    public String getDeviceId() {return deviceId;}
     public void setType(String type){
         this.type = type;
     }

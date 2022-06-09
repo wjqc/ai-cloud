@@ -16,11 +16,11 @@ public interface IUserAccountService {
      * 创建账户
      *
      * @param userId
-     * @param uuid
+     * @param deviceId
      * @param type
      * @return
      */
-    public int createAccount(String userId, String uuid, String type);
+    public int createAccount(String userId, String deviceId, String type);
 
 
     /**

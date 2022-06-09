@@ -31,7 +31,7 @@ public class RegisterApi {
     @ApiOperation("新用户注册")
     public Response<?> register(@RequestBody RegisterParam param) {
         //用户注册
-        registerService.register(param.getUsername(), param.getPassword(), param.getUuid());
+        registerService.register(param.getUsername(), param.getPassword(), param.getDeviceId());
         return Response.ok();
     }
 

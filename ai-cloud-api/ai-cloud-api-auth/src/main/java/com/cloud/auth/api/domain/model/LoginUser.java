@@ -29,6 +29,12 @@ public class LoginUser implements Serializable {
      */
     private String username;
 
+
+    /**
+     * 用户设备唯一标识
+     */
+    private String deviceId;
+
     /**
      * 登录时间
      */
@@ -61,6 +67,10 @@ public class LoginUser implements Serializable {
         return username;
     }
 
+    public String getDeviceId() {
+        return deviceId;
+    }
+
     public Long getLoginTime() {
         return loginTime;
     }
@@ -87,6 +97,10 @@ public class LoginUser implements Serializable {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public void setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
     }
 
     public void setLoginTime(Long loginTime) {

@@ -41,7 +41,7 @@ public class RegisterServiceImpl implements RegisterService {
     /**
      * 账号密码注册
      */
-    public void register(String username, String password, String uuid) {
+    public void register(String username, String password, String deviceId) {
         // 用户名或密码为空 错误
         if (StringUtils.isAnyBlank(username, password)) {
             throw new ServiceException("用户/密码必须填写");
@@ -57,13 +57,13 @@ public class RegisterServiceImpl implements RegisterService {
         // 注册用户信息
         User user = new User();
         user.setUserName(username);
-        user.setUuid(uuid);
+        user.setDeviceId(deviceId);
         user.setPassword(SecurityUtils.encryptPassword(password));
         Response<?> registerResult = remoteUserService.registerUserInfo(user, SecurityConstants.INNER);
         if (Response.FAIL == registerResult.getCode()) {
             throw new ServiceException(registerResult.getMsg());
         }
-        recordUserRegistryLog(username, Constants.REGISTER, "注册成功");
+        recordUserRegistryLog(username,deviceId, Constants.REGISTER, "注册成功");
     }
 
 
@@ -75,10 +75,11 @@ public class RegisterServiceImpl implements RegisterService {
      * @param message  消息内容
      * @return
      */
-    public void recordUserRegistryLog(String username, String status, String message) {
+    public void recordUserRegistryLog(String username,String deviceId, String status, String message) {
         UserRegistryLog userRegistryLog = new UserRegistryLog();
         userRegistryLog.setId(IdUtils.fastSimpleUUID());
         userRegistryLog.setUserName(username);
+        userRegistryLog.setDeviceId(deviceId);
         userRegistryLog.setIpaddr(IpUtils.getIpAddr(ServletUtils.getRequest()));
         userRegistryLog.setMsg(message);
         // 日志状态
