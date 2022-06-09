@@ -73,4 +73,5 @@ public class UserInfoDto {
     /** 排名 */
     @ApiModelProperty(value = "排名")
     private Integer rank;
+
 }

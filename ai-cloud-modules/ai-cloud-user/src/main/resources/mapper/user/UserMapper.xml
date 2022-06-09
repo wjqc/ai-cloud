@@ -57,38 +57,54 @@
     </resultMap>
     
     <select id="checkUserNameUnique" parameterType="String" resultType="int">
-        select count(1)
-        from `user`
-        where user_name = #{userName} limit 1
+        SELECT
+            count( 1 )
+        FROM
+            `user`
+        WHERE
+            user_name = #{username} limit 1
     </select>
     
     <select id="checkPhoneUnique" parameterType="String" resultMap="UserResult">
-        select id, phone from `user` where phone = #{phonen} limit 1
+        SELECT
+            id,
+            phone
+        FROM
+            `user`
+        WHERE
+            phone = #{phonen} limit 1
     </select>
     
-    <select id="selectByUserName" resultMap="UserResult">
-        SELECT *
-        FROM `user`
-        WHERE user_name = #{username}
+    <select id="selectByUserNamePhone" resultMap="UserResult">
+        SELECT
+            a.*
+        FROM
+            `user` a
+        WHERE
+            a.user_name = #{param}
+           OR a.phone = #{param} AND a.status_flag = 0 AND a.delete_flag = 0
     </select>
     
     <select id="selectByUserInfo" resultType="com.cloud.user.dto.UserInfoDto">
-        SELECT user_name,
-               head_img,
-               nick_name,
-               sex,
-               age,
-               phone,
-               sign,
-               vip_type,
-               vip_start_time,
-               vip_end_time,
-               user_type,
-               fans,
-               attention,
-               likes
-        FROM `user`
-        WHERE status_flag = 0
+        SELECT
+            user_name,
+            head_img,
+            nick_name,
+            sex,
+            age,
+            phone,
+            sign,
+            vip_type,
+            vip_start_time,
+            vip_end_time,
+            user_type,
+            fans,
+            attention,
+            likes
+        FROM
+            `user`
+        WHERE
+            status_flag = 0
           AND delete_flag = 0
           AND id = #{userId}
     </select>

@@ -19,14 +19,14 @@ import org.springframework.web.bind.annotation.*;
 public interface RemoteUserService {
 
     /**
-     * 通过用户名查询用户信息
+     * 通过用户名或手机号查询用户
      *
-     * @param username 用户名
-     * @param source   请求来源
+     * @param param  用户名或手机号
+     * @param source 请求来源
      * @return 结果
      */
-    @PostMapping("/user/info/{username}")
-    public Response<LoginUser> getUserInfo(@PathVariable("username") String username, @RequestHeader(SecurityConstants.FROM_SOURCE) String source);
+    @PostMapping("/user/info/{param}")
+    public Response<LoginUser> getUserInfo(@PathVariable("param") String param, @RequestHeader(SecurityConstants.FROM_SOURCE) String source);
 
     /**
      * 注册用户信息

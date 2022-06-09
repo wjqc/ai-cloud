@@ -49,16 +49,16 @@ public class UserApi {
     }
 
     /**
-     * 通过用户名查询用户
+     * 通过用户名或手机号查询用户
      *
-     * @param username 用户名
+     * @param param 用户名或手机号
      * @return 用户对象信息
      */
     @InnerAuth
-    @PostMapping("/info/{username}")
+    @PostMapping("/info/{param}")
     @ApiOperation("通过用户名查询用户")
-    public Response<LoginUser> info(@PathVariable("username") String username) {
-        User user = userService.selectByUserName(username);
+    public Response<LoginUser> info(@PathVariable("param") String param) {
+        User user = userService.selectByUserNamePhone(param);
         LoginUser userVo = new LoginUser();
         userVo.setUser(user);
         return Response.ok(userVo);

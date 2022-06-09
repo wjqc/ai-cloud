@@ -13,8 +13,8 @@ import lombok.Data;
 @ApiModel("用户登录参数")
 public class LoginParam extends BaseParam{
 
-    /** 用户账号 */
-    @ApiModelProperty(value = "用户账号",example = "String")
+    /** 用户账号或手机号 */
+    @ApiModelProperty(value = "用户账号或手机号",example = "String")
     private String username;
 
     /** 用户密码 */

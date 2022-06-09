@@ -14,7 +14,7 @@ import lombok.Data;
 @ApiModel("请求公共参数")
 public class BaseParam {
 
-    /** deviceId */
+    /** 用户设备唯一标识 */
     @ApiModelProperty(value = "设备deviceId", example = "e1e4c24876514fc999d043ae0f496752")
     private String deviceId;
 

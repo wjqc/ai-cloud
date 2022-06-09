@@ -36,12 +36,12 @@ public class UserServiceImpl implements IUserService {
     /**
      * 校验用户名称是否唯一
      *
-     * @param userName 用户名称
+     * @param username 用户名称
      * @return 结果
      */
     @Override
-    public String checkUserNameUnique(String userName) {
-        int count = userMapper.checkUserNameUnique(userName);
+    public String checkUserNameUnique(String username) {
+        int count = userMapper.checkUserNameUnique(username);
         if (count > 0) {
             return UserConstants.NOT_UNIQUE;
         }
@@ -84,14 +84,14 @@ public class UserServiceImpl implements IUserService {
     }
 
     /**
-     * 通过用户名查询用户
+     * 通过用户名或手机号查询用户
      *
-     * @param username 用户名
+     * @param param 用户名或手机号
      * @return 用户对象信息
      */
     @Override
-    public User selectByUserName(String username) {
-        return userMapper.selectByUserName(username);
+    public User selectByUserNamePhone(String param) {
+        return userMapper.selectByUserNamePhone(param);
     }
 
     /**
