@@ -24,7 +24,7 @@ public class UserWithdrawLog extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
 
-    /** $column.columnComment */
+    /** 提现记录id */
     private String id;
 
     /** 用户id */

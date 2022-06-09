@@ -23,7 +23,7 @@ public class UserBind extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
 
-    /** $column.columnComment */
+    /** id */
     private String id;
 
     /** 用户id */
@@ -81,10 +81,6 @@ public class UserBind extends BaseEntity {
     @TableField("delete_flag")
     @ApiModelProperty(value = "删除：0：未删除，2：已删除",example = "Long")
     private Long deleteFlag;
-
-
-
-
 
     public void setId(String id){
         this.id = id;

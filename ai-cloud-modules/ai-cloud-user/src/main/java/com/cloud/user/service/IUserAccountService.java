@@ -1,10 +1,5 @@
 package com.cloud.user.service;
 
-import com.cloud.auth.api.domain.UserAccount;
-import com.cloud.user.param.AccountParam;
-
-import java.util.List;
-
 /**
  * 用户账户信息Service接口
  *

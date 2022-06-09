@@ -3,7 +3,6 @@ package com.cloud.auth.controller;
 
 import com.cloud.auth.param.RegisterParam;
 import com.cloud.auth.service.RegisterService;
-import com.cloud.auth.service.impl.LoginServiceImpl;
 import com.cloud.common.model.Response;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

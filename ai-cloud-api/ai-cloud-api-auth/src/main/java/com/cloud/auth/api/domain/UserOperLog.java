@@ -42,10 +42,6 @@ public class UserOperLog{
     @ApiModelProperty(value = "操作人员",example = "String")
     private String operName;
 
-    /** 部门名称 */
-    @ApiModelProperty(value = "部门名称",example = "String")
-    private String deptName;
-
     /** 请求URL */
     @ApiModelProperty(value = "请求URL",example = "String")
     private String operUrl;
@@ -120,12 +116,6 @@ public class UserOperLog{
     }
     public String getOperName(){
         return operName;
-    }
-    public void setDeptName(String deptName){
-        this.deptName = deptName;
-    }
-    public String getDeptName(){
-        return deptName;
     }
     public void setOperUrl(String operUrl){
         this.operUrl = operUrl;

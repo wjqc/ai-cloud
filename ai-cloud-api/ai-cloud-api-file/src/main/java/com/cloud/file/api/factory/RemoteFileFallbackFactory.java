@@ -22,10 +22,17 @@ public class RemoteFileFallbackFactory implements FallbackFactory<RemoteFileServ
     public RemoteFileService create(Throwable throwable) {
         log.error("文件服务调用失败:{}", throwable.getMessage());
         return new RemoteFileService() {
+            /**
+             * 上传文件
+             *
+             * @param file 文件信息
+             * @return 结果
+             */
             @Override
             public Response<File> upload(MultipartFile file) {
                 return Response.fail("上传文件失败:" + throwable.getMessage());
             }
+
         };
     }
 }

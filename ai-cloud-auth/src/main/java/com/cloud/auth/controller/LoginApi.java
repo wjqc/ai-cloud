@@ -3,14 +3,10 @@ package com.cloud.auth.controller;
 
 import com.cloud.auth.api.domain.model.LoginUser;
 import com.cloud.auth.param.LoginParam;
-import com.cloud.auth.param.RegisterParam;
 import com.cloud.auth.service.impl.LoginServiceImpl;
 import com.cloud.common.model.Response;
-import com.cloud.common.utils.JwtUtils;
 import com.cloud.common.utils.StringUtils;
-import com.cloud.security.auth.AuthUtil;
 import com.cloud.security.service.TokenService;
-import com.cloud.security.utils.SecurityUtils;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
