@@ -18,11 +18,11 @@ public class UserParam {
 
     /** 性别 */
     @ApiModelProperty(value = "性别", example = "1")
-    private String sex;
+    private Long sex;
 
     /** 年龄 */
     @ApiModelProperty(value = "年龄", example = "19")
-    private String age;
+    private Long age;
 
     /** 签名 */
     @ApiModelProperty(value = "签名", example = "这个世界本就是平衡的，想要得到什么就要付出什么")

@@ -17,12 +17,4 @@ public interface IUserAccountService {
      */
     public int createAccount(String userId, String deviceId, String type);
 
-
-    /**
-     * 钱包余额
-     *
-     * @return
-     */
-    public String wallet();
-
 }

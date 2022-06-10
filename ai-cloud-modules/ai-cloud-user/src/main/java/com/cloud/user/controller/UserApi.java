@@ -8,6 +8,7 @@ import com.cloud.common.model.Response;
 import com.cloud.log.annotation.Log;
 import com.cloud.log.enums.BusinessType;
 import com.cloud.security.annotation.InnerAuth;
+import com.cloud.user.service.IUserAccountService;
 import com.cloud.user.service.IUserConfigService;
 import com.cloud.user.service.IUserService;
 import io.swagger.annotations.Api;
@@ -16,7 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * 用户信息api
+ * 用户信息
  *
  * @author ai-cloud
  */
@@ -32,7 +33,10 @@ public class UserApi {
     private IUserConfigService userConfigService;
 
     /**
-     * 注册用户信息
+     * 用户对象信息
+     *
+     * @param user 用户信息
+     * @return 用户对象信息
      */
     @InnerAuth
     @PostMapping("/register")
@@ -55,7 +59,7 @@ public class UserApi {
      * @return 用户对象信息
      */
     @InnerAuth
-    @PostMapping("/info/{param}")
+    @PostMapping("/{param}")
     @ApiOperation("通过用户名查询用户")
     public Response<LoginUser> info(@PathVariable("param") String param) {
         User user = userService.selectByUserNamePhone(param);
@@ -64,17 +68,5 @@ public class UserApi {
         return Response.ok(userVo);
     }
 
-    /**
-     * 查询用户信息
-     *
-     * @param
-     * @return 用户对象信息
-     */
-    @Log(title = "查询用户信息", businessType = BusinessType.QUERY)
-    @PostMapping(value = "/userInfo")
-    @ApiOperation("查询用户信息")
-    public Response userInfo() {
-        return Response.ok(userService.selectByUserInfo(), "查询成功");
-    }
 
 }

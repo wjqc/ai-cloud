@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cloud.user.mapper.UserAccountDetailMapper">
+
+    <resultMap type="com.cloud.user.domain.UserAccountDetail" id="UserAccountDetailResult">
+        <result property="id" column="id"/>
+        <result property="accountId" column="account_id"/>
+        <result property="accountNumber" column="account_number"/>
+        <result property="accountType" column="account_type"/>
+        <result property="type" column="type"/>
+        <result property="debitType" column="debit_type"/>
+        <result property="debitNumber" column="debit_number"/>
+        <result property="debitPhone" column="debit_phone"/>
+        <result property="creditType" column="credit_type"/>
+        <result property="creditNumber" column="credit_number"/>
+        <result property="creditPhone" column="credit_phone"/>
+        <result property="orderPrice" column="order_price"/>
+        <result property="beforeAvailableBalance" column="before_available_balance"/>
+        <result property="afterAvailableBalance" column="after_available_balance"/>
+        <result property="dealName" column="deal_name"/>
+        <result property="orderNumber" column="order_number"/>
+        <result property="dealSerialNumber" column="deal_serial_number"/>
+        <result property="merchantSerialNumber" column="merchant_serial_number"/>
+        <result property="remarks" column="remarks"/>
+        <result property="img" column="img"/>
+        <result property="serviceCharge" column="service_charge"/>
+        <result property="dealType" column="deal_type"/>
+        <result property="deleteFlag" column="delete_flag"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateBy" column="update_by"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+</mapper>

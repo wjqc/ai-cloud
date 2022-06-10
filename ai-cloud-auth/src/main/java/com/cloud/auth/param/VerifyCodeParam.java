@@ -8,6 +8,7 @@ import lombok.Data;
  * 手机验证码请求参数
  *
  * @author ai-cloud
+ *
  */
 @Data
 @ApiModel("手机验证码请求参数")

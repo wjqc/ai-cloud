@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
  * 注册接口
  *
  * @author ai-cloud
+ *
  */
 @Api(tags = "注册接口")
 @RestController

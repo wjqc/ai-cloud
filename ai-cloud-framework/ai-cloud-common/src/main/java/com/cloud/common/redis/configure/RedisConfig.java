@@ -17,6 +17,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
  * redis配置
  *
  * @author ai-cloud
+ *
  */
 @Configuration
 @EnableCaching

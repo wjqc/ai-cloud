@@ -7,9 +7,9 @@ import com.cloud.auth.api.domain.UserConfig;
  * 参数配置Mapper接口
  *
  * @author ai-cloud
+ *
  */
 public interface UserConfigMapper extends BaseMapper<UserConfig> {
-
 
     /**
      * 查询参数配置信息

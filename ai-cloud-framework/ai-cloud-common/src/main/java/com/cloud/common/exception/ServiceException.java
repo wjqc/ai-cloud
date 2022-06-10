@@ -4,6 +4,7 @@ package com.cloud.common.exception;
  * 业务异常
  *
  * @author ai-cloud
+ *
  */
 public final class ServiceException extends RuntimeException {
     private static final long serialVersionUID = 1L;

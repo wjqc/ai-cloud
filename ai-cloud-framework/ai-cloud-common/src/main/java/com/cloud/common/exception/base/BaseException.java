@@ -4,6 +4,7 @@ package com.cloud.common.exception.base;
  * 基础异常
  *
  * @author ai-cloud
+ *
  */
 public class BaseException extends RuntimeException {
     private static final long serialVersionUID = 1L;

@@ -8,6 +8,7 @@ import com.cloud.auth.api.domain.UserRegistryLog;
  * 用户注册记录Mapper接口
  * 
  * @author ai-cloud
+ *
  */
 public interface UserRegistryLogMapper extends BaseMapper<UserRegistryLog> {
 

@@ -4,6 +4,7 @@ package com.cloud.common.exception;
  * 全局异常
  *
  * @author ai-cloud
+ *
  */
 public class GlobalException extends RuntimeException {
 

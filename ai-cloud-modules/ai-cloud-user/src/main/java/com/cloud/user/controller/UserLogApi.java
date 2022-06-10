@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 用户登录记录api
+ * 用户登录记录
  *
  * @author ai-cloud
  */

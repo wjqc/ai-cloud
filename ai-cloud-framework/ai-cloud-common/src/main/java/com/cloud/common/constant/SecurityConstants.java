@@ -4,6 +4,7 @@ package com.cloud.common.constant;
  * 用户相关通用常量
  *
  * @author ai-cloud
+ *
  */
 public class SecurityConstants {
     /**

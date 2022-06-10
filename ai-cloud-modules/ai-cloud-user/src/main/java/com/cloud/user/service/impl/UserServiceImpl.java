@@ -22,10 +22,10 @@ import com.cloud.user.service.IUserService;
  * 用户信息Service业务层处理
  *
  * @author ai-cloud
+ *
  */
 @Service
 public class UserServiceImpl implements IUserService {
-
 
     @Autowired
     private UserMapper userMapper;
@@ -94,17 +94,6 @@ public class UserServiceImpl implements IUserService {
         return userMapper.selectByUserNamePhone(param);
     }
 
-    /**
-     * 查询用户信息
-     *
-     * @param
-     * @return 用户对象信息
-     */
-    @Override
-    public UserInfoDto selectByUserInfo() {
-        //获取userId
-        String userId = SecurityUtils.getUserId();
-        return userMapper.selectByUserInfo(String.valueOf(userId));
-    }
+
 
 }

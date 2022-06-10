@@ -1,5 +1,11 @@
 package com.cloud.auth.service;
 
+/**
+ * 注册校验方法
+ *
+ * @author ai-cloud
+ *
+ */
 public interface RegisterService {
 
     /**

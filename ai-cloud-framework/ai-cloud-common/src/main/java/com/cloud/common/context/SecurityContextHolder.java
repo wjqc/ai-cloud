@@ -13,6 +13,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * 注意： 必须在网关通过请求头的方法传入，同时在HeaderInterceptor拦截器设置值。 否则这里无法获取
  *
  * @author ai-cloud
+ *
  */
 public class SecurityContextHolder {
     private static final TransmittableThreadLocal<Map<String, Object>> THREAD_LOCAL = new TransmittableThreadLocal<>();

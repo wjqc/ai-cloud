@@ -17,6 +17,7 @@ import java.math.BigDecimal;
  * 用户账户信息Service业务层处理
  *
  * @author ai-cloud
+ *
  */
 @Service
 public class UserAccountServiceImpl implements IUserAccountService {
@@ -45,16 +46,6 @@ public class UserAccountServiceImpl implements IUserAccountService {
         return userAccountMapper.insert(userAccount);
     }
 
-    /**
-     * 钱包余额
-     *
-     * @return
-     */
-    @Override
-    public String wallet() {
-        //获取userId
-        String userId = SecurityUtils.getUserId();
-        BigDecimal balance = userAccountMapper.selectAvailableBalanceByUserIdAndType(userId, UserAccountConstants.ACCOUNT_TYPE_余额账户);
-        return StringUtils.isNull(balance) ? "0.000" : balance.toString();
-    }
+
+
 }

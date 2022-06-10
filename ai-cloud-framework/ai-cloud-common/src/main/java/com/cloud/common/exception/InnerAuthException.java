@@ -4,6 +4,7 @@ package com.cloud.common.exception;
  * 内部认证异常
  *
  * @author ai-cloud
+ *
  */
 public class InnerAuthException extends RuntimeException {
     private static final long serialVersionUID = 1L;

@@ -4,6 +4,7 @@ package com.cloud.common.constant;
  * 通用常量信息
  *
  * @author ai-cloud
+ *
  */
 public class Constants {
     /**

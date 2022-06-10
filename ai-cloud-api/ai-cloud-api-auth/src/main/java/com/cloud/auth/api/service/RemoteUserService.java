@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
  * 用户服务
  *
  * @author ai-cloud
+ *
  */
 @FeignClient(contextId = "remoteUserService", value = ServiceNameConstants.USER_SERVICE, fallbackFactory = RemoteUserFallbackFactory.class)
 public interface RemoteUserService {
@@ -25,7 +26,7 @@ public interface RemoteUserService {
      * @param source 请求来源
      * @return 结果
      */
-    @PostMapping("/user/info/{param}")
+    @PostMapping("/user/{param}")
     public Response<LoginUser> getUserInfo(@PathVariable("param") String param, @RequestHeader(SecurityConstants.FROM_SOURCE) String source);
 
     /**

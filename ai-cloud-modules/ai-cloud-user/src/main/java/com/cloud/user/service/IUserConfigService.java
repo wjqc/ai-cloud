@@ -4,6 +4,7 @@ package com.cloud.user.service;
  * 参数配置Service接口
  *
  * @author ai-cloud
+ *
  */
 public interface IUserConfigService {
 

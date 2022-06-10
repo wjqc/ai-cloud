@@ -14,6 +14,7 @@ import java.util.Arrays;
  * 图片处理工具类
  *
  * @author ai-cloud
+ *
  */
 public class ImageUtils {
     private static final Logger log = LoggerFactory.getLogger(ImageUtils.class);

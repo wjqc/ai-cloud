@@ -27,8 +27,8 @@ import javax.servlet.http.HttpServletRequest;
  * 登录校验方法
  *
  * @author ai-cloud
+ *
  */
-
 @Service
 @Component
 public class LoginServiceImpl implements LoginService {

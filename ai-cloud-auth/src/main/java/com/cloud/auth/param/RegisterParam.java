@@ -9,6 +9,7 @@ import lombok.Data;
  * 用户注册参数
  *
  * @author ai-cloud
+ *
  */
 @Data
 @ApiModel("用户注册参数")

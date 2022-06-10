@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cloud.user.mapper.UserBindMapper">
+
+    <resultMap type="com.cloud.user.domain.UserBind" id="UserBindResult">
+        <result property="id" column="id"/>
+        <result property="userId" column="user_id"/>
+        <result property="deviceId" column="device_id"/>
+        <result property="belongBank" column="belong_bank"/>
+        <result property="bankCard" column="bank_card"/>
+        <result property="bankName" column="bank_name"/>
+        <result property="bankAccount" column="bank_account"/>
+        <result property="alipayAccount" column="alipay_account"/>
+        <result property="alipayName" column="alipay_name"/>
+        <result property="bindTime" column="bind_time"/>
+        <result property="statusFlag" column="status_flag"/>
+        <result property="deleteFlag" column="delete_flag"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateBy" column="update_by"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+</mapper>

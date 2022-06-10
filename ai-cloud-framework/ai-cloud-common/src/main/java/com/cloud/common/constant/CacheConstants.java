@@ -4,6 +4,7 @@ package com.cloud.common.constant;
  * 缓存的key 常量
  *
  * @author ai-cloud
+ *
  */
 public class CacheConstants {
     /**

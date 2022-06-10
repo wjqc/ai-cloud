@@ -8,8 +8,8 @@ import lombok.Data;
  * 请求公共参数
  *
  * @author ai-cloud
+ *
  */
-
 @Data
 @ApiModel("请求公共参数")
 public class BaseParam {

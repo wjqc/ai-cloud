@@ -13,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
  * 文件服务降级处理
  *
  * @author ai-cloud
+ *
  */
 @Component
 public class RemoteFileFallbackFactory implements FallbackFactory<RemoteFileService> {

@@ -11,6 +11,7 @@ import java.util.List;
  * 用户信息Service接口
  *
  * @author ai-cloud
+ *
  */
 public interface IUserService {
 
@@ -44,15 +45,7 @@ public interface IUserService {
      * @param param 用户名或手机号
      * @return 用户对象信息
      */
-    public User selectByUserNamePhone(@Param("param")String param);
-
-    /**
-     * 查询用户信息
-     *
-     * @param
-     * @return 用户对象信息
-     */
-    public UserInfoDto selectByUserInfo();
+    public User selectByUserNamePhone(@Param("param") String param);
 
 
 

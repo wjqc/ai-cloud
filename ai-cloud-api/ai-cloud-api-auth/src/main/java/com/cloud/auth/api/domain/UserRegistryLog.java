@@ -9,6 +9,7 @@ import io.swagger.annotations.ApiModelProperty;
  * 用户注册记录对象 user_registry_log
  * 
  * @author ai-cloud
+ *
  */
 @ApiModel("用户注册记录")
 public class UserRegistryLog{

@@ -8,6 +8,7 @@ import java.io.Serializable;
  * 响应信息主体
  *
  * @author ai-cloud
+ *
  */
 public class Response<T> implements Serializable {
 

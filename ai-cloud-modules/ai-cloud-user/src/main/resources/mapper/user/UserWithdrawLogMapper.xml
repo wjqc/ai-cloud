@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cloud.user.mapper.UserWithdrawLogMapper">
+
+    <resultMap type="com.cloud.user.domain.UserWithdrawLog" id="UserWithdrawLogResult">
+        <result property="id" column="id"/>
+        <result property="userId" column="user_id"/>
+        <result property="deviceId" column="device_id"/>
+        <result property="belongBank" column="belong_bank"/>
+        <result property="bankName" column="bank_name"/>
+        <result property="bankAccount" column="bank_account"/>
+        <result property="bankCard" column="bank_card"/>
+        <result property="alipayAccount" column="alipay_account"/>
+        <result property="alipayName" column="alipay_name"/>
+        <result property="amount" column="amount"/>
+        <result property="dealSerialNumber" column="deal_serial_number"/>
+        <result property="merchantSerialNumber" column="merchant_serial_number"/>
+        <result property="serviceCharge" column="service_charge"/>
+        <result property="settlementAmount" column="settlement_amount"/>
+        <result property="status" column="status"/>
+        <result property="remitStatus" column="remit_status"/>
+        <result property="applyTime" column="apply_time"/>
+        <result property="acceptApplyTime" column="accept_apply_time"/>
+        <result property="acceptApplySerialNumber" column="accept_apply_serial_number"/>
+        <result property="remitTime" column="remit_time"/>
+        <result property="remitSerialNumber" column="remit_serial_number"/>
+        <result property="otherNumber" column="other_number"/>
+        <result property="refuseApplyTime" column="refuse_apply_time"/>
+        <result property="refuseSerialNumber" column="refuse_serial_number"/>
+        <result property="remarks" column="remarks"/>
+        <result property="deleteFlag" column="delete_flag"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateBy" column="update_by"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+</mapper>

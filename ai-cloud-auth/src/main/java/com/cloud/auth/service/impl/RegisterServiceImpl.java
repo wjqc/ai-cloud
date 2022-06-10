@@ -23,8 +23,8 @@ import org.springframework.stereotype.Service;
  * 注册校验方法
  *
  * @author ai-cloud
+ *
  */
-
 @Service
 @Component
 public class RegisterServiceImpl implements RegisterService {

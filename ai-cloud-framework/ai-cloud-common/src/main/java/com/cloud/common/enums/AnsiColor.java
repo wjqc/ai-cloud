@@ -6,8 +6,8 @@ import org.springframework.boot.ansi.AnsiElement;
  * banner自定义颜色
  *
  * @author ai-cloud
+ *
  */
-
 public enum AnsiColor implements AnsiElement {
     DEFAULT("39" ),
     BLACK("30" ),
