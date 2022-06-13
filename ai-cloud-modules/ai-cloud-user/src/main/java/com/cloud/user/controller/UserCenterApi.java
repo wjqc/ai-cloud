@@ -48,7 +48,7 @@ public class UserCenterApi {
      * 保存我的信息
      *
      * @param param
-     * @return 结果
+     * @return
      */
     @Log(title = "保存我的信息", businessType = BusinessType.UPDATE)
     @PostMapping(value = "/userSave")
@@ -76,11 +76,11 @@ public class UserCenterApi {
      * @param param
      * @return
      */
-    @Log(title = "申请提现", businessType = BusinessType.QUERY)
+    @Log(title = "用户申请提现", businessType = BusinessType.QUERY)
     @PostMapping(value = "/wallet/withdraw")
     @ApiOperation(value = "申请提现")
-    public Response walletWithdraw(WalletWithdrawParam param){
-        return Response.ok(userCenterService.walletWithdraw(param),"申请成功!");
+    public Response walletWithdraw(WalletWithdrawParam param) {
+        return Response.ok(userCenterService.walletWithdraw(param), "申请成功!");
     }
 
 

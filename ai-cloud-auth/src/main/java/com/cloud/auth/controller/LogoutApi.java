@@ -43,7 +43,7 @@ public class LogoutApi {
             // 记录用户退出日志
             loginService.logout(username,deviceId);
         }
-        return Response.ok();
+        return Response.ok("","退出成功");
     }
 
 }

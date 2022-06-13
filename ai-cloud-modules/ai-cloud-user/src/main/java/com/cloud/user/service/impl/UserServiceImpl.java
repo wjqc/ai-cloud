@@ -75,6 +75,9 @@ public class UserServiceImpl implements IUserService {
     public boolean registerUser(User user) {
         //创建用户
         user.setId(IdUtils.fastSimpleUUID());
+        //创建随机用户昵称
+
+        //创建随机用户头像
         user.setCreateBy(user.getId());
         user.setCreateTime(DateUtils.getNowDate());
         //创建账户

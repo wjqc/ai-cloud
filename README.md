@@ -1,7 +1,24 @@
+<p align="center">
+
+[//]: # (	<img alt="logo" src="https://cdn.ayuanlmo.cn/lmo_loso_r.png">)
+</p>
+<p align="center">
+
+[//]: # (	Hi, there👋)
+</p>
+<h1 align="center" style="margin: 30px 0 30px; font-weight: bold;color:#409fee;">ai-cloud</h1>
+<p align="center">
+    <img src="https://img.shields.io/badge/SpringBoot-2.6.8 -blue.svg" alt="SpringBoot">
+    <img src="https://img.shields.io/badge/SpringCloud-2021.0.1 -blue.svg" alt="SpringCloud">
+    <img src="https://img.shields.io/badge/Alibaba-2021.0.1.0 -blue.svg" alt="Alibaba">
+    <img src="https://img.shields.io/badge/Nacos-2.1.0 -blue.svg" alt="Nacos">
+    <img src="https://img.shields.io/badge/MybatisPlus-3.5.1 -blue.svg" alt="Mybatis-Plus">
+</p>
+
 ## 简介
 ~~~
-* 基于Spring Boot  Spring Cloud & Alibaba,
-* 注册中心、配置中心Nacos 2.1.0,
+* 基于SpringBoot  SpringCloud & Alibaba,
+* 注册中心、配置中心Nacos,
 * 统一认证授权使用Security,Jwt，Redis,
 * 流量控制框架Sentinel,
 * 分布式事务Seata,
@@ -10,8 +27,8 @@
 * 多数据源,
 * Swagger文档,
 * FastDFS,Minio文件上传,
-** 搭建的一套分布式微服务架构，代码干净整洁，注释清晰，适合新项目开发,
-** 后续会持续封装，用户账户服务，支付服务，短信服务，邮箱服务，oos对象存储，等等，以及产品原型，ui原型，前端代码更新
+* 搭建的一套分布式微服务架构，代码干净整洁，注释清晰，适合新项目开发,
+* 后续会持续封装，用户账户服务，支付服务，短信服务，邮箱服务，oos对象存储，等等，以及产品原型，ui原型，前端代码更新
 ~~~
 ## 目录结构
 ~~~

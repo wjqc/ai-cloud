@@ -5,6 +5,7 @@ import com.cloud.auth.api.domain.UserLoginLog;
 import com.cloud.auth.api.domain.model.LoginUser;
 import com.cloud.auth.api.service.RemoteLogService;
 import com.cloud.auth.api.service.RemoteUserService;
+import com.cloud.auth.param.WxLoginParam;
 import com.cloud.auth.service.LoginService;
 import com.cloud.common.constant.Constants;
 import com.cloud.common.constant.SecurityConstants;
@@ -27,7 +28,6 @@ import javax.servlet.http.HttpServletRequest;
  * 登录校验方法
  *
  * @author ai-cloud
- *
  */
 @Service
 @Component
@@ -41,6 +41,12 @@ public class LoginServiceImpl implements LoginService {
 
     /**
      * 账号密码登录
+     *
+     * @param username 用户名
+     * @param password 密码
+     * @param deviceId 设备唯一标识
+     * @param request  请求对象
+     * @return 登录结果
      */
     public LoginUser login(String username, String password, String deviceId, HttpServletRequest request) {
         // 用户名或密码为空 错误
@@ -51,13 +57,13 @@ public class LoginServiceImpl implements LoginService {
         // 密码如果不在指定范围内 错误
         if (password.length() < UserConstants.PASSWORD_MIN_LENGTH
                 || password.length() > UserConstants.PASSWORD_MAX_LENGTH) {
-            recordUserLoginLog(username, deviceId,Constants.LOGIN_FAIL, "用户密码不在指定范围");
+            recordUserLoginLog(username, deviceId, Constants.LOGIN_FAIL, "用户密码不在指定范围");
             throw new ServiceException("用户密码不在指定范围");
         }
         // 用户名不在指定范围内 错误
         if (username.length() < UserConstants.USERNAME_MIN_LENGTH
                 || username.length() > UserConstants.USERNAME_MAX_LENGTH) {
-            recordUserLoginLog(username,deviceId, Constants.LOGIN_FAIL, "用户名不在指定范围");
+            recordUserLoginLog(username, deviceId, Constants.LOGIN_FAIL, "用户名不在指定范围");
             throw new ServiceException("用户名不在指定范围");
         }
         // 查询用户信息
@@ -68,33 +74,45 @@ public class LoginServiceImpl implements LoginService {
         }
 
         if (StringUtils.isNull(userResponse) || StringUtils.isNull(userResponse.getData().getUser())) {
-            recordUserLoginLog(username,deviceId, Constants.LOGIN_FAIL, "登录用户不存在");
+            recordUserLoginLog(username, deviceId, Constants.LOGIN_FAIL, "登录用户不存在");
             throw new ServiceException("登录用户：" + username + " 不存在");
         }
 
         LoginUser userInfo = userResponse.getData();
         User user = userResponse.getData().getUser();
         if (UserStatus.DELETED.getCode().equals(user.getDeleteFlag())) {
-            recordUserLoginLog(username,deviceId, Constants.LOGIN_FAIL, "对不起，您的账号已被删除");
+            recordUserLoginLog(username, deviceId, Constants.LOGIN_FAIL, "对不起，您的账号已被删除");
             throw new ServiceException("对不起，您的账号：" + username + " 已被删除");
         }
         if (UserStatus.DISABLE.getCode().equals(user.getStatusFlag())) {
-            recordUserLoginLog(username,deviceId, Constants.LOGIN_FAIL, "用户已停用，请联系管理员");
+            recordUserLoginLog(username, deviceId, Constants.LOGIN_FAIL, "用户已停用，请联系管理员");
             throw new ServiceException("对不起，您的账号：" + username + " 已停用");
         }
         if (!SecurityUtils.matchesPassword(password, user.getPassword())) {
-            recordUserLoginLog(username,deviceId, Constants.LOGIN_FAIL, "用户密码错误");
+            recordUserLoginLog(username, deviceId, Constants.LOGIN_FAIL, "用户密码错误");
             throw new ServiceException("用户不存在/密码错误");
         }
-        recordUserLoginLog(username,deviceId, Constants.LOGIN_SUCCESS, "登录成功");
+        recordUserLoginLog(username, deviceId, Constants.LOGIN_SUCCESS, "登录成功");
         return userInfo;
+    }
+
+    /**
+     * 微信授权登录
+     *
+     * @param param
+     * @param request 请求对象
+     * @return 登录结果
+     */
+    @Override
+    public LoginUser loginWeixin(WxLoginParam param, HttpServletRequest request) {
+        return null;
     }
 
     /**
      * 退出登录
      */
     @Override
-    public void logout(String loginName,String deviceId) {
+    public void logout(String loginName, String deviceId) {
         recordUserLoginLog(loginName, deviceId, Constants.LOGOUT, "退出成功");
     }
 
@@ -106,7 +124,7 @@ public class LoginServiceImpl implements LoginService {
      * @param message  消息内容
      * @return
      */
-    public void recordUserLoginLog(String username, String deviceId,  String status, String message) {
+    public void recordUserLoginLog(String username, String deviceId, String status, String message) {
         UserLoginLog userLoginLog = new UserLoginLog();
         userLoginLog.setId(IdUtils.fastSimpleUUID());
         userLoginLog.setUserName(username);

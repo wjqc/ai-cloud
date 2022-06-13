@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
  * 注册接口
  *
  * @author ai-cloud
- *
  */
 @Api(tags = "注册接口")
 @RestController
@@ -26,13 +25,16 @@ public class RegisterApi {
 
     /**
      * 账号密码注册
+     *
+     * @param param
+     * @return 注册结果
      */
     @PostMapping("register")
     @ApiOperation("新用户注册")
     public Response<?> register(@RequestBody RegisterParam param) {
         //用户注册
         registerService.register(param.getUsername(), param.getPassword(), param.getDeviceId());
-        return Response.ok();
+        return Response.ok("", "注册成功");
     }
 
 }

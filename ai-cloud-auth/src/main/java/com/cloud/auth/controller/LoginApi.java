@@ -34,7 +34,11 @@ public class LoginApi {
 
 
     /**
-     * 用户账号密码登录
+     * 账号密码登录
+     *
+     * @param param
+     * @param request 请求对象
+     * @return 登录结果
      */
     @PostMapping("login")
     @ApiOperation("账号密码登录")

@@ -23,7 +23,6 @@ import org.springframework.stereotype.Service;
  * 注册校验方法
  *
  * @author ai-cloud
- *
  */
 @Service
 @Component
@@ -37,6 +36,11 @@ public class RegisterServiceImpl implements RegisterService {
 
     /**
      * 账号密码注册
+     *
+     * @param username 用户名
+     * @param password 密码
+     * @param deviceId 设备唯一标识
+     * @return 注册结果
      */
     public void register(String username, String password, String deviceId) {
         // 用户名或密码为空 错误
@@ -60,7 +64,7 @@ public class RegisterServiceImpl implements RegisterService {
         if (Response.FAIL == registerResult.getCode()) {
             throw new ServiceException(registerResult.getMsg());
         }
-        recordUserRegistryLog(username,deviceId, Constants.REGISTER, "注册成功");
+        recordUserRegistryLog(username, deviceId, Constants.REGISTER, "注册成功");
     }
 
 
@@ -72,7 +76,7 @@ public class RegisterServiceImpl implements RegisterService {
      * @param message  消息内容
      * @return
      */
-    public void recordUserRegistryLog(String username,String deviceId, String status, String message) {
+    public void recordUserRegistryLog(String username, String deviceId, String status, String message) {
         UserRegistryLog userRegistryLog = new UserRegistryLog();
         userRegistryLog.setId(IdUtils.fastSimpleUUID());
         userRegistryLog.setUserName(username);
