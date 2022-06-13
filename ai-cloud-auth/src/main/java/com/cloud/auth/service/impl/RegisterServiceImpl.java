@@ -42,6 +42,7 @@ public class RegisterServiceImpl implements RegisterService {
      * @param deviceId 设备唯一标识
      * @return 注册结果
      */
+    @Override
     public void register(String username, String password, String deviceId) {
         // 用户名或密码为空 错误
         if (StringUtils.isAnyBlank(username, password)) {

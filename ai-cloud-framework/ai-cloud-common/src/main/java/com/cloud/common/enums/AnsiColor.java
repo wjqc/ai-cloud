@@ -32,6 +32,7 @@ public enum AnsiColor implements AnsiElement {
         this.code = code;
     }
 
+    @Override
     public String toString() {
         return this.code;
     }

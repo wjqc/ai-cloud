@@ -50,6 +50,7 @@ public class LoginServiceImpl implements LoginService {
      * @param request  请求对象
      * @return 登录结果
      */
+    @Override
     public LoginUser login(String username, String password, String deviceId, HttpServletRequest request) {
         // 用户名或密码为空 错误
         if (StringUtils.isAnyBlank(username, password)) {
