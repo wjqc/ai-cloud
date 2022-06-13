@@ -12,7 +12,6 @@ import io.swagger.annotations.ApiModelProperty;
  * 用户信息对象 user
  * 
  * @author ai-cloud
- *
  */
 @ApiModel("用户信息")
 public class User extends BaseEntity {

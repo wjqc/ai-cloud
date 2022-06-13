@@ -13,7 +13,6 @@ import java.util.Map;
  * Jwt工具类
  *
  * @author ai-cloud
- *
  */
 public class JwtUtils {
     public static String secret = TokenConstants.SECRET;

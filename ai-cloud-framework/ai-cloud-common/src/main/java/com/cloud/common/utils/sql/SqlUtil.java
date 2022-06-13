@@ -7,7 +7,6 @@ import com.cloud.common.utils.StringUtils;
  * sql操作工具类
  *
  * @author ai-cloud
- *
  */
 public class SqlUtil {
     /**
@@ -25,7 +24,7 @@ public class SqlUtil {
      */
     public static String escapeOrderBySql(String value) {
         if (StringUtils.isNotEmpty(value) && !isValidOrderBySql(value)) {
-            throw new UtilException("参数不符合规范，不能进行查询" );
+            throw new UtilException("参数不符合规范，不能进行查询");
         }
         return value;
     }
@@ -44,10 +43,10 @@ public class SqlUtil {
         if (StringUtils.isEmpty(value)) {
             return;
         }
-        String[] sqlKeywords = StringUtils.split(SQL_REGEX, "\\|" );
+        String[] sqlKeywords = StringUtils.split(SQL_REGEX, "\\|");
         for (String sqlKeyword : sqlKeywords) {
             if (StringUtils.indexOfIgnoreCase(value, sqlKeyword) > -1) {
-                throw new UtilException("参数存在SQL注入风险" );
+                throw new UtilException("参数存在SQL注入风险");
             }
         }
     }

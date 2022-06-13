@@ -9,7 +9,6 @@ import io.swagger.annotations.ApiModelProperty;
  * 用户账户信息对象 user_account
  * 
  * @author ai-cloud
- *
  */
 @ApiModel("用户账户信息")
 public class UserAccount extends BaseEntity {

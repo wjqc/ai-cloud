@@ -12,7 +12,6 @@ import java.util.Map;
  * 字符串工具类
  *
  * @author ai-cloud
- *
  */
 public class StringUtils extends org.apache.commons.lang3.StringUtils {
     /**
@@ -335,12 +334,12 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
         if (name == null || name.isEmpty()) {
             // 没必要转换
             return "";
-        } else if (!name.contains("_" )) {
+        } else if (!name.contains("_")) {
             // 不含下划线，仅将首字母大写
             return name.substring(0, 1).toUpperCase() + name.substring(1);
         }
         // 用下划线将原始字符串分割
-        String[] camels = name.split("_" );
+        String[] camels = name.split("_");
         for (String camel : camels) {
             // 跳过原始字符串中开头、结尾的下换线或双重下划线
             if (camel.isEmpty()) {
@@ -412,7 +411,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
         return matcher.match(pattern, url);
     }
 
-    @SuppressWarnings("unchecked" )
+    @SuppressWarnings("unchecked")
     public static <T> T cast(Object obj) {
         return (T) obj;
     }

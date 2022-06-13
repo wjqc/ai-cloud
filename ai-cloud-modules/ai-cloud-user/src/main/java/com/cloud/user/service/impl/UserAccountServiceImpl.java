@@ -17,7 +17,6 @@ import java.math.BigDecimal;
  * 用户账户信息Service业务层处理
  *
  * @author ai-cloud
- *
  */
 @Service
 public class UserAccountServiceImpl implements IUserAccountService {
@@ -45,7 +44,6 @@ public class UserAccountServiceImpl implements IUserAccountService {
         userAccount.setCreateTime(DateUtils.getNowDate());
         return userAccountMapper.insert(userAccount);
     }
-
 
 
 }

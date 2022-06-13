@@ -4,7 +4,6 @@ package com.cloud.common.enums;
  * 用户状态
  *
  * @author ai-cloud
- *
  */
 public enum UserStatus {
     OK("0", "正常"), DISABLE("2", "停用"), DELETED("2", "删除");

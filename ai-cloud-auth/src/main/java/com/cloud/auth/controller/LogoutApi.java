@@ -19,7 +19,6 @@ import javax.servlet.http.HttpServletRequest;
  * 退出登录接口
  *
  * @author ai-cloud
- *
  */
 @Api(tags = "退出登录接口")
 @RestController
@@ -30,6 +29,8 @@ public class LogoutApi {
 
     /**
      * 退出登录
+     *
+     * @return 结果
      */
     @PostMapping("logout")
     @ApiOperation("退出登录")
@@ -41,9 +42,9 @@ public class LogoutApi {
             // 删除用户缓存记录
             AuthUtil.logoutByToken(token);
             // 记录用户退出日志
-            loginService.logout(username,deviceId);
+            loginService.logout(username, deviceId);
         }
-        return Response.ok("","退出成功");
+        return Response.ok("", "退出成功");
     }
 
 }

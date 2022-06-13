@@ -16,11 +16,10 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * 用户提现申请记录对象 user_withdraw_log
  * 
  * @author ai-cloud
- * @date 2022-06-09
  */
 @ApiModel("用户提现申请记录")
 @TableName("user_withdraw_log")
-public class UserWithdrawLog extends BaseEntity {
+public class UserWithdrawApply extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
 

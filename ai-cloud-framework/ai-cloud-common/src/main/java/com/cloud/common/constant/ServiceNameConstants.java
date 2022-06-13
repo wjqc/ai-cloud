@@ -4,7 +4,6 @@ package com.cloud.common.constant;
  * 服务名称
  *
  * @author ai-cloud
- *
  */
 public class ServiceNameConstants {
 

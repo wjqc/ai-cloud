@@ -16,7 +16,6 @@ import com.cloud.user.service.IUserLogService;
  * 用户日志记录Service业务层处理
  *
  * @author ai-cloud
- *
  */
 @Service
 public class UserLogServiceImpl implements IUserLogService {

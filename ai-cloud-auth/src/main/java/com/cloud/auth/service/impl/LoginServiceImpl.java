@@ -5,7 +5,9 @@ import com.cloud.auth.api.domain.UserLoginLog;
 import com.cloud.auth.api.domain.model.LoginUser;
 import com.cloud.auth.api.service.RemoteLogService;
 import com.cloud.auth.api.service.RemoteUserService;
-import com.cloud.auth.param.WxLoginParam;
+import com.cloud.auth.param.LoginPhoneParam;
+import com.cloud.auth.param.LoginOneStepParam;
+import com.cloud.auth.param.LoginWxParam;
 import com.cloud.auth.service.LoginService;
 import com.cloud.common.constant.Constants;
 import com.cloud.common.constant.SecurityConstants;
@@ -97,6 +99,29 @@ public class LoginServiceImpl implements LoginService {
     }
 
     /**
+     * 一键登录
+     *
+     * @param request
+     * @param param
+     */
+    @Override
+    public LoginUser onestep(LoginOneStepParam param, HttpServletRequest request) {
+        return null;
+    }
+
+    /**
+     * 手机快捷登录
+     *
+     * @param param
+     * @param request
+     * @return
+     */
+    @Override
+    public LoginUser phone(LoginPhoneParam param, HttpServletRequest request) {
+        return null;
+    }
+
+    /**
      * 微信授权登录
      *
      * @param param
@@ -104,12 +129,16 @@ public class LoginServiceImpl implements LoginService {
      * @return 登录结果
      */
     @Override
-    public LoginUser loginWeixin(WxLoginParam param, HttpServletRequest request) {
+    public LoginUser weixin(LoginWxParam param, HttpServletRequest request) {
         return null;
     }
 
     /**
      * 退出登录
+     *
+     * @param loginName
+     * @param deviceId
+     * @return 结果
      */
     @Override
     public void logout(String loginName, String deviceId) {

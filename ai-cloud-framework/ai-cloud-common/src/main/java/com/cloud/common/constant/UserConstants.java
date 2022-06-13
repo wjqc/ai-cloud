@@ -4,7 +4,6 @@ package com.cloud.common.constant;
  * 用户常量信息
  *
  * @author ai-cloud
- * 
  */
 public class UserConstants {
     /**

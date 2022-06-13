@@ -13,7 +13,6 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * 用户账户明细记录对象 user_account_detail
  * 
  * @author ai-cloud
- * @date 2022-06-09
  */
 @ApiModel("用户账户明细记录")
 @TableName("user_account_detail")

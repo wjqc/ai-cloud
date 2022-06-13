@@ -15,7 +15,6 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  * 用户绑定银行卡或支付宝对象 user_bind
  * 
  * @author ai-cloud
- * @date 2022-06-09
  */
 @ApiModel("用户绑定银行卡或支付宝")
 @TableName("user_bind")

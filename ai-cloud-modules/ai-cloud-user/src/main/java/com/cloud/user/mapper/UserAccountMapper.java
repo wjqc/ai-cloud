@@ -11,7 +11,6 @@ import org.apache.ibatis.annotations.Param;
  * 用户账户信息Mapper接口
  *
  * @author ai-cloud
- *
  */
 public interface UserAccountMapper extends BaseMapper<UserAccount> {
 

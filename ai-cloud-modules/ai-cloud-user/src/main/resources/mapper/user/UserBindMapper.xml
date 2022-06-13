@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cloud.user.mapper.UserBindMapper">
-
+    
     <resultMap type="com.cloud.user.domain.UserBind" id="UserBindResult">
         <result property="id" column="id"/>
         <result property="userId" column="user_id"/>

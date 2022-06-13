@@ -10,7 +10,6 @@ import java.util.regex.Pattern;
  * Bean 工具类
  *
  * @author ai-cloud
- *
  */
 public class BeanUtils extends org.springframework.beans.BeanUtils {
     /**
@@ -21,12 +20,12 @@ public class BeanUtils extends org.springframework.beans.BeanUtils {
     /**
      * 匹配getter方法的正则表达式
      */
-    private static final Pattern GET_PATTERN = Pattern.compile("get(\\p{javaUpperCase}\\w*)" );
+    private static final Pattern GET_PATTERN = Pattern.compile("get(\\p{javaUpperCase}\\w*)");
 
     /**
      * 匹配setter方法的正则表达式
      */
-    private static final Pattern SET_PATTERN = Pattern.compile("set(\\p{javaUpperCase}\\w*)" );
+    private static final Pattern SET_PATTERN = Pattern.compile("set(\\p{javaUpperCase}\\w*)");
 
     /**
      * Bean属性复制工具方法。

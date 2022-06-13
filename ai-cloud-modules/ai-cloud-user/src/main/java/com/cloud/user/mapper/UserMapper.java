@@ -8,9 +8,8 @@ import org.apache.ibatis.annotations.Param;
 
 /**
  * 用户信息Mapper接口
- * 
- * @author ai-cloud
  *
+ * @author ai-cloud
  */
 @Mapper
 public interface UserMapper extends BaseMapper<User> {
@@ -21,7 +20,7 @@ public interface UserMapper extends BaseMapper<User> {
      * @param username 用户名称
      * @return 结果
      */
-    public int checkUserNameUnique(@Param("username")String username);
+    public int checkUserNameUnique(@Param("username") String username);
 
 
     /**
@@ -30,7 +29,7 @@ public interface UserMapper extends BaseMapper<User> {
      * @param phone 手机号码
      * @return 结果
      */
-    public User checkPhoneUnique(@Param("phone")String phone);
+    public User checkPhoneUnique(@Param("phone") String phone);
 
     /**
      * 通过用户名或手机号查询用户
@@ -38,7 +37,7 @@ public interface UserMapper extends BaseMapper<User> {
      * @param param 用户名或手机号
      * @return 用户对象信息
      */
-    public User selectByUserNamePhone(@Param("param")String param);
+    public User selectByUserNamePhone(@Param("param") String param);
 
 
     /**
@@ -47,8 +46,7 @@ public interface UserMapper extends BaseMapper<User> {
      * @param
      * @return 用户对象信息
      */
-    public UserInfoDto selectByUserInfo(@Param("userId")String userId);
-
+    public UserInfoDto selectByUserInfo(@Param("userId") String userId);
 
 
 }

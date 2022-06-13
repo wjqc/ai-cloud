@@ -14,7 +14,6 @@ import org.springframework.stereotype.Component;
  * 用户服务降级处理
  *
  * @author ai-cloud
- *
  */
 @Component
 public class RemoteUserFallbackFactory implements FallbackFactory<RemoteUserService> {

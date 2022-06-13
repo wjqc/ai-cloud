@@ -29,7 +29,6 @@ import java.util.Map;
  * 客户端工具类
  *
  * @author ai-cloud
- *
  */
 public class ServletUtils {
     /**
@@ -142,8 +141,8 @@ public class ServletUtils {
     public static void renderString(HttpServletResponse response, String string) {
         try {
             response.setStatus(200);
-            response.setContentType("application/json" );
-            response.setCharacterEncoding("utf-8" );
+            response.setContentType("application/json");
+            response.setCharacterEncoding("utf-8");
             response.getWriter().print(string);
         } catch (IOException e) {
             e.printStackTrace();
@@ -156,23 +155,23 @@ public class ServletUtils {
      * @param request
      */
     public static boolean isAjaxRequest(HttpServletRequest request) {
-        String accept = request.getHeader("accept" );
-        if (accept != null && accept.contains("application/json" )) {
+        String accept = request.getHeader("accept");
+        if (accept != null && accept.contains("application/json")) {
             return true;
         }
 
-        String xRequestedWith = request.getHeader("X-Requested-With" );
-        if (xRequestedWith != null && xRequestedWith.contains("XMLHttpRequest" )) {
+        String xRequestedWith = request.getHeader("X-Requested-With");
+        if (xRequestedWith != null && xRequestedWith.contains("XMLHttpRequest")) {
             return true;
         }
 
         String uri = request.getRequestURI();
-        if (StringUtils.inStringIgnoreCase(uri, ".json" , ".xml" )) {
+        if (StringUtils.inStringIgnoreCase(uri, ".json", ".xml")) {
             return true;
         }
 
-        String ajax = request.getParameter("__ajax" );
-        return StringUtils.inStringIgnoreCase(ajax, "json" , "xml" );
+        String ajax = request.getParameter("__ajax");
+        return StringUtils.inStringIgnoreCase(ajax, "json", "xml");
     }
 
     /**

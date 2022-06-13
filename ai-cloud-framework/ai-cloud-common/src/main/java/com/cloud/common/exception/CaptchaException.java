@@ -4,9 +4,8 @@ package com.cloud.common.exception;
  * 验证码错误异常类
  *
  * @author ai-cloud
- *
  */
-public class  CaptchaException extends RuntimeException {
+public class CaptchaException extends RuntimeException {
     private static final long serialVersionUID = 1L;
 
     public CaptchaException(String msg) {

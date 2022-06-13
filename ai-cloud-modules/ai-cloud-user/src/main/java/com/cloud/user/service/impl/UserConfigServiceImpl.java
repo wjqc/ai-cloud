@@ -14,7 +14,6 @@ import com.cloud.user.service.IUserConfigService;
  * 参数配置Service业务层处理
  *
  * @author ai-cloud
- *
  */
 @Service
 public class UserConfigServiceImpl implements IUserConfigService {

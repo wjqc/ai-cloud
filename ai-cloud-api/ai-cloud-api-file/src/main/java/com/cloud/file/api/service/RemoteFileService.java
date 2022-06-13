@@ -14,7 +14,6 @@ import org.springframework.web.multipart.MultipartFile;
  * 文件服务
  *
  * @author ai-cloud
- *
  */
 @FeignClient(contextId = "remoteFileService", value = ServiceNameConstants.FILE_SERVICE, fallbackFactory = RemoteFileFallbackFactory.class)
 public interface RemoteFileService {

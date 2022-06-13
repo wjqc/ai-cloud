@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestHeader;
  * 日志服务
  *
  * @author ai-cloud
- *
  */
 @FeignClient(contextId = "remoteLogService", value = ServiceNameConstants.USER_SERVICE, fallbackFactory = RemoteLogFallbackFactory.class)
 public interface RemoteLogService {
@@ -36,7 +35,7 @@ public interface RemoteLogService {
      * 保存注册记录
      *
      * @param userRegistryLog 访问实体
-     * @param source       请求来源
+     * @param source          请求来源
      * @return 结果
      */
     @PostMapping("/registrylog")

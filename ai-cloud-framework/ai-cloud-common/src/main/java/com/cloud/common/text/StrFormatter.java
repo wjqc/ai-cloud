@@ -6,7 +6,6 @@ import com.cloud.common.utils.StringUtils;
  * 字符串格式化
  *
  * @author ai-cloud
- *
  */
 public class StrFormatter {
     public static final String EMPTY_JSON = "{}";

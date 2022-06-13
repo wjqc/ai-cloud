@@ -22,7 +22,6 @@ import com.cloud.user.service.IUserService;
  * 用户信息Service业务层处理
  *
  * @author ai-cloud
- *
  */
 @Service
 public class UserServiceImpl implements IUserService {
@@ -96,7 +95,6 @@ public class UserServiceImpl implements IUserService {
     public User selectByUserNamePhone(String param) {
         return userMapper.selectByUserNamePhone(param);
     }
-
 
 
 }

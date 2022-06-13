@@ -12,7 +12,6 @@ import java.util.Date;
  * 时间工具类
  *
  * @author ai-cloud
- *
  */
 public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
     public static String YYYY = "yyyy";
@@ -26,9 +25,9 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
     public static String YYYY_MM_DD_HH_MM_SS = "yyyy-MM-dd HH:mm:ss";
 
     private static String[] parsePatterns = {
-            "yyyy-MM-dd" , "yyyy-MM-dd HH:mm:ss" , "yyyy-MM-dd HH:mm" , "yyyy-MM" ,
-            "yyyy/MM/dd" , "yyyy/MM/dd HH:mm:ss" , "yyyy/MM/dd HH:mm" , "yyyy/MM" ,
-            "yyyy.MM.dd" , "yyyy.MM.dd HH:mm:ss" , "yyyy.MM.dd HH:mm" , "yyyy.MM"};
+            "yyyy-MM-dd", "yyyy-MM-dd HH:mm:ss", "yyyy-MM-dd HH:mm", "yyyy-MM",
+            "yyyy/MM/dd", "yyyy/MM/dd HH:mm:ss", "yyyy/MM/dd HH:mm", "yyyy/MM",
+            "yyyy.MM.dd", "yyyy.MM.dd HH:mm:ss", "yyyy.MM.dd HH:mm", "yyyy.MM"};
 
     /**
      * 获取当前Date型日期
@@ -81,7 +80,7 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
      */
     public static final String datePath() {
         Date now = new Date();
-        return DateFormatUtils.format(now, "yyyy/MM/dd" );
+        return DateFormatUtils.format(now, "yyyy/MM/dd");
     }
 
     /**
@@ -89,7 +88,7 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
      */
     public static final String dateTime() {
         Date now = new Date();
-        return DateFormatUtils.format(now, "yyyyMMdd" );
+        return DateFormatUtils.format(now, "yyyyMMdd");
     }
 
     /**

@@ -12,7 +12,6 @@ import java.util.concurrent.ThreadLocalRandom;
  * 提供通用唯一识别码（universally unique identifier）（UUID）实现
  *
  * @author ai-cloud
- *
  */
 public final class UUID implements java.io.Serializable, Comparable<UUID> {
     private static final long serialVersionUID = -1185015143654744140L;
@@ -109,9 +108,9 @@ public final class UUID implements java.io.Serializable, Comparable<UUID> {
     public static UUID nameUUIDFromBytes(byte[] name) {
         MessageDigest md;
         try {
-            md = MessageDigest.getInstance("MD5" );
+            md = MessageDigest.getInstance("MD5");
         } catch (NoSuchAlgorithmException nsae) {
-            throw new InternalError("MD5 not supported" );
+            throw new InternalError("MD5 not supported");
         }
         byte[] md5Bytes = md.digest(name);
         md5Bytes[6] &= 0x0f; /* clear version */
@@ -129,7 +128,7 @@ public final class UUID implements java.io.Serializable, Comparable<UUID> {
      * @throws IllegalArgumentException 如果 name 与 {@link #toString} 中描述的字符串表示形式不符抛出此异常
      */
     public static UUID fromString(String name) {
-        String[] components = name.split("-" );
+        String[] components = name.split("-");
         if (components.length != 5) {
             throw new IllegalArgumentException("Invalid UUID string: " + name);
         }
@@ -413,7 +412,7 @@ public final class UUID implements java.io.Serializable, Comparable<UUID> {
      */
     private void checkTimeBase() {
         if (version() != 1) {
-            throw new UnsupportedOperationException("Not a time-based UUID" );
+            throw new UnsupportedOperationException("Not a time-based UUID");
         }
     }
 
@@ -424,7 +423,7 @@ public final class UUID implements java.io.Serializable, Comparable<UUID> {
      */
     public static SecureRandom getSecureRandom() {
         try {
-            return SecureRandom.getInstance("SHA1PRNG" );
+            return SecureRandom.getInstance("SHA1PRNG");
         } catch (NoSuchAlgorithmException e) {
             throw new UtilException(e);
         }

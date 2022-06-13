@@ -4,7 +4,6 @@ package com.cloud.common.utils.sign;
  * Base64工具类
  *
  * @author ai-cloud
- *
  */
 public final class Base64 {
     static private final int BASELENGTH = 128;

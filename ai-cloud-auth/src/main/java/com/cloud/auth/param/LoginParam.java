@@ -5,13 +5,12 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 /**
- * 用户登录参数
+ * 账号密码登录参数
  *
  * @author ai-cloud
- *
  */
 @Data
-@ApiModel("用户登录参数")
+@ApiModel("账号密码登录参数")
 public class LoginParam extends BaseParam{
 
     /** 用户账号或手机号 */
