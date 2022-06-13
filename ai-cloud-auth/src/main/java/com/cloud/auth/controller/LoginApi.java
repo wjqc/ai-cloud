@@ -75,7 +75,7 @@ public class LoginApi {
      * @return 登录结果
      */
     @PostMapping("phone")
-    @ApiOperation("一键登录")
+    @ApiOperation("手机快捷登录")
     public Response<?> phone(@RequestBody LoginPhoneParam param, HttpServletRequest request) {
         // 用户登录
         LoginUser userInfo = loginService.phone(param, request);
@@ -90,8 +90,8 @@ public class LoginApi {
      * @param request 请求对象
      * @return 登录结果
      */
-    @PostMapping("phone")
-    @ApiOperation("一键登录")
+    @PostMapping("weixin")
+    @ApiOperation("微信授权登录")
     public Response<?> weixin(@RequestBody LoginWxParam param, HttpServletRequest request) {
         // 用户登录
         LoginUser userInfo = loginService.weixin(param, request);
