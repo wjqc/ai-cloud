@@ -1,14 +1,16 @@
 package com.cloud.auth.api.service;
 
 import com.cloud.auth.api.domain.User;
-import com.cloud.auth.api.domain.UserAccount;
-import com.cloud.auth.api.factory.RemoteUserFallbackFactory;
 import com.cloud.auth.api.domain.model.LoginUser;
+import com.cloud.auth.api.factory.RemoteUserFallbackFactory;
 import com.cloud.common.constant.SecurityConstants;
 import com.cloud.common.constant.ServiceNameConstants;
 import com.cloud.common.model.Response;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 
 /**
  * 用户服务

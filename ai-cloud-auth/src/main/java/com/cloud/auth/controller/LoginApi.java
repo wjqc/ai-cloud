@@ -2,9 +2,9 @@ package com.cloud.auth.controller;
 
 
 import com.cloud.auth.api.domain.model.LoginUser;
+import com.cloud.auth.param.LoginOneStepParam;
 import com.cloud.auth.param.LoginParam;
 import com.cloud.auth.param.LoginPhoneParam;
-import com.cloud.auth.param.LoginOneStepParam;
 import com.cloud.auth.param.LoginWxParam;
 import com.cloud.auth.service.impl.LoginServiceImpl;
 import com.cloud.common.model.Response;

@@ -8,13 +8,13 @@
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    
+
     <artifactId>ai-cloud-api-auth</artifactId>
-    
+
     <description>
         cloud-api-auth授权对内接口模块
     </description>
-    
+
     <dependencies>
 
         <!-- 通用工具-->
@@ -22,7 +22,7 @@
             <groupId>com.cloud</groupId>
             <artifactId>ai-cloud-common</artifactId>
         </dependency>
-        
+
     </dependencies>
 
 </project>

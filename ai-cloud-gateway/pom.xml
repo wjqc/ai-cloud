@@ -8,13 +8,13 @@
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    
+
     <artifactId>ai-cloud-gateway</artifactId>
-    
+
     <description>
         cloud-gateway网关模块
     </description>
-    
+
     <dependencies>
 
         <!-- SpringCloud Gateway -->
@@ -58,7 +58,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-    
+
         <!-- SpringCloud Loadbalancer -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -70,26 +70,26 @@
             <groupId>com.github.penggle</groupId>
             <artifactId>kaptcha</artifactId>
         </dependency>
-    
+
         <!-- 通用工具-->
         <dependency>
             <groupId>com.cloud</groupId>
             <artifactId>ai-cloud-common</artifactId>
         </dependency>
-    
+
         <!-- Swagger -->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
         </dependency>
-        
+
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
         </dependency>
-    
+
     </dependencies>
-    
+
     <build>
         <finalName>${project.artifactId}</finalName>
         <plugins>

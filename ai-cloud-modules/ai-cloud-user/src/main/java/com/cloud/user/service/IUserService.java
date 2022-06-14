@@ -1,11 +1,7 @@
 package com.cloud.user.service;
 
 import com.cloud.auth.api.domain.User;
-import com.cloud.user.dto.UserInfoDto;
-import com.cloud.user.param.UserParam;
 import org.apache.ibatis.annotations.Param;
-
-import java.util.List;
 
 /**
  * 用户信息Service接口

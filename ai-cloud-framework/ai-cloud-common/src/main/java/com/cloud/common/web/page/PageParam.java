@@ -6,7 +6,6 @@ import com.cloud.common.utils.StringUtils;
  * 分页数据
  *
  * @author ai-cloud
- *
  */
 public class PageParam {
     /**

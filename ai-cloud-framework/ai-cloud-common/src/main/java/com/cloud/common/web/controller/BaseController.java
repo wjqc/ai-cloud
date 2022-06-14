@@ -19,7 +19,6 @@ import java.util.List;
  * web层通用数据处理
  *
  * @author ai-cloud
- *
  */
 public class BaseController {
     protected final Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -48,12 +47,12 @@ public class BaseController {
     /**
      * 响应请求分页数据
      */
-    @SuppressWarnings({"rawtypes" , "unchecked"})
+    @SuppressWarnings({"rawtypes", "unchecked"})
     protected PageList getDataTable(List<?> list) {
         PageList rspData = new PageList();
         rspData.setCode(HttpStatus.SUCCESS);
         rspData.setRows(list);
-        rspData.setMsg("查询成功" );
+        rspData.setMsg("查询成功");
         rspData.setTotal(new PageInfo(list).getTotal());
         return rspData;
     }

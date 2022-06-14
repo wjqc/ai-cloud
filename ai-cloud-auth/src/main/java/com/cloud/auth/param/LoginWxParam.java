@@ -10,6 +10,6 @@ import lombok.Data;
  */
 @Data
 @ApiModel("微信授权登录请求参数")
-public class LoginWxParam extends BaseParam{
+public class LoginWxParam extends BaseParam {
 
 }

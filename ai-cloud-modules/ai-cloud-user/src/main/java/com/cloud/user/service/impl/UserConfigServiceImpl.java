@@ -1,14 +1,14 @@
 package com.cloud.user.service.impl;
 
+import com.cloud.auth.api.domain.UserConfig;
 import com.cloud.common.constant.Constants;
 import com.cloud.common.redis.service.RedisService;
 import com.cloud.common.text.Convert;
 import com.cloud.common.utils.StringUtils;
+import com.cloud.user.mapper.UserConfigMapper;
+import com.cloud.user.service.IUserConfigService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.cloud.user.mapper.UserConfigMapper;
-import com.cloud.auth.api.domain.UserConfig;
-import com.cloud.user.service.IUserConfigService;
 
 /**
  * 参数配置Service业务层处理

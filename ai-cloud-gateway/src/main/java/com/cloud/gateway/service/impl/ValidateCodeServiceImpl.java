@@ -1,14 +1,14 @@
 package com.cloud.gateway.service.impl;
 
-import com.cloud.common.redis.service.RedisService;
-import com.cloud.gateway.service.ValidateCodeService;
 import com.cloud.common.constant.Constants;
 import com.cloud.common.exception.CaptchaException;
+import com.cloud.common.redis.service.RedisService;
 import com.cloud.common.utils.StringUtils;
 import com.cloud.common.utils.sign.Base64;
 import com.cloud.common.utils.uuid.IdUtils;
 import com.cloud.common.web.domain.AjaxResult;
 import com.cloud.gateway.config.properties.CaptchaProperties;
+import com.cloud.gateway.service.ValidateCodeService;
 import com.google.code.kaptcha.Producer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,10 +27,10 @@ import java.util.concurrent.TimeUnit;
  */
 @Service
 public class ValidateCodeServiceImpl implements ValidateCodeService {
-    @Resource(name = "captchaProducer" )
+    @Resource(name = "captchaProducer")
     private Producer captchaProducer;
 
-    @Resource(name = "captchaProducerMath" )
+    @Resource(name = "captchaProducerMath")
     private Producer captchaProducerMath;
 
     @Autowired
@@ -46,7 +46,7 @@ public class ValidateCodeServiceImpl implements ValidateCodeService {
     public AjaxResult createCaptcha() throws IOException, CaptchaException {
         AjaxResult ajax = AjaxResult.success();
         boolean captchaOnOff = captchaProperties.getEnabled();
-        ajax.put("captchaOnOff" , captchaOnOff);
+        ajax.put("captchaOnOff", captchaOnOff);
         if (!captchaOnOff) {
             return ajax;
         }
@@ -62,8 +62,8 @@ public class ValidateCodeServiceImpl implements ValidateCodeService {
         // 生成验证码
         if ("math".equals(captchaType)) {
             String capText = captchaProducerMath.createText();
-            capStr = capText.substring(0, capText.lastIndexOf("@" ));
-            code = capText.substring(capText.lastIndexOf("@" ) + 1);
+            capStr = capText.substring(0, capText.lastIndexOf("@"));
+            code = capText.substring(capText.lastIndexOf("@") + 1);
             image = captchaProducerMath.createImage(capStr);
         } else if ("char".equals(captchaType)) {
             capStr = code = captchaProducer.createText();
@@ -74,13 +74,13 @@ public class ValidateCodeServiceImpl implements ValidateCodeService {
         // 转换流信息写出
         FastByteArrayOutputStream os = new FastByteArrayOutputStream();
         try {
-            ImageIO.write(image, "jpg" , os);
+            ImageIO.write(image, "jpg", os);
         } catch (IOException e) {
             return AjaxResult.error(e.getMessage());
         }
 
-        ajax.put("uuid" , uuid);
-        ajax.put("img" , Base64.encode(os.toByteArray()));
+        ajax.put("uuid", uuid);
+        ajax.put("img", Base64.encode(os.toByteArray()));
         return ajax;
     }
 
@@ -90,17 +90,17 @@ public class ValidateCodeServiceImpl implements ValidateCodeService {
     @Override
     public void checkCaptcha(String code, String uuid) throws CaptchaException {
         if (StringUtils.isEmpty(code)) {
-            throw new CaptchaException("验证码不能为空" );
+            throw new CaptchaException("验证码不能为空");
         }
         if (StringUtils.isEmpty(uuid)) {
-            throw new CaptchaException("验证码已失效" );
+            throw new CaptchaException("验证码已失效");
         }
         String verifyKey = Constants.CAPTCHA_CODE_KEY + uuid;
         String captcha = redisService.getCacheObject(verifyKey);
         redisService.deleteObject(verifyKey);
 
         if (!code.equalsIgnoreCase(captcha)) {
-            throw new CaptchaException("验证码错误" );
+            throw new CaptchaException("验证码错误");
         }
     }
 }

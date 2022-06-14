@@ -16,31 +16,31 @@
     </description>
 
     <dependencies>
-    
+
         <!-- SpringCloud Alibaba Nacos -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
-    
+
         <!-- SpringCloud Alibaba Nacos Config -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
         </dependency>
-    
+
         <!-- SpringCloud Alibaba Sentinel -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
         </dependency>
-    
+
         <!-- SpringBoot Actuator -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-    
+
         <!-- FastDFS -->
         <dependency>
             <groupId>com.github.tobato</groupId>
@@ -52,7 +52,7 @@
             <groupId>io.minio</groupId>
             <artifactId>minio</artifactId>
         </dependency>
-    
+
         <!-- 接口模块 -->
         <dependency>
             <groupId>com.cloud</groupId>

@@ -12,18 +12,24 @@ import lombok.Data;
  */
 @Data
 @ApiModel("用户注册参数")
-public class RegisterParam extends LoginParam{
+public class RegisterParam extends LoginParam {
 
-    /** 用户手机号 */
-    @ApiModelProperty(value = "用户手机号",example = "String")
+    /**
+     * 用户手机号
+     */
+    @ApiModelProperty(value = "用户手机号", example = "String")
     private String phone;
 
-    /** 邀请者id */
-    @ApiModelProperty(value = "邀请者id",example = "String")
+    /**
+     * 邀请者id
+     */
+    @ApiModelProperty(value = "邀请者id", example = "String")
     private String invitationId;
 
-    /** 注册方式；1：手机快捷注册 2：手机短信注册 3：微信注册 4：支付宝注册 5：新浪微博注册 */
-    @ApiModelProperty(value = "注册方式；1：手机快捷注册 2：手机短信注册 3：微信注册 4：支付宝注册 5：新浪微博注册",example = "String")
+    /**
+     * 注册方式；1：手机快捷注册 2：手机短信注册 3：微信注册 4：支付宝注册 5：新浪微博注册
+     */
+    @ApiModelProperty(value = "注册方式；1：手机快捷注册 2：手机短信注册 3：微信注册 4：支付宝注册 5：新浪微博注册", example = "String")
     private Integer regType;
 
     public String getPhone() {

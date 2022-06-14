@@ -1,8 +1,8 @@
 package com.cloud.file.controller;
 
-import com.cloud.file.api.domain.File;
 import com.cloud.common.model.Response;
 import com.cloud.common.utils.file.FileUtils;
+import com.cloud.file.api.domain.File;
 import com.cloud.file.service.IFileService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,7 +34,7 @@ public class FileApi {
             File files = new File();
             files.setName(FileUtils.getName(url));
             files.setUrl(url);
-            return Response.ok(files,"上传成功");
+            return Response.ok(files, "上传成功");
         } catch (Exception e) {
             log.error("上传文件失败", e);
             return Response.fail(e.getMessage());

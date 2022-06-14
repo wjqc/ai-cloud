@@ -8,33 +8,33 @@
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    
+
     <artifactId>ai-cloud-datasource</artifactId>
-    
+
     <description>
         cloud-datasource多数据源
     </description>
-    
+
     <dependencies>
-    
-    <!-- Druid -->
-    <dependency>
-        <groupId>com.alibaba</groupId>
-        <artifactId>druid-spring-boot-starter</artifactId>
-    </dependency>
-    
-    <!-- Dynamic DataSource -->
-    <dependency>
-        <groupId>com.baomidou</groupId>
-        <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
-    </dependency>
-    
-    <!-- SpringBoot Seata -->
-    <dependency>
-        <groupId>com.alibaba.cloud</groupId>
-        <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
-    </dependency>
-    
+
+        <!-- Druid -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+        </dependency>
+
+        <!-- Dynamic DataSource -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+        </dependency>
+
+        <!-- SpringBoot Seata -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
+        </dependency>
+
     </dependencies>
-    
+
 </project>

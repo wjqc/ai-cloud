@@ -16,6 +16,7 @@
 </p>
 
 ## 简介
+
 ~~~
 * 基于SpringBoot  SpringCloud & Alibaba,
 * 注册中心、配置中心Nacos,
@@ -30,7 +31,9 @@
 * 搭建的一套分布式微服务架构，代码干净整洁，注释清晰，适合新项目开发,
 * 后续会持续封装，用户账户服务，支付服务，短信服务，邮箱服务，oos对象存储，等等，以及产品原型，ui原型，前端代码更新
 ~~~
+
 ## 目录结构
+
 ~~~
 ai-cloud-app
 ├── ai-cloud-gateway    --网关服务 [8088]
@@ -89,5 +92,6 @@ ai-cloud-app
 <img src="https://lawcontract.oss-cn-beijing.aliyuncs.com/3d6qj57lwc1zwdn6rlzt.png"/>
 
 ## 微服务交流群
+
 QQ群: [![加入QQ群](https://img.shields.io/badge/679033812-blue.svg)](https://jq.qq.com/?_wv=1027&k=eW62TFzU) 点击按钮入群。
 

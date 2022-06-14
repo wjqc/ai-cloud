@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
  * @author ai-cloud
  */
 @EnableCustomSwagger2
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class })
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 public class CloudFileApplication {
     public static void main(String[] args) {
         SpringApplication.run(CloudFileApplication.class, args);

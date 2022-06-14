@@ -70,7 +70,7 @@
             <groupId>com.cloud</groupId>
             <artifactId>ai-cloud-swagger</artifactId>
         </dependency>
-    
+
         <!-- 日志记录 -->
         <dependency>
             <groupId>com.cloud</groupId>

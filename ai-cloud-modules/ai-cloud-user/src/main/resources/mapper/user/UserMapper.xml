@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cloud.user.mapper.UserMapper">
-    
+
     <resultMap type="com.cloud.auth.api.domain.User" id="UserResult">
         <result property="id" column="id"/>
         <result property="userName" column="user_name"/>
@@ -55,56 +55,44 @@
         <result property="updateBy" column="update_by"/>
         <result property="updateTime" column="update_time"/>
     </resultMap>
-    
+
     <select id="checkUserNameUnique" parameterType="String" resultType="int">
-        SELECT
-            count( 1 )
-        FROM
-            `user`
-        WHERE
-            user_name = #{username} limit 1
+        SELECT count(1)
+        FROM `user`
+        WHERE user_name = #{username} limit 1
     </select>
-    
+
     <select id="checkPhoneUnique" parameterType="String" resultMap="UserResult">
-        SELECT
-            id,
-            phone
-        FROM
-            `user`
-        WHERE
-            phone = #{phonen} limit 1
+        SELECT id,
+               phone
+        FROM `user`
+        WHERE phone = #{phonen} limit 1
     </select>
-    
+
     <select id="selectByUserNamePhone" resultMap="UserResult">
-        SELECT
-            a.*
-        FROM
-            `user` a
-        WHERE
-            a.user_name = #{param}
+        SELECT a.*
+        FROM `user` a
+        WHERE a.user_name = #{param}
            OR a.phone = #{param} AND a.status_flag = 0 AND a.delete_flag = 0
     </select>
-    
+
     <select id="selectByUserInfo" resultType="com.cloud.user.dto.UserInfoDto">
-        SELECT
-            user_name,
-            head_img,
-            nick_name,
-            sex,
-            age,
-            phone,
-            sign,
-            vip_type,
-            vip_start_time,
-            vip_end_time,
-            user_type,
-            fans,
-            attention,
-            likes
-        FROM
-            `user`
-        WHERE
-            status_flag = 0
+        SELECT user_name,
+               head_img,
+               nick_name,
+               sex,
+               age,
+               phone,
+               sign,
+               vip_type,
+               vip_start_time,
+               vip_end_time,
+               user_type,
+               fans,
+               attention,
+               likes
+        FROM `user`
+        WHERE status_flag = 0
           AND delete_flag = 0
           AND id = #{userId}
     </select>

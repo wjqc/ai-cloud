@@ -4,7 +4,6 @@ import com.cloud.auth.api.domain.UserLoginLog;
 import com.cloud.auth.api.domain.UserOperLog;
 import com.cloud.auth.api.domain.UserRegistryLog;
 import com.cloud.common.model.Response;
-import com.cloud.common.web.domain.AjaxResult;
 import com.cloud.security.annotation.InnerAuth;
 import com.cloud.user.service.IUserLogService;
 import io.swagger.annotations.Api;

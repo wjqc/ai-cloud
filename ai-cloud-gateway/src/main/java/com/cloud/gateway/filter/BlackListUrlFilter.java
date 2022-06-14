@@ -22,7 +22,7 @@ public class BlackListUrlFilter extends AbstractGatewayFilterFactory<BlackListUr
 
             String url = exchange.getRequest().getURI().getPath();
             if (config.matchBlacklist(url)) {
-                return ServletUtils.webFluxResponseWriter(exchange.getResponse(), "请求地址不允许访问" );
+                return ServletUtils.webFluxResponseWriter(exchange.getResponse(), "请求地址不允许访问");
             }
 
             return chain.filter(exchange);
@@ -50,7 +50,7 @@ public class BlackListUrlFilter extends AbstractGatewayFilterFactory<BlackListUr
             this.blacklistUrl = blacklistUrl;
             this.blacklistUrlPattern.clear();
             this.blacklistUrl.forEach(url -> {
-                this.blacklistUrlPattern.add(Pattern.compile(url.replaceAll("\\*\\*" , "(.*?)" ), Pattern.CASE_INSENSITIVE));
+                this.blacklistUrlPattern.add(Pattern.compile(url.replaceAll("\\*\\*", "(.*?)"), Pattern.CASE_INSENSITIVE));
             });
         }
     }

@@ -2,8 +2,8 @@ package com.cloud.auth.service;
 
 
 import com.cloud.auth.api.domain.model.LoginUser;
-import com.cloud.auth.param.LoginPhoneParam;
 import com.cloud.auth.param.LoginOneStepParam;
+import com.cloud.auth.param.LoginPhoneParam;
 import com.cloud.auth.param.LoginWxParam;
 
 import javax.servlet.http.HttpServletRequest;

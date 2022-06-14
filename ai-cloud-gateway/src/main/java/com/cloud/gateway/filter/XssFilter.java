@@ -28,7 +28,7 @@ import java.nio.charset.StandardCharsets;
  * @author ai-cloud
  */
 @Component
-@ConditionalOnProperty(value = "security.xss.enabled" , havingValue = "true" )
+@ConditionalOnProperty(value = "security.xss.enabled", havingValue = "true")
 public class XssFilter implements GlobalFilter, Ordered {
     // 跨站脚本的 xss 配置，nacos自行添加
     @Autowired
@@ -39,7 +39,7 @@ public class XssFilter implements GlobalFilter, Ordered {
         ServerHttpRequest request = exchange.getRequest();
         // GET DELETE 不过滤
         HttpMethod method = request.getMethod();
-        if (method == null || method.matches("GET" ) || method.matches("DELETE" )) {
+        if (method == null || method.matches("GET") || method.matches("DELETE")) {
             return chain.filter(exchange);
         }
         // 非json类型，不过滤
@@ -85,7 +85,7 @@ public class XssFilter implements GlobalFilter, Ordered {
                 httpHeaders.putAll(super.getHeaders());
                 // 由于修改了请求体的body，导致content-length长度不确定，因此需要删除原先的content-length
                 httpHeaders.remove(HttpHeaders.CONTENT_LENGTH);
-                httpHeaders.set(HttpHeaders.TRANSFER_ENCODING, "chunked" );
+                httpHeaders.set(HttpHeaders.TRANSFER_ENCODING, "chunked");
                 return httpHeaders;
             }
 

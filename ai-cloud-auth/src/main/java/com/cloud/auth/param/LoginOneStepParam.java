@@ -11,9 +11,11 @@ import lombok.Data;
  */
 @Data
 @ApiModel("一键登录请求参数")
-public class LoginOneStepParam extends VerifyPhoneParam{
+public class LoginOneStepParam extends VerifyPhoneParam {
 
-    /** 邀请者id */
+    /**
+     * 邀请者id
+     */
     @ApiModelProperty(value = "邀请人ID", example = "1")
     private String invitationId;
 

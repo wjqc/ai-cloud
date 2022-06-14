@@ -6,7 +6,6 @@ import com.cloud.common.utils.ServletUtils;
 import com.cloud.common.utils.StringUtils;
 import com.cloud.common.utils.ip.IpUtils;
 import com.cloud.common.utils.uuid.IdUtils;
-import com.cloud.common.utils.uuid.UUID;
 import com.cloud.log.annotation.Log;
 import com.cloud.log.enums.BusinessStatus;
 import com.cloud.log.service.AsyncLogService;

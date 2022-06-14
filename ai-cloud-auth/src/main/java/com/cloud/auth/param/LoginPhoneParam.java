@@ -11,9 +11,11 @@ import lombok.Data;
  */
 @Data
 @ApiModel("手机登录请求参数")
-public class LoginPhoneParam extends VerifyCodeParam{
+public class LoginPhoneParam extends VerifyCodeParam {
 
-    /** 邀请者id */
+    /**
+     * 邀请者id
+     */
     @ApiModelProperty(value = "邀请人ID", example = "1")
     private String invitationId;
 

@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cloud.user.mapper.UserConfigMapper">
-    
+
     <resultMap type="com.cloud.auth.api.domain.UserConfig" id="UserConfigResult">
         <result property="id" column="id"/>
         <result property="configName" column="config_name"/>
@@ -15,12 +15,12 @@
         <result property="updateBy" column="update_by"/>
         <result property="updateTime" column="update_time"/>
     </resultMap>
-    
+
     <sql id="selectConfigVo">
         select *
         from user_config
     </sql>
-    
+
     <!-- 查询条件 -->
     <sql id="sqlwhereSearch">
         <where>
@@ -32,7 +32,7 @@
             </if>
         </where>
     </sql>
-    
+
     <select id="selectConfig" resultMap="UserConfigResult">
         <include refid="selectConfigVo"/>
         <include refid="sqlwhereSearch"/>

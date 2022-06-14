@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cloud.user.mapper.UserAccountMapper">
-    
+
     <resultMap type="com.cloud.auth.api.domain.UserAccount" id="UserAccountResult">
         <result property="id" column="id"/>
         <result property="number" column="number"/>
@@ -28,67 +28,53 @@
         <result property="updateBy" column="update_by"/>
         <result property="updateTime" column="update_time"/>
     </resultMap>
-    
+
     <select id="selectAvailableBalanceByUserIdAndType" resultType="java.math.BigDecimal">
-        SELECT
-            available_balance
-        FROM
-            user_account
-        WHERE
-            user_id = #{userId}
+        SELECT available_balance
+        FROM user_account
+        WHERE user_id = #{userId}
           AND type = #{type}
           AND status_flag = 0
           AND delete_flag = 0
     </select>
-    
+
     <select id="selectCountByUserId" resultType="java.lang.Integer">
-        SELECT
-            COUNT( 1 )
-        FROM
-            user_account
-        WHERE
-            status_flag = 0
+        SELECT COUNT(1)
+        FROM user_account
+        WHERE status_flag = 0
           AND delete_flag = 0
           AND user_id = #{userId}
     </select>
-    
+
     <select id="selectByUserIdType" resultType="com.cloud.auth.api.domain.UserAccount">
-        SELECT
-            *
-        FROM
-            user_account
-        WHERE
-            user_id = #{userId}
+        SELECT *
+        FROM user_account
+        WHERE user_id = #{userId}
           AND type = #{type}
           AND status_flag = 0
           AND delete_flag = 0
     </select>
-    
+
     <select id="selectPasswordByUserId" resultType="java.util.Map">
-        SELECT DISTINCT
-            `password`,
-            salt
-        FROM
-            user_account
-        WHERE
-            status_flag = 0
+        SELECT DISTINCT `password`,
+                        salt
+        FROM user_account
+        WHERE status_flag = 0
           AND delete_flag = 0
           AND user_id = #{userId}
     </select>
-    
+
     <update id="updatePasswordSaltByUserId">
         UPDATE user_account
         SET `password` = #{password},
-            salt = #{salt}
-        WHERE
-            user_id = #{userId}
+            salt       = #{salt}
+        WHERE user_id = #{userId}
     </update>
-    
+
     <update id="updateAvailableBalance">
         UPDATE user_account
         SET available_balance = #{amount}
-        WHERE
-            user_id = #{userId}
+        WHERE user_id = #{userId}
           AND type = #{type}
     </update>
 
