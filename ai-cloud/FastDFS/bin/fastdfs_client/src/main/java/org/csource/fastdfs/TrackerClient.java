@@ -15,6 +15,7 @@ import java.net.Socket;
 
 /**
  * Tracker client
+ *
  * @author Happy Fish / YuQing
  * @version Version 1.19
  */
@@ -31,6 +32,7 @@ public class TrackerClient {
 
     /**
      * constructor with specified tracker group
+     *
      * @param tracker_group the tracker group object
      */
     public TrackerClient(TrackerGroup tracker_group) {
@@ -39,6 +41,7 @@ public class TrackerClient {
 
     /**
      * get the error code of last call
+     *
      * @return the error code of last call
      */
     public byte getErrorCode() {
@@ -47,6 +50,7 @@ public class TrackerClient {
 
     /**
      * get a connection to tracker server
+     *
      * @return tracker server Socket object, return null if fail
      */
     public TrackerServer getConnection() throws IOException {
@@ -55,6 +59,7 @@ public class TrackerClient {
 
     /**
      * query storage server to upload file
+     *
      * @param trackerServer the tracker server
      * @return storage server Socket object, return null if fail
      */
@@ -65,8 +70,9 @@ public class TrackerClient {
 
     /**
      * query storage server to upload file
+     *
      * @param trackerServer the tracker server
-     * @param groupName the group name to upload file to, can be empty
+     * @param groupName     the group name to upload file to, can be empty
      * @return storage server object, return null if fail
      */
     public StorageServer getStoreStorage(TrackerServer trackerServer, String groupName) throws IOException {
@@ -159,8 +165,9 @@ public class TrackerClient {
 
     /**
      * query storage servers to upload file
+     *
      * @param trackerServer the tracker server
-     * @param groupName the group name to upload file to, can be empty
+     * @param groupName     the group name to upload file to, can be empty
      * @return storage servers, return null if fail
      */
     public StorageServer[] getStoreStorages(TrackerServer trackerServer, String groupName) throws IOException {
@@ -278,9 +285,10 @@ public class TrackerClient {
 
     /**
      * query storage server to download file
+     *
      * @param trackerServer the tracker server
-     *    @param groupName the group name of storage server
-     * @param filename filename on storage server
+     * @param groupName     the group name of storage server
+     * @param filename      filename on storage server
      * @return storage server Socket object, return null if fail
      */
     public StorageServer getFetchStorage(TrackerServer trackerServer,
@@ -296,9 +304,10 @@ public class TrackerClient {
 
     /**
      * query storage server to update file (delete file or set meta data)
+     *
      * @param trackerServer the tracker server
-     *    @param groupName the group name of storage server
-     * @param filename filename on storage server
+     * @param groupName     the group name of storage server
+     * @param filename      filename on storage server
      * @return storage server Socket object, return null if fail
      */
     public StorageServer getUpdateStorage(TrackerServer trackerServer,
@@ -314,9 +323,10 @@ public class TrackerClient {
 
     /**
      * get storage servers to download file
+     *
      * @param trackerServer the tracker server
-     *    @param groupName the group name of storage server
-     * @param filename filename on storage server
+     * @param groupName     the group name of storage server
+     * @param filename      filename on storage server
      * @return storage servers, return null if fail
      */
     public ServerInfo[] getFetchStorages(TrackerServer trackerServer,
@@ -327,11 +337,12 @@ public class TrackerClient {
 
     /**
      * query storage server to download file
+     *
      * @param trackerServer the tracker server
-     * @param cmd command code, ProtoCommon.TRACKER_PROTO_CMD_SERVICE_QUERY_FETCH_ONE or
-    ProtoCommon.TRACKER_PROTO_CMD_SERVICE_QUERY_UPDATE
-     *    @param groupName the group name of storage server
-     * @param filename filename on storage server
+     * @param cmd           command code, ProtoCommon.TRACKER_PROTO_CMD_SERVICE_QUERY_FETCH_ONE or
+     *                      ProtoCommon.TRACKER_PROTO_CMD_SERVICE_QUERY_UPDATE
+     * @param groupName     the group name of storage server
+     * @param filename      filename on storage server
      * @return storage server Socket object, return null if fail
      */
     protected ServerInfo[] getStorages(TrackerServer trackerServer,
@@ -432,8 +443,9 @@ public class TrackerClient {
 
     /**
      * query storage server to download file
+     *
      * @param trackerServer the tracker server
-     *    @param file_id the file id(including group name and filename)
+     * @param file_id       the file id(including group name and filename)
      * @return storage server Socket object, return null if fail
      */
     public StorageServer getFetchStorage1(TrackerServer trackerServer, String file_id) throws IOException {
@@ -448,8 +460,9 @@ public class TrackerClient {
 
     /**
      * get storage servers to download file
+     *
      * @param trackerServer the tracker server
-     *    @param file_id the file id(including group name and filename)
+     * @param file_id       the file id(including group name and filename)
      * @return storage servers, return null if fail
      */
     public ServerInfo[] getFetchStorages1(TrackerServer trackerServer, String file_id) throws IOException {
@@ -464,6 +477,7 @@ public class TrackerClient {
 
     /**
      * list groups
+     *
      * @param trackerServer the tracker server
      * @return group stat array, return null if fail
      */
@@ -530,8 +544,9 @@ public class TrackerClient {
 
     /**
      * query storage server stat info of the group
+     *
      * @param trackerServer the tracker server
-     *    @param groupName the group name of storage server
+     * @param groupName     the group name of storage server
      * @return storage server stat array, return null if fail
      */
     public StructStorageStat[] listStorages(TrackerServer trackerServer, String groupName) throws IOException {
@@ -541,8 +556,9 @@ public class TrackerClient {
 
     /**
      * query storage server stat info of the group
+     *
      * @param trackerServer the tracker server
-     *    @param groupName the group name of storage server
+     * @param groupName     the group name of storage server
      * @param storageIpAddr the storage server ip address, can be null or empty
      * @return storage server stat array, return null if fail
      */
@@ -638,8 +654,9 @@ public class TrackerClient {
 
     /**
      * delete a storage server from the tracker server
+     *
      * @param trackerServer the connected tracker server
-     *    @param groupName the group name of storage server
+     * @param groupName     the group name of storage server
      * @param storageIpAddr the storage server ip address
      * @return true for success, false for fail
      */
@@ -688,7 +705,8 @@ public class TrackerClient {
 
     /**
      * delete a storage server from the global FastDFS cluster
-     *    @param groupName the group name of storage server
+     *
+     * @param groupName     the group name of storage server
      * @param storageIpAddr the storage server ip address
      * @return true for success, false for fail
      */
@@ -698,8 +716,9 @@ public class TrackerClient {
 
     /**
      * delete a storage server from the FastDFS cluster
-     * @param trackerGroup the tracker server group
-     *    @param groupName the group name of storage server
+     *
+     * @param trackerGroup  the tracker server group
+     * @param groupName     the group name of storage server
      * @param storageIpAddr the storage server ip address
      * @return true for success, false for fail
      */

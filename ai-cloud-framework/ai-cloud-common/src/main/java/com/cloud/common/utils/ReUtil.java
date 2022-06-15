@@ -10,6 +10,11 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * 正则
+ *
+ * @author ai-cloud
+ */
 public class ReUtil {
     public final static Pattern GROUP_VAR = Pattern.compile("\\$(\\d+)");
 

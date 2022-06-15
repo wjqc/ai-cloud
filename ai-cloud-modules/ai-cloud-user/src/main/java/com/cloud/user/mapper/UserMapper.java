@@ -43,7 +43,7 @@ public interface UserMapper extends BaseMapper<User> {
     /**
      * 查询用户信息
      *
-     * @param
+     * @param userId 用户id
      * @return 用户对象信息
      */
     public UserInfoDto selectByUserInfo(@Param("userId") String userId);

@@ -16,6 +16,7 @@ import org.csource.common.*;
 
 /**
  * Tracker Server Info
+ *
  * @author Happy Fish / YuQing
  * @version Version 1.11
  */
@@ -25,7 +26,8 @@ public class TrackerServer {
 
     /**
      * Constructor
-     * @param sock Socket of server
+     *
+     * @param sock         Socket of server
      * @param inetSockAddr the server info
      */
     public TrackerServer(Socket sock, InetSocketAddress inetSockAddr) {
@@ -35,6 +37,7 @@ public class TrackerServer {
 
     /**
      * get the connected socket
+     *
      * @return the socket
      */
     public Socket getSocket() throws IOException {
@@ -47,6 +50,7 @@ public class TrackerServer {
 
     /**
      * get the server info
+     *
      * @return the server info
      */
     public InetSocketAddress getInetSocketAddress() {

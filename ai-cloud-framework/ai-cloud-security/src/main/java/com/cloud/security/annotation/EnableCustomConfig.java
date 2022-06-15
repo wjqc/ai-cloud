@@ -9,6 +9,11 @@ import org.springframework.scheduling.annotation.EnableAsync;
 
 import java.lang.annotation.*;
 
+/**
+ * EnableCustomConfig
+ *
+ * @author ai-cloud
+ */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented

@@ -5,6 +5,7 @@ import com.cloud.common.model.Response;
 import com.cloud.log.annotation.Log;
 import com.cloud.log.enums.BusinessType;
 import com.cloud.user.param.UserParam;
+import com.cloud.user.param.WalletBillParam;
 import com.cloud.user.param.WalletWithdrawParam;
 import com.cloud.user.service.IUserCenterService;
 import io.swagger.annotations.Api;
@@ -80,5 +81,30 @@ public class UserCenterApi {
         return Response.ok(userCenterService.walletWithdraw(param), "申请成功!");
     }
 
+    /**
+     * 查询钱包账单
+     *
+     * @param param
+     * @return
+     */
+    @Log(title = "查询钱包账单", businessType = BusinessType.QUERY)
+    @PostMapping(value = "/wallet/bill")
+    @ApiOperation(value = "钱包账单")
+    public Response walletBill(@RequestBody WalletBillParam param) {
+        return Response.ok(userCenterService.walletBill(param), "查询成功!");
+    }
+
+    /**
+     * 查询账单明细
+     *
+     * @param detailId
+     * @return
+     */
+    @Log(title = "查询账单明细", businessType = BusinessType.QUERY)
+    @PostMapping(value = "/wallet/bill/detail")
+    @ApiOperation(value = "账单明细")
+    public Response walletBillDetail(@RequestBody String detailId) {
+        return Response.ok(userCenterService.walletBillDetail(detailId), "查询成功!");
+    }
 
 }

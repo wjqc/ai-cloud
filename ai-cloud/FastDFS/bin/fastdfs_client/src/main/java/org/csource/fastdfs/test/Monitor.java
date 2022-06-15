@@ -15,6 +15,7 @@ import org.csource.fastdfs.*;
 
 /**
  * load test class
+ *
  * @author Happy Fish / YuQing
  * @version Version 1.20
  */
@@ -24,8 +25,9 @@ public class Monitor {
 
     /**
      * entry point
+     *
      * @param args comand arguments
-     *     <ul><li>args[0]: config filename</li></ul>
+     *             <ul><li>args[0]: config filename</li></ul>
      */
     public static void main(String args[]) {
         if (args.length < 1) {

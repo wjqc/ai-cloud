@@ -31,6 +31,7 @@ public interface LoginService {
      *
      * @param request
      * @param param
+     * @return
      */
     public LoginUser onestep(LoginOneStepParam param, HttpServletRequest request);
 

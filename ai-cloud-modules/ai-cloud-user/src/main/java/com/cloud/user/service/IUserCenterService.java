@@ -1,8 +1,14 @@
 package com.cloud.user.service;
 
+import com.cloud.user.dto.BillDetailDto;
+import com.cloud.user.dto.BillDto;
 import com.cloud.user.dto.UserInfoDto;
 import com.cloud.user.param.UserParam;
+import com.cloud.user.param.WalletBillParam;
 import com.cloud.user.param.WalletWithdrawParam;
+import com.github.pagehelper.PageInfo;
+
+import java.util.List;
 
 /**
  * 我的信息Service接口
@@ -42,5 +48,21 @@ public interface IUserCenterService {
      * @return
      */
     public boolean walletWithdraw(WalletWithdrawParam param);
+
+    /**
+     * 查询钱包账单
+     *
+     * @param param
+     * @return
+     */
+    public PageInfo<BillDto> walletBill(WalletBillParam param);
+
+    /**
+     * 查询账单明细
+     *
+     * @param detailId
+     * @return
+     */
+    List<BillDetailDto> walletBillDetail(String detailId);
 
 }

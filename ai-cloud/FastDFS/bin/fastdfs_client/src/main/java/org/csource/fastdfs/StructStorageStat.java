@@ -12,6 +12,7 @@ import java.util.Date;
 
 /**
  * C struct body decoder
+ *
  * @author Happy Fish / YuQing
  * @version Version 1.25
  */
@@ -341,6 +342,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get storage status
+     *
      * @return storage status
      */
     public byte getStatus() {
@@ -349,6 +351,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get storage server id
+     *
      * @return storage server id
      */
     public String getId() {
@@ -357,6 +360,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get storage server ip address
+     *
      * @return storage server ip address
      */
     public String getIpAddr() {
@@ -365,6 +369,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get source storage ip address
+     *
      * @return source storage ip address
      */
     public String getSrcIpAddr() {
@@ -373,6 +378,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get the domain name of the storage server
+     *
      * @return the domain name of the storage server
      */
     public String getDomainName() {
@@ -381,6 +387,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get storage version
+     *
      * @return storage version
      */
     public String getVersion() {
@@ -389,6 +396,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get total disk space in MB
+     *
      * @return total disk space in MB
      */
     public long getTotalMB() {
@@ -397,6 +405,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get free disk space in MB
+     *
      * @return free disk space in MB
      */
     public long getFreeMB() {
@@ -405,6 +414,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get storage server upload priority
+     *
      * @return storage server upload priority
      */
     public int getUploadPriority() {
@@ -413,6 +423,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get storage server join time
+     *
      * @return storage server join time
      */
     public Date getJoinTime() {
@@ -421,6 +432,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get storage server up time
+     *
      * @return storage server up time
      */
     public Date getUpTime() {
@@ -429,6 +441,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get store base path count of each storage server
+     *
      * @return store base path count of each storage server
      */
     public int getStorePathCount() {
@@ -437,6 +450,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get sub dir count per store path
+     *
      * @return sub dir count per store path
      */
     public int getSubdirCountPerPath() {
@@ -445,6 +459,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get storage server port
+     *
      * @return storage server port
      */
     public int getStoragePort() {
@@ -453,6 +468,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get storage server HTTP port
+     *
      * @return storage server HTTP port
      */
     public int getStorageHttpPort() {
@@ -461,6 +477,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get current write path index
+     *
      * @return current write path index
      */
     public int getCurrentWritePath() {
@@ -469,6 +486,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get total upload file count
+     *
      * @return total upload file count
      */
     public long getTotalUploadCount() {
@@ -477,6 +495,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get success upload file count
+     *
      * @return success upload file count
      */
     public long getSuccessUploadCount() {
@@ -485,6 +504,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get total append count
+     *
      * @return total append count
      */
     public long getTotalAppendCount() {
@@ -493,6 +513,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get success append count
+     *
      * @return success append count
      */
     public long getSuccessAppendCount() {
@@ -501,6 +522,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get total modify count
+     *
      * @return total modify count
      */
     public long getTotalModifyCount() {
@@ -509,6 +531,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get success modify count
+     *
      * @return success modify count
      */
     public long getSuccessModifyCount() {
@@ -517,6 +540,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get total truncate count
+     *
      * @return total truncate count
      */
     public long getTotalTruncateCount() {
@@ -525,6 +549,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get success truncate count
+     *
      * @return success truncate count
      */
     public long getSuccessTruncateCount() {
@@ -533,6 +558,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get total set meta data count
+     *
      * @return total set meta data count
      */
     public long getTotalSetMetaCount() {
@@ -541,6 +567,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get success set meta data count
+     *
      * @return success set meta data count
      */
     public long getSuccessSetMetaCount() {
@@ -549,6 +576,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get total delete file count
+     *
      * @return total delete file count
      */
     public long getTotalDeleteCount() {
@@ -557,6 +585,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get success delete file count
+     *
      * @return success delete file count
      */
     public long getSuccessDeleteCount() {
@@ -565,6 +594,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get total download file count
+     *
      * @return total download file count
      */
     public long getTotalDownloadCount() {
@@ -573,6 +603,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get success download file count
+     *
      * @return success download file count
      */
     public long getSuccessDownloadCount() {
@@ -581,6 +612,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get total get metadata count
+     *
      * @return total get metadata count
      */
     public long getTotalGetMetaCount() {
@@ -589,6 +621,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get success get metadata count
+     *
      * @return success get metadata count
      */
     public long getSuccessGetMetaCount() {
@@ -597,6 +630,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get total create linke count
+     *
      * @return total create linke count
      */
     public long getTotalCreateLinkCount() {
@@ -605,6 +639,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get success create linke count
+     *
      * @return success create linke count
      */
     public long getSuccessCreateLinkCount() {
@@ -613,6 +648,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get total delete link count
+     *
      * @return total delete link count
      */
     public long getTotalDeleteLinkCount() {
@@ -621,6 +657,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get success delete link count
+     *
      * @return success delete link count
      */
     public long getSuccessDeleteLinkCount() {
@@ -629,6 +666,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get total upload file bytes
+     *
      * @return total upload file bytes
      */
     public long getTotalUploadBytes() {
@@ -637,6 +675,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get success upload file bytes
+     *
      * @return success upload file bytes
      */
     public long getSuccessUploadBytes() {
@@ -645,6 +684,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get total append bytes
+     *
      * @return total append bytes
      */
     public long getTotalAppendBytes() {
@@ -653,6 +693,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get success append bytes
+     *
      * @return success append bytes
      */
     public long getSuccessAppendBytes() {
@@ -661,6 +702,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get total modify bytes
+     *
      * @return total modify bytes
      */
     public long getTotalModifyBytes() {
@@ -669,6 +711,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get success modify bytes
+     *
      * @return success modify bytes
      */
     public long getSuccessModifyBytes() {
@@ -677,6 +720,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get total download file bytes
+     *
      * @return total download file bytes
      */
     public long getTotalDownloadloadBytes() {
@@ -685,6 +729,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get success download file bytes
+     *
      * @return success download file bytes
      */
     public long getSuccessDownloadloadBytes() {
@@ -693,6 +738,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get total sync in bytes
+     *
      * @return total sync in bytes
      */
     public long getTotalSyncInBytes() {
@@ -701,6 +747,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get success sync in bytes
+     *
      * @return success sync in bytes
      */
     public long getSuccessSyncInBytes() {
@@ -709,6 +756,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get total sync out bytes
+     *
      * @return total sync out bytes
      */
     public long getTotalSyncOutBytes() {
@@ -717,6 +765,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get success sync out bytes
+     *
      * @return success sync out bytes
      */
     public long getSuccessSyncOutBytes() {
@@ -725,6 +774,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get total file opened count
+     *
      * @return total file opened bytes
      */
     public long getTotalFileOpenCount() {
@@ -733,6 +783,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get success file opened count
+     *
      * @return success file opened count
      */
     public long getSuccessFileOpenCount() {
@@ -741,6 +792,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get total file read count
+     *
      * @return total file read bytes
      */
     public long getTotalFileReadCount() {
@@ -749,6 +801,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get success file read count
+     *
      * @return success file read count
      */
     public long getSuccessFileReadCount() {
@@ -757,6 +810,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get total file write count
+     *
      * @return total file write bytes
      */
     public long getTotalFileWriteCount() {
@@ -765,6 +819,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get success file write count
+     *
      * @return success file write count
      */
     public long getSuccessFileWriteCount() {
@@ -773,6 +828,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get last source update timestamp
+     *
      * @return last source update timestamp
      */
     public Date getLastSourceUpdate() {
@@ -781,6 +837,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get last synced update timestamp
+     *
      * @return last synced update timestamp
      */
     public Date getLastSyncUpdate() {
@@ -789,6 +846,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get last synced timestamp
+     *
      * @return last synced timestamp
      */
     public Date getLastSyncedTimestamp() {
@@ -797,6 +855,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get last heart beat timestamp
+     *
      * @return last heart beat timestamp
      */
     public Date getLastHeartBeatTime() {
@@ -805,6 +864,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * if the trunk server
+     *
      * @return true for the trunk server, otherwise false
      */
     public boolean isTrunkServer() {
@@ -813,6 +873,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get connection alloc count
+     *
      * @return connection alloc count
      */
     public int getConnectionAllocCount() {
@@ -821,6 +882,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get connection current count
+     *
      * @return connection current count
      */
     public int getConnectionCurrentCount() {
@@ -829,6 +891,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get connection max count
+     *
      * @return connection max count
      */
     public int getConnectionMaxCount() {
@@ -837,7 +900,8 @@ public class StructStorageStat extends StructBase {
 
     /**
      * set fields
-     * @param bs byte array
+     *
+     * @param bs     byte array
      * @param offset start offset
      */
     public void setFields(byte[] bs, int offset) {
@@ -909,6 +973,7 @@ public class StructStorageStat extends StructBase {
 
     /**
      * get fields total size
+     *
      * @return fields total size
      */
     public static int getFieldsTotalSize() {

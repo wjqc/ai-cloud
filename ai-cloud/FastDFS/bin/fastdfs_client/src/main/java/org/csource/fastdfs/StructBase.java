@@ -13,6 +13,7 @@ import java.util.Date;
 
 /**
  * C struct body decoder
+ *
  * @author Happy Fish / YuQing
  * @version Version 1.17
  */
@@ -31,7 +32,8 @@ public abstract class StructBase {
 
     /**
      * set fields
-     * @param bs byte array
+     *
+     * @param bs     byte array
      * @param offset start offset
      */
     public abstract void setFields(byte[] bs, int offset);

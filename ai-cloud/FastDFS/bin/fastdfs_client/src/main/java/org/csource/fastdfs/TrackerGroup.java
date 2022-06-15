@@ -16,6 +16,7 @@ import org.csource.common.*;
 
 /**
  * Tracker server group
+ *
  * @author Happy Fish / YuQing
  * @version Version 1.17
  */
@@ -26,6 +27,7 @@ public class TrackerGroup {
 
     /**
      * Constructor
+     *
      * @param tracker_servers tracker servers
      */
     public TrackerGroup(InetSocketAddress[] tracker_servers) {
@@ -36,6 +38,7 @@ public class TrackerGroup {
 
     /**
      * return connected tracker server
+     *
      * @return connected tracker server, null for fail
      */
     public TrackerServer getConnection(int serverIndex) throws IOException {
@@ -48,6 +51,7 @@ public class TrackerGroup {
 
     /**
      * return connected tracker server
+     *
      * @return connected tracker server, null for fail
      */
     public TrackerServer getConnection() throws IOException {

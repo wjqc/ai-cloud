@@ -34,4 +34,62 @@
         <result property="updateTime" column="update_time"/>
     </resultMap>
 
+    <select id="selectByDealType" resultType="com.cloud.user.dto.BillDto">
+        SELECT
+        uad.id AS detailId,
+        uad.img,
+        uad.order_price AS amount,
+        uad.`type`,
+        uad.deal_type AS dealType,
+        uad.deal_name AS dealName,
+        uad.create_time AS createTime
+        FROM
+        user_account_detail uad
+        LEFT JOIN user_account ua ON uad.account_id = ua.id
+        WHERE
+        ua.status_flag = 0
+        AND ua.delete_flag = 0
+        AND uad.delete_flag = 0
+        AND uad.status_flag = 0
+        AND ua.user_id = #{userId} and ua.`type` = 1
+        <if test="dealType != '' and dealType != null">
+            AND uad.deal_type = #{dealType}
+        </if>
+        <if test="start != '' and start != null">
+            AND left(uad.create_time,10) >= #{start}
+        </if>
+        <if test="end != '' and end != null">
+            AND left(uad.create_time,10) &lt;= #{end}
+        </if>
+        order by uad.create_time desc
+    </select>
+
+    <select id="selectByDetail" resultType="com.cloud.user.dto.BillDetailDto">
+        SELECT uad.img,
+               uad.order_price    AS amount,
+               uad.`type`,
+               uad.deal_type      AS dealType,
+               uad.deal_name      AS dealName,
+               uwl.`status`,
+               uwl.remit_status   AS remitStatus,
+               uwl.belong_bank    AS belongBank,
+               uwl.bank_account   AS bankAccount,
+               uwl.bank_card      AS bankCard,
+               uwl.bank_name      AS bankName,
+               uwl.alipay_account AS alipayAccount,
+               uwl.alipay_name    AS alipayName,
+               uad.create_time    AS createTime
+        FROM user_account_detail uad
+        LEFT JOIN user_account ua ON uad.account_id = ua.id
+        LEFT JOIN user_withdraw_apply uwl ON uwl.deal_serial_number = uad.deal_serial_number
+        WHERE ua.status_flag = 0
+          AND ua.delete_flag = 0
+          AND uad.delete_flag = 0
+          AND uad.status_flag = 0
+          AND uwl.delete_flag = 0
+          AND uwl.status_flag = 0
+          AND ua.user_id = #{userId}
+          AND uad.id = #{detailId}
+    </select>
+
 </mapper>

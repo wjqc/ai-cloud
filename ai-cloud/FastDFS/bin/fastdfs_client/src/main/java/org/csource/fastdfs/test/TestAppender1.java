@@ -17,6 +17,7 @@ import org.csource.fastdfs.*;
 
 /**
  * client test
+ *
  * @author Happy Fish / YuQing
  * @version Version 1.20
  */
@@ -26,9 +27,10 @@ public class TestAppender1 {
 
     /**
      * entry point
+     *
      * @param args comand arguments
-     *     <ul><li>args[0]: config filename</li></ul>
-     *     <ul><li>args[1]: local filename to upload</li></ul>
+     *             <ul><li>args[0]: config filename</li></ul>
+     *             <ul><li>args[1]: local filename to upload</li></ul>
      */
     public static void main(String args[]) {
         if (args.length < 2) {

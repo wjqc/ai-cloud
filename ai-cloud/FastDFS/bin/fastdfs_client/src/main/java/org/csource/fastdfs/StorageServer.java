@@ -16,6 +16,7 @@ import org.csource.common.*;
 
 /**
  * Storage Server Info
+ *
  * @author Happy Fish / YuQing
  * @version Version 1.11
  */
@@ -24,8 +25,9 @@ public class StorageServer extends TrackerServer {
 
     /**
      * Constructor
-     * @param ip_addr the ip address of storage server
-     * @param port the port of storage server
+     *
+     * @param ip_addr    the ip address of storage server
+     * @param port       the port of storage server
      * @param store_path the store path index on the storage server
      */
     public StorageServer(String ip_addr, int port, int store_path) throws IOException {
@@ -35,8 +37,9 @@ public class StorageServer extends TrackerServer {
 
     /**
      * Constructor
-     * @param ip_addr the ip address of storage server
-     * @param port the port of storage server
+     *
+     * @param ip_addr    the ip address of storage server
+     * @param port       the port of storage server
      * @param store_path the store path index on the storage server
      */
     public StorageServer(String ip_addr, int port, byte store_path) throws IOException {

@@ -16,6 +16,7 @@ import org.csource.fastdfs.*;
 
 /**
  * upload file callback class, local file sender
+ *
  * @author Happy Fish / YuQing
  * @version Version 1.0
  */
@@ -28,6 +29,7 @@ public class UploadLocalFileSender implements UploadCallback {
 
     /**
      * send file content callback function, be called only once when the file uploaded
+     *
      * @param out output stream for writing file content
      * @return 0 success, return none zero(errno) if fail
      */

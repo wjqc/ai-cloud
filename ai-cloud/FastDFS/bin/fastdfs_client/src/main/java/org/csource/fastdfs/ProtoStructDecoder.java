@@ -17,6 +17,7 @@ import org.csource.common.*;
 
 /**
  * C struct body decoder
+ *
  * @author Happy Fish / YuQing
  * @version Version 1.17
  */

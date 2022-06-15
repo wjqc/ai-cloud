@@ -16,6 +16,7 @@ import org.csource.common.*;
 
 /**
  * Server Info
+ *
  * @author Happy Fish / YuQing
  * @version Version 1.7
  */
@@ -25,8 +26,9 @@ public class ServerInfo {
 
     /**
      * Constructor
+     *
      * @param ip_addr address of the server
-     * @param port the port of the server
+     * @param port    the port of the server
      */
     public ServerInfo(String ip_addr, int port) {
         this.ip_addr = ip_addr;
@@ -35,6 +37,7 @@ public class ServerInfo {
 
     /**
      * return the ip address
+     *
      * @return the ip address
      */
     public String getIpAddr() {
@@ -43,6 +46,7 @@ public class ServerInfo {
 
     /**
      * return the port of the server
+     *
      * @return the port of the server
      */
     public int getPort() {
@@ -51,6 +55,7 @@ public class ServerInfo {
 
     /**
      * connect to server
+     *
      * @return connected Socket object
      */
     public Socket connect() throws IOException {

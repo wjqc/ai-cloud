@@ -11,19 +11,30 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @author ai-cloud
  */
 public class Seq {
-    // 通用序列类型
+
+    /**
+     * 通用序列类型
+     */
     public static final String commSeqType = "COMMON";
 
-    // 上传序列类型
+    /**
+     * 上传序列类型
+     */
     public static final String uploadSeqType = "UPLOAD";
 
-    // 通用接口序列数
+    /**
+     * 通用接口序列数
+     */
     private static AtomicInteger commSeq = new AtomicInteger(1);
 
-    // 上传接口序列数
+    /**
+     * 上传接口序列数
+     */
     private static AtomicInteger uploadSeq = new AtomicInteger(1);
 
-    // 机器标识
+    /**
+     * 机器标识
+     */
     private static String machineCode = "A";
 
     /**

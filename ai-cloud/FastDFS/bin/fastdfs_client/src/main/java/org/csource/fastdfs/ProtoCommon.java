@@ -20,6 +20,7 @@ import org.csource.common.NameValuePair;
 
 /**
  * protocol common functions
+ *
  * @author Happy Fish / YuQing
  * @version Version 1.18
  */
@@ -167,9 +168,10 @@ public class ProtoCommon {
 
     /**
      * pack header by FastDFS transfer protocol
-     * @param cmd which command to send
+     *
+     * @param cmd     which command to send
      * @param pkg_len package body length
-     * @param errno status code, should be (byte)0
+     * @param errno   status code, should be (byte)0
      * @return packed byte buffer
      */
     public static byte[] packHeader(byte cmd, long pkg_len, byte errno) throws UnsupportedEncodingException {
@@ -188,8 +190,9 @@ public class ProtoCommon {
 
     /**
      * receive pack header
-     * @param in input stream
-     * @param expect_cmd expect response command
+     *
+     * @param in              input stream
+     * @param expect_cmd      expect response command
      * @param expect_body_len expect response package body length
      * @return RecvHeaderInfo: errno and pkg body length
      */
@@ -226,8 +229,9 @@ public class ProtoCommon {
 
     /**
      * receive whole pack
-     * @param in input stream
-     * @param expect_cmd expect response command
+     *
+     * @param in              input stream
+     * @param expect_cmd      expect response command
      * @param expect_body_len expect response package body length
      * @return RecvPackageInfo: errno and reponse body(byte buff)
      */
@@ -260,6 +264,7 @@ public class ProtoCommon {
 
     /**
      * split metadata to name value pair array
+     *
      * @param meta_buff metadata
      * @return name value pair array
      */
@@ -269,9 +274,10 @@ public class ProtoCommon {
 
     /**
      * split metadata to name value pair array
-     * @param meta_buff metadata
+     *
+     * @param meta_buff       metadata
      * @param recordSeperator record/row seperator
-     * @param filedSeperator field/column seperator
+     * @param filedSeperator  field/column seperator
      * @return name value pair array
      */
     public static NameValuePair[] split_metadata(String meta_buff,
@@ -295,6 +301,7 @@ public class ProtoCommon {
 
     /**
      * pack metadata array to string
+     *
      * @param meta_list metadata array
      * @return packed metadata
      */
@@ -315,6 +322,7 @@ public class ProtoCommon {
 
     /**
      * send quit command to server and close socket
+     *
      * @param sock the Socket object
      */
     public static void closeSocket(Socket sock) throws IOException {
@@ -326,6 +334,7 @@ public class ProtoCommon {
 
     /**
      * send ACTIVE_TEST command to server, test if network is ok and the server is alive
+     *
      * @param sock the Socket object
      */
     public static boolean activeTest(Socket sock) throws IOException {
@@ -339,6 +348,7 @@ public class ProtoCommon {
 
     /**
      * long convert to buff (big-endian)
+     *
      * @param n long number
      * @return 8 bytes buff
      */
@@ -360,7 +370,8 @@ public class ProtoCommon {
 
     /**
      * buff convert to long
-     * @param bs the buffer (big-endian)
+     *
+     * @param bs     the buffer (big-endian)
      * @param offset the start position based 0
      * @return long number
      */
@@ -377,7 +388,8 @@ public class ProtoCommon {
 
     /**
      * buff convert to int
-     * @param bs the buffer (big-endian)
+     *
+     * @param bs     the buffer (big-endian)
      * @param offset the start position based 0
      * @return int number
      */
@@ -390,7 +402,8 @@ public class ProtoCommon {
 
     /**
      * buff convert to ip address
-     * @param bs the buffer (big-endian)
+     *
+     * @param bs     the buffer (big-endian)
      * @param offset the start position based 0
      * @return ip address
      */
@@ -415,6 +428,7 @@ public class ProtoCommon {
 
     /**
      * md5 function
+     *
      * @param source the input buffer
      * @return md5 string
      */
@@ -435,9 +449,10 @@ public class ProtoCommon {
 
     /**
      * get token for file URL
+     *
      * @param remote_filename the filename return by FastDFS server
-     * @param ts unix timestamp, unit: second
-     * @param secret_key the secret key
+     * @param ts              unix timestamp, unit: second
+     * @param secret_key      the secret key
      * @return token string
      */
     public static String getToken(String remote_filename, int ts, String secret_key) throws UnsupportedEncodingException, NoSuchAlgorithmException, MyException {
@@ -455,9 +470,10 @@ public class ProtoCommon {
 
     /**
      * generate slave filename
+     *
      * @param master_filename the master filename to generate the slave filename
-     * @param prefix_name the prefix name to generate the slave filename
-     * @param ext_name the extension name of slave filename, null for same as the master extension name
+     * @param prefix_name     the prefix name to generate the slave filename
+     * @param ext_name        the extension name of slave filename, null for same as the master extension name
      * @return slave filename string
      */
     public static String genSlaveFilename(String master_filename,

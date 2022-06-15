@@ -13,15 +13,9 @@ import lombok.Data;
 @ApiModel("账号密码登录参数")
 public class LoginParam extends BaseParam {
 
-    /**
-     * 用户账号或手机号
-     */
     @ApiModelProperty(value = "用户账号或手机号", example = "String")
     private String username;
 
-    /**
-     * 用户密码
-     */
     @ApiModelProperty(value = "用户密码", example = "String")
     private String password;
 
@@ -40,4 +34,5 @@ public class LoginParam extends BaseParam {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }

@@ -16,6 +16,7 @@ import org.csource.common.*;
 
 /**
  * Global variables
+ *
  * @author Happy Fish / YuQing
  * @version Version 1.11
  */
@@ -36,6 +37,7 @@ public class ClientGlobal {
 
     /**
      * load global variables
+     *
      * @param conf_filename config filename
      */
     public static void init(String conf_filename) throws FileNotFoundException, IOException, MyException {
@@ -87,8 +89,9 @@ public class ClientGlobal {
 
     /**
      * construct Socket object
+     *
      * @param ip_addr ip address or hostname
-     * @param port port number
+     * @param port    port number
      * @return connected Socket object
      */
     public static Socket getSocket(String ip_addr, int port) throws IOException {
@@ -100,6 +103,7 @@ public class ClientGlobal {
 
     /**
      * construct Socket object
+     *
      * @param addr InetSocketAddress object, including ip address and port
      * @return connected Socket object
      */

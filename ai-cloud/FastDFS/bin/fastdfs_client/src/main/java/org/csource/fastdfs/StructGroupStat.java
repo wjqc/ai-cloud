@@ -10,6 +10,7 @@ package org.csource.fastdfs;
 
 /**
  * C struct body decoder
+ *
  * @author Happy Fish / YuQing
  * @version Version 1.18
  */
@@ -86,6 +87,7 @@ public class StructGroupStat extends StructBase {
 
     /**
      * get group name
+     *
      * @return group name
      */
     public String getGroupName() {
@@ -94,6 +96,7 @@ public class StructGroupStat extends StructBase {
 
     /**
      * get total disk space in MB
+     *
      * @return total disk space in MB
      */
     public long getTotalMB() {
@@ -102,6 +105,7 @@ public class StructGroupStat extends StructBase {
 
     /**
      * get free disk space in MB
+     *
      * @return free disk space in MB
      */
     public long getFreeMB() {
@@ -110,6 +114,7 @@ public class StructGroupStat extends StructBase {
 
     /**
      * get trunk free space in MB
+     *
      * @return trunk free space in MB
      */
     public long getTrunkFreeMB() {
@@ -118,6 +123,7 @@ public class StructGroupStat extends StructBase {
 
     /**
      * get storage server count in this group
+     *
      * @return storage server count in this group
      */
     public int getStorageCount() {
@@ -126,6 +132,7 @@ public class StructGroupStat extends StructBase {
 
     /**
      * get active storage server count in this group
+     *
      * @return active storage server count in this group
      */
     public int getActiveCount() {
@@ -134,6 +141,7 @@ public class StructGroupStat extends StructBase {
 
     /**
      * get storage server port
+     *
      * @return storage server port
      */
     public int getStoragePort() {
@@ -142,6 +150,7 @@ public class StructGroupStat extends StructBase {
 
     /**
      * get storage server HTTP port
+     *
      * @return storage server HTTP port
      */
     public int getStorageHttpPort() {
@@ -150,6 +159,7 @@ public class StructGroupStat extends StructBase {
 
     /**
      * get current storage server index to upload file
+     *
      * @return current storage server index to upload file
      */
     public int getCurrentWriteServer() {
@@ -158,6 +168,7 @@ public class StructGroupStat extends StructBase {
 
     /**
      * get store base path count of each storage server
+     *
      * @return store base path count of each storage server
      */
     public int getStorePathCount() {
@@ -166,6 +177,7 @@ public class StructGroupStat extends StructBase {
 
     /**
      * get sub dir count per store path
+     *
      * @return sub dir count per store path
      */
     public int getSubdirCountPerPath() {
@@ -174,6 +186,7 @@ public class StructGroupStat extends StructBase {
 
     /**
      * get current trunk file id
+     *
      * @return current trunk file id
      */
     public int getCurrentTrunkFileId() {
@@ -182,7 +195,8 @@ public class StructGroupStat extends StructBase {
 
     /**
      * set fields
-     * @param bs byte array
+     *
+     * @param bs     byte array
      * @param offset start offset
      */
     public void setFields(byte[] bs, int offset) {
@@ -202,6 +216,7 @@ public class StructGroupStat extends StructBase {
 
     /**
      * get fields total size
+     *
      * @return fields total size
      */
     public static int getFieldsTotalSize() {
