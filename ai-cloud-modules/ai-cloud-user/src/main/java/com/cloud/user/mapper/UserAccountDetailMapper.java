@@ -18,10 +18,10 @@ public interface UserAccountDetailMapper extends BaseMapper<UserAccountDetail> {
     /**
      * 查询钱包账单
      *
-     * @param userId
-     * @param dealType
-     * @param start
-     * @param end
+     * @param userId   用户id
+     * @param dealType 交易类型
+     * @param start    开始时间
+     * @param end      结束时间
      * @return
      */
     List<BillDto> selectByDealType(@Param("userId") String userId, @Param("dealType") String dealType, @Param("start") String start, @Param("end") String end);
@@ -29,8 +29,8 @@ public interface UserAccountDetailMapper extends BaseMapper<UserAccountDetail> {
     /**
      * 查询账单明细
      *
-     * @param userId
-     * @param detailId
+     * @param userId   用户id
+     * @param detailId 账单id
      * @return
      */
     List<BillDetailDto> selectByDetail(@Param("userId") String userId, @Param("detailId") String detailId);

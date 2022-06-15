@@ -4,6 +4,7 @@ import com.cloud.user.dto.BillDetailDto;
 import com.cloud.user.dto.BillDto;
 import com.cloud.user.dto.UserInfoDto;
 import com.cloud.user.param.UserParam;
+import com.cloud.user.param.WalletBillDetailParam;
 import com.cloud.user.param.WalletBillParam;
 import com.cloud.user.param.WalletWithdrawParam;
 import com.github.pagehelper.PageInfo;
@@ -60,9 +61,9 @@ public interface IUserCenterService {
     /**
      * 查询账单明细
      *
-     * @param detailId
+     * @param param
      * @return
      */
-    List<BillDetailDto> walletBillDetail(String detailId);
+    List<BillDetailDto> walletBillDetail(WalletBillDetailParam param);
 
 }

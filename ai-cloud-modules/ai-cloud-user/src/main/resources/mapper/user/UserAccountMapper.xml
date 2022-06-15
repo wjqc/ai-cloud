@@ -6,10 +6,11 @@
 
     <resultMap type="com.cloud.auth.api.domain.UserAccount" id="UserAccountResult">
         <result property="id" column="id"/>
-        <result property="number" column="number"/>
-        <result property="password" column="password"/>
         <result property="userId" column="user_id"/>
         <result property="deviceId" column="device_id"/>
+        <result property="number" column="number"/>
+        <result property="password" column="password"/>
+        <result property="salt" column="salt"/>
         <result property="type" column="type"/>
         <result property="userType" column="user_type"/>
         <result property="grade" column="grade"/>

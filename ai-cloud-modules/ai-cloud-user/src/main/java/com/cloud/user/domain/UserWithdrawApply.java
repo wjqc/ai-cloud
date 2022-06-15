@@ -13,12 +13,12 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * 用户提现申请记录对象 user_withdraw_log
+ * 用户提现申请记录对象 user_withdraw_apply
  *
  * @author ai-cloud
  */
 @ApiModel("用户提现申请记录")
-@TableName("user_withdraw_log")
+@TableName("user_withdraw_apply")
 public class UserWithdrawApply extends BaseEntity {
 
     private static final long serialVersionUID = 1L;
@@ -47,7 +47,7 @@ public class UserWithdrawApply extends BaseEntity {
      */
     @TableField("belong_bank")
     @ApiModelProperty(value = "提现方式；1：支付宝 2：银行卡", example = "String")
-    private String belongBank;
+    private Integer belongBank;
 
     /**
      * 开户行姓名
@@ -232,11 +232,11 @@ public class UserWithdrawApply extends BaseEntity {
         return deviceId;
     }
 
-    public void setBelongBank(String belongBank) {
+    public void setBelongBank(Integer belongBank) {
         this.belongBank = belongBank;
     }
 
-    public String getBelongBank() {
+    public Integer getBelongBank() {
         return belongBank;
     }
 

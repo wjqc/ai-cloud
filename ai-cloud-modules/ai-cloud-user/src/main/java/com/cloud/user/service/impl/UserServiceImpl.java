@@ -52,7 +52,7 @@ public class UserServiceImpl implements IUserService {
     public String checkPhoneUnique(User user) {
         String userId = StringUtils.isNull(user.getId()) ? String.valueOf(-1L) : user.getId();
         User info = userMapper.checkPhoneUnique(user.getPhone());
-        if (StringUtils.isNotNull(info) && info.getId().toString() != userId) {
+        if (StringUtils.isNotNull(info) && info.getId() != userId) {
             return UserConstants.NOT_UNIQUE;
         }
         return UserConstants.UNIQUE;

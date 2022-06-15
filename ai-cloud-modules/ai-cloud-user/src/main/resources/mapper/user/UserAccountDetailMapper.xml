@@ -50,7 +50,6 @@
         ua.status_flag = 0
         AND ua.delete_flag = 0
         AND uad.delete_flag = 0
-        AND uad.status_flag = 0
         AND ua.user_id = #{userId} and ua.`type` = 1
         <if test="dealType != '' and dealType != null">
             AND uad.deal_type = #{dealType}
@@ -85,9 +84,7 @@
         WHERE ua.status_flag = 0
           AND ua.delete_flag = 0
           AND uad.delete_flag = 0
-          AND uad.status_flag = 0
           AND uwl.delete_flag = 0
-          AND uwl.status_flag = 0
           AND ua.user_id = #{userId}
           AND uad.id = #{detailId}
     </select>

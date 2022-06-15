@@ -17,7 +17,7 @@ import java.util.Date;
 public class BillDto {
 
     @ApiModelProperty(value = "账单id", example = "2")
-    private String DetailId;
+    private String detailId;
 
     @ApiModelProperty(value = "头像", example = "1")
     private String img;

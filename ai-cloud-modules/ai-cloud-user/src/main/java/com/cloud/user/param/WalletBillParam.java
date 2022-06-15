@@ -6,7 +6,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 /**
- * 绑定支付宝参数
+ * 账单请求参数
  *
  * @author ai-cloud
  */

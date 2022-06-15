@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cloud.user.mapper.UserBindMapper">
-
+    
     <resultMap type="com.cloud.user.domain.UserBind" id="UserBindResult">
         <result property="id" column="id"/>
         <result property="userId" column="user_id"/>
@@ -22,5 +22,14 @@
         <result property="updateBy" column="update_by"/>
         <result property="updateTime" column="update_time"/>
     </resultMap>
+    
+    <select id="selectByBelongBankUserId" resultType="com.cloud.user.domain.UserBind">
+        SELECT *
+        FROM user_bind
+        WHERE status_flag = 0
+          AND delete_flag = 0
+          AND belong_bank = #{belongBank}
+          AND user_id = #{userId}
+    </select>
 
 </mapper>
