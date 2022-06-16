@@ -55,7 +55,7 @@ public class LoginApi {
      * 一键登录
      *
      * @param param
-     * @param request
+     * @param request 请求对象
      * @return 登录结果
      */
     @PostMapping("onestep")
@@ -71,7 +71,7 @@ public class LoginApi {
      * 手机快捷登录
      *
      * @param param
-     * @param request
+     * @param request 请求对象
      * @return 登录结果
      */
     @PostMapping("phone")

@@ -30,6 +30,7 @@ public class LogoutApi {
     /**
      * 退出登录
      *
+     * @param request 请求对象
      * @return 结果
      */
     @PostMapping("logout")

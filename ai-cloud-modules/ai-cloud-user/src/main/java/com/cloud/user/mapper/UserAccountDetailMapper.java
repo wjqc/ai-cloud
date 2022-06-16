@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.cloud.user.domain.UserAccountDetail;
 import com.cloud.user.dto.BillDetailDto;
 import com.cloud.user.dto.BillDto;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.List;
  *
  * @author ai-cloud
  */
+@Mapper
 public interface UserAccountDetailMapper extends BaseMapper<UserAccountDetail> {
 
     /**

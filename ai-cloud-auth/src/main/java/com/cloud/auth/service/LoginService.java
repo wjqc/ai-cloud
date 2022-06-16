@@ -29,8 +29,8 @@ public interface LoginService {
     /**
      * 一键登录
      *
-     * @param request
      * @param param
+     * @param request 请求对象
      * @return
      */
     public LoginUser onestep(LoginOneStepParam param, HttpServletRequest request);
@@ -39,7 +39,7 @@ public interface LoginService {
      * 手机快捷登录
      *
      * @param param
-     * @param request
+     * @param request 请求对象
      * @return
      */
     public LoginUser phone(LoginPhoneParam param, HttpServletRequest request);

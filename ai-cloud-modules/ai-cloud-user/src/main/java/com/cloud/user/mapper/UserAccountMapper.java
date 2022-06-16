@@ -2,6 +2,7 @@ package com.cloud.user.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.cloud.auth.api.domain.UserAccount;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.math.BigDecimal;
@@ -12,6 +13,7 @@ import java.util.Map;
  *
  * @author ai-cloud
  */
+@Mapper
 public interface UserAccountMapper extends BaseMapper<UserAccount> {
 
     /**

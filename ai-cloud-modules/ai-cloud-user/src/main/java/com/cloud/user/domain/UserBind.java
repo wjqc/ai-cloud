@@ -46,7 +46,7 @@ public class UserBind extends BaseEntity {
      */
     @TableField("belong_bank")
     @ApiModelProperty(value = "所属银行；1：支付宝 2：银行卡", example = "Long")
-    private Long belongBank;
+    private Integer belongBank;
 
     /**
      * 银行卡卡号
@@ -129,11 +129,11 @@ public class UserBind extends BaseEntity {
         return deviceId;
     }
 
-    public void setBelongBank(Long belongBank) {
+    public void setBelongBank(Integer belongBank) {
         this.belongBank = belongBank;
     }
 
-    public Long getBelongBank() {
+    public Integer getBelongBank() {
         return belongBank;
     }
 

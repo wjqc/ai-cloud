@@ -4,10 +4,7 @@ package com.cloud.user.controller;
 import com.cloud.common.model.Response;
 import com.cloud.log.annotation.Log;
 import com.cloud.log.enums.BusinessType;
-import com.cloud.user.param.UserParam;
-import com.cloud.user.param.WalletBillDetailParam;
-import com.cloud.user.param.WalletBillParam;
-import com.cloud.user.param.WalletWithdrawParam;
+import com.cloud.user.param.*;
 import com.cloud.user.service.IUserCenterService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -64,20 +61,20 @@ public class UserCenterApi {
      */
     @Log(title = "查询钱包余额", businessType = BusinessType.QUERY)
     @PostMapping(value = "/wallet")
-    @ApiOperation(value = "钱包余额")
+    @ApiOperation(value = "查询钱包余额")
     public Response wallet() {
         return Response.ok(userCenterService.wallet(), "查询成功!");
     }
 
     /**
-     * 申请提现
+     * 用户申请提现
      *
      * @param param
      * @return
      */
     @Log(title = "用户申请提现", businessType = BusinessType.QUERY)
     @PostMapping(value = "/wallet/withdraw")
-    @ApiOperation(value = "申请提现")
+    @ApiOperation(value = "用户申请提现")
     public Response walletWithdraw(@RequestBody WalletWithdrawParam param) {
         return Response.ok(userCenterService.walletWithdraw(param), "申请成功!");
     }
@@ -90,7 +87,7 @@ public class UserCenterApi {
      */
     @Log(title = "查询钱包账单", businessType = BusinessType.QUERY)
     @PostMapping(value = "/wallet/bill")
-    @ApiOperation(value = "钱包账单")
+    @ApiOperation(value = "用户申请提现")
     public Response walletBill(@RequestBody WalletBillParam param) {
         return Response.ok(userCenterService.walletBill(param), "查询成功!");
     }
@@ -103,9 +100,61 @@ public class UserCenterApi {
      */
     @Log(title = "查询账单明细", businessType = BusinessType.QUERY)
     @PostMapping(value = "/wallet/bill/detail")
-    @ApiOperation(value = "账单明细")
+    @ApiOperation(value = "查询账单明细")
     public Response walletBillDetail(@RequestBody WalletBillDetailParam param) {
         return Response.ok(userCenterService.walletBillDetail(param), "查询成功!");
+    }
+
+    /**
+     * 查询银行卡绑定信息
+     *
+     * @param
+     * @return
+     */
+    @Log(title = "查询银行卡绑定信息", businessType = BusinessType.QUERY)
+    @PostMapping(value = "/wallet/bindBank/info")
+    @ApiOperation(value = "查询银行卡绑定信息")
+    public Response walletBindBankInfo() {
+        return Response.ok(userCenterService.walletBindBankInfo(),"查询成功!");
+    }
+
+    /**
+     * 保存绑定银行卡信息
+     *
+     * @param param
+     * @return
+     */
+    @Log(title = "保存绑定银行卡信息", businessType = BusinessType.QUERY)
+    @PostMapping("/wallet/bindBank/save")
+    @ApiOperation(value = "保存绑定银行卡信息")
+    public Response walletBindBankSave(@RequestBody BindBankParam param) {
+        return Response.ok(userCenterService.walletBindBankSave(param),"保存成功!");
+    }
+
+    /**
+     * 查询支付宝绑定信息
+     *
+     * @param
+     * @return
+     */
+    @Log(title = "查询支付宝绑定信息", businessType = BusinessType.QUERY)
+    @PostMapping("/wallet/bindAlipay/Info")
+    @ApiOperation(value = "查询支付宝绑定信息")
+    public Response walletBindAlipayInfo() {
+        return Response.ok(userCenterService.walletBindAlipayInfo(),"查询成功!");
+    }
+
+    /**
+     * 保存绑定支付宝信息
+     *
+     * @param param
+     * @return
+     */
+    @Log(title = "保存绑定支付宝信息", businessType = BusinessType.QUERY)
+    @PostMapping("/wallet/bindAlipay/save")
+    @ApiOperation(value = "保存绑定支付宝信息")
+    public Response walletBindAlipaySave(@RequestBody BindAlipayParam param) {
+        return Response.ok(userCenterService.walletBindAlipaySave(param),"保存成功!");
     }
 
 }

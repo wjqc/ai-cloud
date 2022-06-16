@@ -11,32 +11,32 @@ public class UserAccountConstants {
     /**
      * 余额账户
      */
-    public static final String ACCOUNT_TYPE_余额账户 = "1";
+    public static final String ACCOUNT_TYPE_BALANCE = "1";
 
     /**
      * kb币账户
      */
-    public static final String ACCOUNT_TYPE_KB币账户 = "2";
+    public static final String ACCOUNT_TYPE_KB = "2";
 
     /**
      * 收入
      */
-    public static final String DETAIL_TYPE_收入 = "1";
+    public static final String DETAIL_TYPE_INCOME = "1";
 
     /**
      * 支出
      */
-    public static final String DETAIL_TYPE_支出 = "2";
+    public static final String DETAIL_TYPE_EXPEND = "2";
 
     /**
      * 余额账户
      */
-    public static final String ACCOUNT_TYPE_CHINESE_余额账户 = "余额账户";
+    public static final String ACCOUNT_TYPE_CHINESE_BALANCE = "余额账户";
 
     /**
      * kb币账户
      */
-    public static final String ACCOUNT_TYPE_CHINESE_KB币账户 = "kb账户";
+    public static final String ACCOUNT_TYPE_CHINESE_KB = "kb账户";
 
     /**
      * 充值
@@ -76,11 +76,11 @@ public class UserAccountConstants {
     /**
      * 支付宝
      */
-    public static final Integer BELONG_BANK_支付宝 = 1;
+    public static final Integer BELONG_BANK_ALIPAY = 1;
 
     /**
      * 银行卡
      */
-    public static final Integer BELONG_BANK_银行卡 = 2;
+    public static final Integer BELONG_BANK_BANK_CARD = 2;
 
 }

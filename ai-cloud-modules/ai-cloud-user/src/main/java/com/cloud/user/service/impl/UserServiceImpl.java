@@ -75,8 +75,8 @@ public class UserServiceImpl implements IUserService {
         user.setCreateBy(user.getId());
         user.setCreateTime(DateUtils.getNowDate());
         //创建账户
-        userAccountService.createAccount(user.getId(), user.getDeviceId(), UserAccountConstants.ACCOUNT_TYPE_余额账户);
-        userAccountService.createAccount(user.getId(), user.getDeviceId(), UserAccountConstants.ACCOUNT_TYPE_KB币账户);
+        userAccountService.createAccount(user.getId(), user.getDeviceId(), UserAccountConstants.ACCOUNT_TYPE_BALANCE);
+        userAccountService.createAccount(user.getId(), user.getDeviceId(), UserAccountConstants.ACCOUNT_TYPE_KB);
         return userMapper.insert(user) > 0;
     }
 

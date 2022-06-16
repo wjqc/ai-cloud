@@ -1,12 +1,7 @@
 package com.cloud.user.service;
 
-import com.cloud.user.dto.BillDetailDto;
-import com.cloud.user.dto.BillDto;
-import com.cloud.user.dto.UserInfoDto;
-import com.cloud.user.param.UserParam;
-import com.cloud.user.param.WalletBillDetailParam;
-import com.cloud.user.param.WalletBillParam;
-import com.cloud.user.param.WalletWithdrawParam;
+import com.cloud.user.dto.*;
+import com.cloud.user.param.*;
 import com.github.pagehelper.PageInfo;
 
 import java.util.List;
@@ -43,7 +38,7 @@ public interface IUserCenterService {
     public String wallet();
 
     /**
-     * 申请提现
+     * 用户申请提现
      *
      * @param param
      * @return
@@ -66,4 +61,35 @@ public interface IUserCenterService {
      */
     List<BillDetailDto> walletBillDetail(WalletBillDetailParam param);
 
+    /**
+     * 查询银行卡绑定信息
+     *
+     * @param
+     * @return
+     */
+    public List<BindBankDto> walletBindBankInfo();
+
+    /**
+     * 保存绑定银行卡信息
+     *
+     * @param param
+     * @return
+     */
+    public boolean walletBindBankSave(BindBankParam param);
+
+    /**
+     * 查询支付宝绑定信息
+     *
+     * @param
+     * @return
+     */
+    public List<BindAlipayDto> walletBindAlipayInfo();
+
+    /**
+     * 保存绑定支付宝信息
+     *
+     * @param param
+     * @return
+     */
+    public boolean walletBindAlipaySave(BindAlipayParam param);
 }

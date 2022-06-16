@@ -1,7 +1,9 @@
 package com.cloud.user.service.impl;
 
+import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.lang.Assert;
 import cn.hutool.core.util.NumberUtil;
+import cn.hutool.core.util.ObjectUtil;
 import com.cloud.auth.api.domain.User;
 import com.cloud.auth.api.domain.UserAccount;
 import com.cloud.common.constant.UserAccountConstants;
@@ -15,14 +17,9 @@ import com.cloud.security.utils.SecurityUtils;
 import com.cloud.user.domain.UserAccountDetail;
 import com.cloud.user.domain.UserBind;
 import com.cloud.user.domain.UserWithdrawApply;
-import com.cloud.user.dto.BillDetailDto;
-import com.cloud.user.dto.BillDto;
-import com.cloud.user.dto.UserInfoDto;
+import com.cloud.user.dto.*;
 import com.cloud.user.mapper.*;
-import com.cloud.user.param.UserParam;
-import com.cloud.user.param.WalletBillDetailParam;
-import com.cloud.user.param.WalletBillParam;
-import com.cloud.user.param.WalletWithdrawParam;
+import com.cloud.user.param.*;
 import com.cloud.user.service.IUserCenterService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -30,6 +27,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -101,12 +99,12 @@ public class UserCenterServiceImpl implements IUserCenterService {
     public String wallet() {
         //获取userId
         String userId = SecurityUtils.getUserId();
-        BigDecimal balance = userAccountMapper.selectAvailableBalanceByUserIdAndType(userId, UserAccountConstants.ACCOUNT_TYPE_余额账户);
+        BigDecimal balance = userAccountMapper.selectAvailableBalanceByUserIdAndType(userId, UserAccountConstants.ACCOUNT_TYPE_BALANCE);
         return StringUtils.isNull(balance) ? "0.000" : balance.toString();
     }
 
     /**
-     * 申请提现
+     * 用户申请提现
      *
      * @param param
      * @return
@@ -127,15 +125,15 @@ public class UserCenterServiceImpl implements IUserCenterService {
         UserBind bind = null;
         //获取userId
         String userId = SecurityUtils.getUserId();
-        if (UserAccountConstants.BELONG_BANK_支付宝.equals(param.getType())) {
+        if (UserAccountConstants.BELONG_BANK_ALIPAY.equals(param.getType())) {
             //验证用户是否绑定支付宝
-            bind = userBindMapper.selectByBelongBankUserId(UserAccountConstants.BELONG_BANK_支付宝, userId);
+            bind = userBindMapper.selectByBelongBankUserId(UserAccountConstants.BELONG_BANK_ALIPAY, userId);
             if (StringUtils.isNull(bind)) {
                 throw new ServiceException("未绑定支付宝!");
             }
-        } else if (UserAccountConstants.BELONG_BANK_银行卡.equals(param.getType())) {
+        } else if (UserAccountConstants.BELONG_BANK_BANK_CARD.equals(param.getType())) {
             //验证用户是否绑定银行卡
-            bind = userBindMapper.selectByBelongBankUserId(UserAccountConstants.BELONG_BANK_银行卡, userId);
+            bind = userBindMapper.selectByBelongBankUserId(UserAccountConstants.BELONG_BANK_BANK_CARD, userId);
             if (StringUtils.isNull(bind)) {
                 throw new ServiceException("未绑定银行卡!");
             }
@@ -156,40 +154,37 @@ public class UserCenterServiceImpl implements IUserCenterService {
         //用户余额账户扣除提现的金额，产生支出记录
         //用户余额支出账户明细
         User user = userMapper.selectById(userId);
-        UserAccount userAccount = userAccountMapper.selectByUserIdType(userId, UserAccountConstants.ACCOUNT_TYPE_余额账户);
+        UserAccount userAccount = userAccountMapper.selectByUserIdType(userId, UserAccountConstants.ACCOUNT_TYPE_BALANCE);
         //检查余额
         Assert.isTrue(NumberUtil.isGreaterOrEqual(userAccount.getAvailableBalance(), param.getAmount()), "余额不足！");
         //添加提现申请
         UserWithdrawApply userWithdrawApply = new UserWithdrawApply();
-        if (UserAccountConstants.BELONG_BANK_支付宝.equals(param.getType())) {
+        if (UserAccountConstants.BELONG_BANK_ALIPAY.equals(param.getType())) {
             userWithdrawApply.setAlipayAccount(bind.getAlipayAccount());
             userWithdrawApply.setAlipayName(bind.getAlipayName());
-        } else if (UserAccountConstants.BELONG_BANK_银行卡.equals(param.getType())) {
+        } else if (UserAccountConstants.BELONG_BANK_BANK_CARD.equals(param.getType())) {
             userWithdrawApply.setBankAccount(bind.getBankAccount());
             userWithdrawApply.setBankName(bind.getBankName());
             userWithdrawApply.setBankCard(bind.getBankCard());
         }
         //减少某个账户余额
-        userAccountMapper.updateAvailableBalance(userId, NumberUtil.sub(userAccount.getAvailableBalance(), param.getAmount()), UserAccountConstants.ACCOUNT_TYPE_余额账户);
+        userAccountMapper.updateAvailableBalance(userId, NumberUtil.sub(userAccount.getAvailableBalance(), param.getAmount()), UserAccountConstants.ACCOUNT_TYPE_BALANCE);
 
         UserAccountDetail userAccountDetail = new UserAccountDetail();
         userAccountDetail.setId(IdUtils.fastSimpleUUID());
         userAccountDetail.setAccountId(userAccount.getId());
         userAccountDetail.setAccountNumber(userAccount.getNumber());
-        userAccountDetail.setAccountType(UserAccountConstants.ACCOUNT_TYPE_余额账户);
-        userAccountDetail.setType(UserAccountConstants.DETAIL_TYPE_支出);
-//        userAccountDetail.setDebitType(UserAccountConstants.ACCOUNT_TYPE_CHINESE_余额账户);
-//        detail.setDebitNumber(bossAccount.getNumber());
-//        detail.setDebitPhone(boss.getPhone());
-//        detail.setImg(boss.getHeadImg());
-        userAccountDetail.setCreditType(UserAccountConstants.ACCOUNT_TYPE_CHINESE_余额账户);
+        userAccountDetail.setAccountType(UserAccountConstants.ACCOUNT_TYPE_BALANCE);
+        userAccountDetail.setType(UserAccountConstants.DETAIL_TYPE_EXPEND);
+        userAccountDetail.setCreditType(UserAccountConstants.ACCOUNT_TYPE_CHINESE_BALANCE);
         userAccountDetail.setCreditNumber(userAccount.getNumber());
         userAccountDetail.setCreditPhone(user.getPhone());
+        userAccountDetail.setImg(user.getHeadImg());
         userAccountDetail.setOrderPrice(param.getAmount());
         userAccountDetail.setBeforeAvailableBalance(userAccount.getAvailableBalance());
         userAccountDetail.setAfterAvailableBalance(NumberUtil.sub(userAccount.getAvailableBalance(), param.getAmount()));
         userAccountDetail.setDealName("余额提现");
-        userAccountDetail.setImg(user.getHeadImg());
+
         //生成交易流水号
         String dealSerialNumber = SerialNumberUtils.getOrderCode("");
         userAccountDetail.setDealSerialNumber(dealSerialNumber);
@@ -197,6 +192,7 @@ public class UserCenterServiceImpl implements IUserCenterService {
         userAccountDetail.setCreateBy(userId);
         userAccountDetail.setCreateTime(DateUtils.getNowDate());
         userAccountDetailMapper.insert(userAccountDetail);
+
         //提现记录
         //提现流水号
         userWithdrawApply.setDealSerialNumber(dealSerialNumber);
@@ -237,6 +233,106 @@ public class UserCenterServiceImpl implements IUserCenterService {
         //获取userId
         String userId = SecurityUtils.getUserId();
         return userAccountDetailMapper.selectByDetail(userId, param.getDetailId());
+    }
+
+    /**
+     * 查询银行卡绑定信息
+     *
+     * @param
+     * @return
+     */
+    @Override
+    public List<BindBankDto> walletBindBankInfo() {
+        //获取userId
+        String userId = SecurityUtils.getUserId();
+        return userBindMapper.selectByWalletBindBankInfo(userId);
+    }
+
+    /**
+     * 保存绑定银行卡信息、
+     *
+     * @param param
+     * @return
+     */
+    @Override
+    public boolean walletBindBankSave(BindBankParam param) {
+        if (StringUtils.isNull(param.getBankName())) {
+            throw new ServiceException("银行卡名称不能为空!");
+        }
+        if (StringUtils.isNull(param.getBankCard())) {
+            throw new ServiceException("卡号不能为空!");
+        }
+        if (StringUtils.isNull(param.getBankAccount())) {
+            throw new ServiceException("姓名不能为空!");
+        }
+        if (StringUtils.isNull(param.getDeviceId())) {
+            throw new ServiceException("设备唯一标识不能为空!");
+        }
+        //获取userId
+        String userId = SecurityUtils.getUserId();
+        UserBind bind = userBindMapper.selectByBelongBankUserId(UserAccountConstants.BELONG_BANK_BANK_CARD, userId);
+        if (ObjectUtil.isNotEmpty(bind)) {
+            bind.setBankAccount(param.getBankAccount());
+            bind.setBankCard(param.getBankCard());
+            bind.setBankName(param.getBankName());
+            userBindMapper.insert(bind);
+        } else {
+            bind = new UserBind();
+            BeanUtil.copyProperties(param, bind);
+            bind.setBelongBank(UserAccountConstants.BELONG_BANK_BANK_CARD);
+            bind.setUserId(userId);
+            bind.setBindTime(new Date());
+            userBindMapper.insert(bind);
+        }
+        return true;
+    }
+
+    /**
+     * 查询支付宝绑定信息
+     *
+     * @param
+     * @return
+     */
+    @Override
+    public List<BindAlipayDto> walletBindAlipayInfo() {
+        //获取userId
+        String userId = SecurityUtils.getUserId();
+        return userBindMapper.selectByWalletBindAlipayInfo(userId);
+    }
+
+    /**
+     * 保存绑定支付宝信息
+     *
+     * @param param
+     * @return
+     */
+    @Override
+    public boolean walletBindAlipaySave(BindAlipayParam param) {
+        if (StringUtils.isNull(param.getAlipayAccount())) {
+            throw new ServiceException("支付宝账号不能为空!");
+        }
+        if (StringUtils.isNull(param.getAlipayName())) {
+            throw new ServiceException("支付宝认证姓名不能为空!");
+        }
+        if (StringUtils.isNull(param.getDeviceId())) {
+            throw new ServiceException("设备唯一标识不能为空!");
+        }
+        //获取userId
+        String userId = SecurityUtils.getUserId();
+        UserBind bind = userBindMapper.selectByBelongBankUserId(UserAccountConstants.BELONG_BANK_ALIPAY, userId);
+        if (ObjectUtil.isNotEmpty(bind)) {
+            bind.setAlipayAccount(param.getAlipayAccount());
+            bind.setAlipayName(param.getAlipayName());
+            userBindMapper.insert(bind);
+        } else {
+            bind = new UserBind();
+            BeanUtil.copyProperties(param, bind);
+            bind.setBelongBank(UserAccountConstants.BELONG_BANK_ALIPAY);
+            bind.setUserId(userId);
+            bind.setBindTime(new Date());
+            userBindMapper.insert(bind);
+        }
+        return true;
     }
 
 }

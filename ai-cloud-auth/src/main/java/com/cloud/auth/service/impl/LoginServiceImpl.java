@@ -102,8 +102,9 @@ public class LoginServiceImpl implements LoginService {
     /**
      * 一键登录
      *
-     * @param request
      * @param param
+     * @param request 请求对象
+     * @return
      */
     @Override
     public LoginUser onestep(LoginOneStepParam param, HttpServletRequest request) {
@@ -114,7 +115,7 @@ public class LoginServiceImpl implements LoginService {
      * 手机快捷登录
      *
      * @param param
-     * @param request
+     * @param request 请求对象
      * @return
      */
     @Override
