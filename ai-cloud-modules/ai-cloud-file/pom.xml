@@ -53,6 +53,12 @@
             <artifactId>minio</artifactId>
         </dependency>
 
+        <!-- Swagger UI -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+        </dependency>
+
         <!-- 接口模块 -->
         <dependency>
             <groupId>com.cloud</groupId>

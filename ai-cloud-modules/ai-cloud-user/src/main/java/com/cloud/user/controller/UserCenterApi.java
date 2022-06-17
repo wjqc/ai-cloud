@@ -87,7 +87,7 @@ public class UserCenterApi {
      */
     @Log(title = "查询钱包账单", businessType = BusinessType.QUERY)
     @PostMapping(value = "/wallet/bill")
-    @ApiOperation(value = "用户申请提现")
+    @ApiOperation(value = "查询钱包账单")
     public Response walletBill(@RequestBody WalletBillParam param) {
         return Response.ok(userCenterService.walletBill(param), "查询成功!");
     }

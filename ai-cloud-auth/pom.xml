@@ -47,6 +47,18 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
+        <!-- Swagger UI -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+        </dependency>
+
+        <!-- 接口模块 -->
+        <dependency>
+            <groupId>com.cloud</groupId>
+            <artifactId>ai-cloud-swagger</artifactId>
+        </dependency>
+
         <!-- 安全模块 -->
         <dependency>
             <groupId>com.cloud</groupId>

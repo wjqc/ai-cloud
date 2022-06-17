@@ -23,6 +23,7 @@
             <artifactId>ai-cloud-common</artifactId>
         </dependency>
 
+
     </dependencies>
 
 </project>
