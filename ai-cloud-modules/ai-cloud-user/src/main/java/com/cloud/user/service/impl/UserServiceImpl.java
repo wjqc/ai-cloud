@@ -7,11 +7,17 @@ import com.cloud.common.constant.UserConstants;
 import com.cloud.common.utils.DateUtils;
 import com.cloud.common.utils.StringUtils;
 import com.cloud.common.utils.uuid.IdUtils;
+import com.cloud.user.domain.UserMockData;
 import com.cloud.user.mapper.UserMapper;
+import com.cloud.user.mapper.UserMockDataMapper;
 import com.cloud.user.service.IUserAccountService;
 import com.cloud.user.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Random;
+import java.util.stream.Collectors;
 
 /**
  * 用户信息Service业务层处理
@@ -26,6 +32,9 @@ public class UserServiceImpl implements IUserService {
 
     @Autowired
     private IUserAccountService userAccountService;
+
+    @Autowired
+    private UserMockDataMapper userMockDataMapper;
 
     /**
      * 校验用户名称是否唯一
@@ -70,8 +79,13 @@ public class UserServiceImpl implements IUserService {
         //创建用户
         user.setId(IdUtils.fastSimpleUUID());
         //创建随机用户昵称
-
+        List<UserMockData> dataNickName = userMockDataMapper.selectUserMockDataList(1);
+        List<String> NickNameList = dataNickName.stream().map(UserMockData::getValue).collect(Collectors.toList());
+        Random randomNickName = new Random();
         //创建随机用户头像
+        List<UserMockData> dataHeadImg = userMockDataMapper.selectUserMockDataList(2);
+        Random randomHeadImg = new Random();
+        //创建人和时间
         user.setCreateBy(user.getId());
         user.setCreateTime(DateUtils.getNowDate());
         //创建账户

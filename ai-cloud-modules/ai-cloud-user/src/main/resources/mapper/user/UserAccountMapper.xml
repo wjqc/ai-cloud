@@ -30,7 +30,7 @@
         <result property="updateTime" column="update_time"/>
     </resultMap>
 
-    <select id="selectAvailableBalanceByUserIdAndType" resultType="java.math.BigDecimal">
+    <select id="selectAvailableBalanceByUserIdType" resultType="java.math.BigDecimal">
         SELECT available_balance
         FROM user_account
         WHERE user_id = #{userId}

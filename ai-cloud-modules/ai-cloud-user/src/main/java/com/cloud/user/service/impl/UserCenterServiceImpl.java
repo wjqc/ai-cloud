@@ -11,6 +11,7 @@ import com.cloud.common.exception.ServiceException;
 import com.cloud.common.utils.DateUtils;
 import com.cloud.common.utils.SerialNumberUtils;
 import com.cloud.common.utils.StringUtils;
+import com.cloud.common.utils.sign.MathUtil;
 import com.cloud.common.utils.sign.Md5Util;
 import com.cloud.common.utils.uuid.IdUtils;
 import com.cloud.security.utils.SecurityUtils;
@@ -99,7 +100,7 @@ public class UserCenterServiceImpl implements IUserCenterService {
     public String wallet() {
         //获取userId
         String userId = SecurityUtils.getUserId();
-        BigDecimal balance = userAccountMapper.selectAvailableBalanceByUserIdAndType(userId, UserAccountConstants.ACCOUNT_TYPE_BALANCE);
+        BigDecimal balance = userAccountMapper.selectAvailableBalanceByUserIdType(userId, UserAccountConstants.ACCOUNT_TYPE_BALANCE);
         return StringUtils.isNull(balance) ? "0.000" : balance.toString();
     }
 
@@ -194,6 +195,7 @@ public class UserCenterServiceImpl implements IUserCenterService {
         userAccountDetailMapper.insert(userAccountDetail);
 
         //提现记录
+        userWithdrawApply.setId(IdUtils.fastSimpleUUID());
         //提现流水号
         userWithdrawApply.setDealSerialNumber(dealSerialNumber);
         userWithdrawApply.setAmount(param.getAmount());
@@ -334,5 +336,58 @@ public class UserCenterServiceImpl implements IUserCenterService {
         }
         return true;
     }
+
+    /**
+     * 是否设置支付密码
+     *
+     * @param
+     * @return
+     */
+    @Override
+    public boolean walletIsSetPassword() {
+        //获取userId
+        String userId = SecurityUtils.getUserId();
+        Map map = userAccountMapper.selectPasswordByUserId(userId);
+        if (ObjectUtil.isEmpty(map)) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    /**
+     * 设置支付密码
+     *
+     * @param param
+     * @return
+     */
+    @Override
+    public void walletSetPassword(WalletSetPasswordParam param) {
+        if (StringUtils.isNull(param.getPassword())) {
+            throw new ServiceException("密码不能为空!");
+        }
+        //获取userId
+        String userId = SecurityUtils.getUserId();
+        Integer count = userAccountMapper.selectCountByUserId(userId);
+        if (count == 0) {
+            throw new ServiceException("账户不存在，请联系客服!");
+        }
+        Map map = userAccountMapper.selectPasswordByUserId(userId);
+        //存在旧密码，验证
+        if (ObjectUtil.isNotEmpty(map)) {
+            String password = (String) map.get("password");
+            String salt = (String) map.get("salt");
+            if (StringUtils.isNull(param.getOldPassword())) {
+                throw new ServiceException("密码不能为空!");
+            }
+            String md5ofStr = Md5Util.getMD5ofStr(param.getOldPassword() + salt);
+            Assert.isTrue(org.apache.commons.lang3.StringUtils.equalsIgnoreCase(password, md5ofStr), "原密码错误");
+        }
+        //修改密码
+        String salt = MathUtil.get(8, MathUtil.UPPERCASE_SEED);
+        String password = Md5Util.getMD5ofStr(param.getPassword() + salt);
+        userAccountMapper.updatePasswordSaltByUserId(password, salt, userId);
+    }
+
 
 }

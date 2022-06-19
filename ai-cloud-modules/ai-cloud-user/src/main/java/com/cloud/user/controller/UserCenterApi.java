@@ -157,4 +157,33 @@ public class UserCenterApi {
         return Response.ok(userCenterService.walletBindAlipaySave(param),"保存成功!");
     }
 
+    /**
+     * 是否设置支付密码
+     *
+     * @param
+     * @return
+     */
+    @Log(title = "是否设置支付密码", businessType = BusinessType.QUERY)
+    @PostMapping("wallet/isSetPassword")
+    @ApiOperation(value = "是否设置支付密码")
+    public Response walletIsSetPassword() {
+        return Response.ok(userCenterService.walletIsSetPassword());
+    }
+
+    /**
+     * 设置支付密码
+     *
+     * @param param
+     * @return
+     */
+    @Log(title = "设置支付密码", businessType = BusinessType.QUERY)
+    @PostMapping("wallet/setPassword")
+    @ApiOperation(value = "设置支付密码")
+    public Response walletSetPassword(@RequestBody WalletSetPasswordParam param) {
+        return Response.ok(param);
+    }
+
+
+
+
 }

@@ -23,7 +23,7 @@ public interface UserAccountMapper extends BaseMapper<UserAccount> {
      * @param type   账户类型
      * @return 可用余额
      */
-    public BigDecimal selectAvailableBalanceByUserIdAndType(@Param("userId") String userId, @Param("type") String type);
+    public BigDecimal selectAvailableBalanceByUserIdType(@Param("userId") String userId, @Param("type") String type);
 
     /**
      * 查询用户存在账户数

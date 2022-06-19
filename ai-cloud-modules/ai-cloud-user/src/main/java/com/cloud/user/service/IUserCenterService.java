@@ -29,6 +29,7 @@ public interface IUserCenterService {
      */
     public boolean userSave(UserParam param);
 
+
     /**
      * 查询钱包余额
      *
@@ -92,4 +93,21 @@ public interface IUserCenterService {
      * @return
      */
     public boolean walletBindAlipaySave(BindAlipayParam param);
+
+    /**
+     * 是否设置支付密码
+     *
+     * @param
+     * @return
+     */
+    public boolean walletIsSetPassword();
+
+    /**
+     * 设置支付密码
+     *
+     * @param param
+     * @return
+     */
+    public void walletSetPassword(WalletSetPasswordParam param);
+
 }

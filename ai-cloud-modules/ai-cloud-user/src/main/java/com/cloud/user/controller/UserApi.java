@@ -44,7 +44,7 @@ public class UserApi {
             return Response.fail("当前系统没有开启注册功能！");
         }
         if (UserConstants.NOT_UNIQUE.equals(userService.checkUserNameUnique(username))) {
-            return Response.fail("注册用户'" + username + "'失败，注册账号已存在");
+            return Response.fail("注册用户'" + username + "'失败，账号已存在");
         }
         return Response.ok(userService.registerUser(user));
     }
