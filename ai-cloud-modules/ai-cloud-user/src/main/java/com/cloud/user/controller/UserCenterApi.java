@@ -115,7 +115,7 @@ public class UserCenterApi {
     @PostMapping(value = "/wallet/bindBank/info")
     @ApiOperation(value = "查询银行卡绑定信息")
     public Response walletBindBankInfo() {
-        return Response.ok(userCenterService.walletBindBankInfo(),"查询成功!");
+        return Response.ok(userCenterService.walletBindBankInfo(), "查询成功!");
     }
 
     /**
@@ -128,7 +128,7 @@ public class UserCenterApi {
     @PostMapping("/wallet/bindBank/save")
     @ApiOperation(value = "保存绑定银行卡信息")
     public Response walletBindBankSave(@RequestBody BindBankParam param) {
-        return Response.ok(userCenterService.walletBindBankSave(param),"保存成功!");
+        return Response.ok(userCenterService.walletBindBankSave(param), "保存成功!");
     }
 
     /**
@@ -141,7 +141,7 @@ public class UserCenterApi {
     @PostMapping("/wallet/bindAlipay/Info")
     @ApiOperation(value = "查询支付宝绑定信息")
     public Response walletBindAlipayInfo() {
-        return Response.ok(userCenterService.walletBindAlipayInfo(),"查询成功!");
+        return Response.ok(userCenterService.walletBindAlipayInfo(), "查询成功!");
     }
 
     /**
@@ -154,7 +154,7 @@ public class UserCenterApi {
     @PostMapping("/wallet/bindAlipay/save")
     @ApiOperation(value = "保存绑定支付宝信息")
     public Response walletBindAlipaySave(@RequestBody BindAlipayParam param) {
-        return Response.ok(userCenterService.walletBindAlipaySave(param),"保存成功!");
+        return Response.ok(userCenterService.walletBindAlipaySave(param), "保存成功!");
     }
 
     /**
@@ -167,7 +167,7 @@ public class UserCenterApi {
     @PostMapping("wallet/isSetPassword")
     @ApiOperation(value = "是否设置支付密码")
     public Response walletIsSetPassword() {
-        return Response.ok(userCenterService.walletIsSetPassword());
+        return Response.ok(userCenterService.walletIsSetPassword(), "请求成功");
     }
 
     /**
@@ -180,10 +180,9 @@ public class UserCenterApi {
     @PostMapping("wallet/setPassword")
     @ApiOperation(value = "设置支付密码")
     public Response walletSetPassword(@RequestBody WalletSetPasswordParam param) {
-        return Response.ok(param);
+        userCenterService.walletSetPassword(param);
+        return Response.ok();
     }
-
-
 
 
 }
