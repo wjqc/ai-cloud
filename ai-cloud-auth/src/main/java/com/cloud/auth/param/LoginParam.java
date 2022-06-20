@@ -3,6 +3,8 @@ package com.cloud.auth.param;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * 账号密码登录参数
@@ -10,6 +12,8 @@ import lombok.Data;
  * @author ai-cloud
  */
 @Data
+@Getter
+@Setter
 @ApiModel("账号密码登录参数")
 public class LoginParam extends BaseParam {
 
@@ -18,21 +22,4 @@ public class LoginParam extends BaseParam {
 
     @ApiModelProperty(value = "用户密码", example = "String")
     private String password;
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
 }

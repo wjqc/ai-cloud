@@ -3,6 +3,8 @@ package com.cloud.auth.api.domain;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Date;
 
@@ -11,6 +13,8 @@ import java.util.Date;
  *
  * @author ai-cloud
  */
+@Getter
+@Setter
 @ApiModel("操作日志记录")
 public class UserOperLog {
 
@@ -105,125 +109,5 @@ public class UserOperLog {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty(value = "操作时间", example = "Date")
     private Date operTime;
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setBusinessType(Integer businessType) {
-        this.businessType = businessType;
-    }
-
-    public Integer getBusinessType() {
-        return businessType;
-    }
-
-    public void setMethod(String method) {
-        this.method = method;
-    }
-
-    public String getMethod() {
-        return method;
-    }
-
-    public void setRequestMethod(String requestMethod) {
-        this.requestMethod = requestMethod;
-    }
-
-    public String getRequestMethod() {
-        return requestMethod;
-    }
-
-    public void setOperatorType(Integer operatorType) {
-        this.operatorType = operatorType;
-    }
-
-    public Integer getOperatorType() {
-        return operatorType;
-    }
-
-    public void setOperName(String operName) {
-        this.operName = operName;
-    }
-
-    public String getOperName() {
-        return operName;
-    }
-
-    public void setOperUrl(String operUrl) {
-        this.operUrl = operUrl;
-    }
-
-    public String getOperUrl() {
-        return operUrl;
-    }
-
-    public void setOperIp(String operIp) {
-        this.operIp = operIp;
-    }
-
-    public String getOperIp() {
-        return operIp;
-    }
-
-    public void setOperLocation(String operLocation) {
-        this.operLocation = operLocation;
-    }
-
-    public String getOperLocation() {
-        return operLocation;
-    }
-
-    public void setOperParam(String operParam) {
-        this.operParam = operParam;
-    }
-
-    public String getOperParam() {
-        return operParam;
-    }
-
-    public void setJsonResult(String jsonResult) {
-        this.jsonResult = jsonResult;
-    }
-
-    public String getJsonResult() {
-        return jsonResult;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setErrorMsg(String errorMsg) {
-        this.errorMsg = errorMsg;
-    }
-
-    public String getErrorMsg() {
-        return errorMsg;
-    }
-
-    public void setOperTime(Date operTime) {
-        this.operTime = operTime;
-    }
-
-    public Date getOperTime() {
-        return operTime;
-    }
 
 }

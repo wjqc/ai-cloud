@@ -3,6 +3,8 @@ package com.cloud.user.param;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * 保存我的信息参数
@@ -10,6 +12,8 @@ import lombok.Data;
  * @author ai-cloud
  */
 @Data
+@Getter
+@Setter
 @ApiModel("保存我的信息参数")
 public class UserParam {
 

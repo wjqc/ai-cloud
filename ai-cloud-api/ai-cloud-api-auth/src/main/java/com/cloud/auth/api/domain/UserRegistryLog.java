@@ -3,6 +3,8 @@ package com.cloud.auth.api.domain;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Date;
 
@@ -11,6 +13,8 @@ import java.util.Date;
  *
  * @author ai-cloud
  */
+@Getter
+@Setter
 @ApiModel("用户注册记录")
 public class UserRegistryLog {
 
@@ -82,91 +86,4 @@ public class UserRegistryLog {
     @ApiModelProperty(value = "注册时间", example = "Date")
     private Date registryTime;
 
-    public String getId() {
-        return id;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public String getDeviceId() {
-        return deviceId;
-    }
-
-    public Long getType() {
-        return type;
-    }
-
-    public Long getSource() {
-        return source;
-    }
-
-    public String getBindPhone() {
-        return bindPhone;
-    }
-
-    public String getInvitationCode() {
-        return invitationCode;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public String getIpaddr() {
-        return ipaddr;
-    }
-
-    public Date getRegistryTime() {
-        return registryTime;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public void setDeviceId(String deviceId) {
-        this.deviceId = deviceId;
-    }
-
-    public void setType(Long type) {
-        this.type = type;
-    }
-
-    public void setSource(Long source) {
-        this.source = source;
-    }
-
-    public void setBindPhone(String bindPhone) {
-        this.bindPhone = bindPhone;
-    }
-
-    public void setInvitationCode(String invitationCode) {
-        this.invitationCode = invitationCode;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public void setIpaddr(String ipaddr) {
-        this.ipaddr = ipaddr;
-    }
-
-    public void setRegistryTime(Date registryTime) {
-        this.registryTime = registryTime;
-    }
 }

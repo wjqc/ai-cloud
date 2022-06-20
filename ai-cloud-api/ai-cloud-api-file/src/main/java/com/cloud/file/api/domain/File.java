@@ -2,12 +2,16 @@ package com.cloud.file.api.domain;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * 文件信息
  *
  * @author ai-cloud
  */
+@Getter
+@Setter
 @ApiModel("文件信息")
 public class File {
 
@@ -23,27 +27,4 @@ public class File {
     @ApiModelProperty(value = "文件地址", example = "String")
     private String url;
 
-    public String getName() {
-        return name;
-    }
-
-    public Long getSize() {
-        return size;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setSize(Long size) {
-        this.size = size;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
 }

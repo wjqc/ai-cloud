@@ -3,6 +3,8 @@ package com.cloud.auth.api.domain;
 import com.cloud.common.web.domain.BaseEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.math.BigDecimal;
 
@@ -11,6 +13,8 @@ import java.math.BigDecimal;
  *
  * @author ai-cloud
  */
+@Getter
+@Setter
 @ApiModel("用户账户信息")
 public class UserAccount extends BaseEntity {
 
@@ -129,155 +133,5 @@ public class UserAccount extends BaseEntity {
     @ApiModelProperty(value = "删除：0：未删除，2：已删除", example = "Long")
     private Long deleteFlag;
 
-    public String getId() {
-        return id;
-    }
 
-    public String getUserId() {
-        return userId;
-    }
-
-    public String getDeviceId() {
-        return deviceId;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public String getSalt() {
-        return salt;
-    }
-
-    public Long getNumber() {
-        return number;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public String getUserType() {
-        return userType;
-    }
-
-    public String getGrade() {
-        return grade;
-    }
-
-    public String getDealCommissionRatio() {
-        return dealCommissionRatio;
-    }
-
-    public String getWithdrawalCommissionRatio() {
-        return withdrawalCommissionRatio;
-    }
-
-    public BigDecimal getDailyTradingLimit() {
-        return dailyTradingLimit;
-    }
-
-    public BigDecimal getMonthTradingLimit() {
-        return monthTradingLimit;
-    }
-
-    public BigDecimal getDailyWithdrawalLimit() {
-        return dailyWithdrawalLimit;
-    }
-
-    public BigDecimal getMonthWithdrawalLimit() {
-        return monthWithdrawalLimit;
-    }
-
-    public BigDecimal getAvailableBalance() {
-        return availableBalance;
-    }
-
-    public BigDecimal getFrozenAmount() {
-        return frozenAmount;
-    }
-
-    public Long getStatusFlag() {
-        return statusFlag;
-    }
-
-    public Long getDeleteFlag() {
-        return deleteFlag;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    public void setDeviceId(String deviceId) {
-        this.deviceId = deviceId;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public void setSalt(String salt) {
-        this.salt = salt;
-    }
-
-    public void setNumber(Long number) {
-        this.number = number;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public void setUserType(String userType) {
-        this.userType = userType;
-    }
-
-    public void setGrade(String grade) {
-        this.grade = grade;
-    }
-
-    public void setDealCommissionRatio(String dealCommissionRatio) {
-        this.dealCommissionRatio = dealCommissionRatio;
-    }
-
-    public void setWithdrawalCommissionRatio(String withdrawalCommissionRatio) {
-        this.withdrawalCommissionRatio = withdrawalCommissionRatio;
-    }
-
-    public void setDailyTradingLimit(BigDecimal dailyTradingLimit) {
-        this.dailyTradingLimit = dailyTradingLimit;
-    }
-
-    public void setMonthTradingLimit(BigDecimal monthTradingLimit) {
-        this.monthTradingLimit = monthTradingLimit;
-    }
-
-    public void setDailyWithdrawalLimit(BigDecimal dailyWithdrawalLimit) {
-        this.dailyWithdrawalLimit = dailyWithdrawalLimit;
-    }
-
-    public void setMonthWithdrawalLimit(BigDecimal monthWithdrawalLimit) {
-        this.monthWithdrawalLimit = monthWithdrawalLimit;
-    }
-
-    public void setAvailableBalance(BigDecimal availableBalance) {
-        this.availableBalance = availableBalance;
-    }
-
-    public void setFrozenAmount(BigDecimal frozenAmount) {
-        this.frozenAmount = frozenAmount;
-    }
-
-    public void setStatusFlag(Long statusFlag) {
-        this.statusFlag = statusFlag;
-    }
-
-    public void setDeleteFlag(Long deleteFlag) {
-        this.deleteFlag = deleteFlag;
-    }
 }

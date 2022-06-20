@@ -3,6 +3,8 @@ package com.cloud.auth.api.domain;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Date;
 
@@ -11,6 +13,8 @@ import java.util.Date;
  *
  * @author ai-cloud
  */
+@Getter
+@Setter
 @ApiModel("用户登录记录")
 public class UserLoginLog {
 
@@ -70,76 +74,6 @@ public class UserLoginLog {
     @ApiModelProperty(value = "访问时间", example = "Date")
     private Date loginTime;
 
-    public void setId(String id) {
-        this.id = id;
-    }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setDeviceId(String deviceId) {
-        this.deviceId = deviceId;
-    }
-
-    public String getDeviceId() {
-        return deviceId;
-    }
-
-    public void setType(Long type) {
-        this.type = type;
-    }
-
-    public Long getType() {
-        return type;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setIpaddr(String ipaddr) {
-        this.ipaddr = ipaddr;
-    }
-
-    public String getIpaddr() {
-        return ipaddr;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setLoginLocation(String loginLocation) {
-        this.loginLocation = loginLocation;
-    }
-
-    public String getLoginLocation() {
-        return loginLocation;
-    }
-
-    public void setLoginTime(Date loginTime) {
-        this.loginTime = loginTime;
-    }
-
-    public Date getLoginTime() {
-        return loginTime;
-    }
 
 }

@@ -1,36 +1,48 @@
 package com.cloud.common.web.page;
 
 import com.cloud.common.utils.StringUtils;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
- * 分页数据
+ * 分页参数
  *
  * @author ai-cloud
  */
+@Getter
+@Setter
+@ApiModel("分页参数")
 public class PageParam {
     /**
      * 当前记录起始索引
      */
+    @ApiModelProperty(value = "当前页", example = "1")
     private Integer pageNum;
 
     /**
      * 每页显示记录数
      */
+    @ApiModelProperty(value = "每页条数", example = "10")
     private Integer pageSize;
 
     /**
      * 排序列
      */
+    @ApiModelProperty(value = "排序列", example = "asc")
     private String orderByColumn;
 
     /**
      * 排序的方向desc或者asc
      */
+    @ApiModelProperty(value = "排序的方向desc或者asc", example = "asc")
     private String isAsc = "asc";
 
     /**
      * 分页参数合理化
      */
+    @ApiModelProperty(value = "分页参数合理化", example = "true")
     private Boolean reasonable = true;
 
     public String getOrderBy() {
@@ -38,34 +50,6 @@ public class PageParam {
             return "";
         }
         return StringUtils.toUnderScoreCase(orderByColumn) + " " + isAsc;
-    }
-
-    public Integer getPageNum() {
-        return pageNum;
-    }
-
-    public void setPageNum(Integer pageNum) {
-        this.pageNum = pageNum;
-    }
-
-    public Integer getPageSize() {
-        return pageSize;
-    }
-
-    public void setPageSize(Integer pageSize) {
-        this.pageSize = pageSize;
-    }
-
-    public String getOrderByColumn() {
-        return orderByColumn;
-    }
-
-    public void setOrderByColumn(String orderByColumn) {
-        this.orderByColumn = orderByColumn;
-    }
-
-    public String getIsAsc() {
-        return isAsc;
     }
 
     public void setIsAsc(String isAsc) {

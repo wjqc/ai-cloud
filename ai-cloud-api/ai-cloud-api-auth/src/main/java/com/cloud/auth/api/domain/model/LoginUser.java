@@ -2,6 +2,9 @@ package com.cloud.auth.api.domain.model;
 
 
 import com.cloud.auth.api.domain.User;
+import io.swagger.annotations.ApiModel;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.io.Serializable;
 
@@ -11,6 +14,9 @@ import java.io.Serializable;
  *
  * @author ai-cloud
  */
+@Getter
+@Setter
+@ApiModel("用户信息")
 public class LoginUser implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -55,67 +61,5 @@ public class LoginUser implements Serializable {
      */
     private User user;
 
-    public String getToken() {
-        return token;
-    }
 
-    public String getUserid() {
-        return userid;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public String getDeviceId() {
-        return deviceId;
-    }
-
-    public Long getLoginTime() {
-        return loginTime;
-    }
-
-    public Long getExpireTime() {
-        return expireTime;
-    }
-
-    public String getIpaddr() {
-        return ipaddr;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setToken(String token) {
-        this.token = token;
-    }
-
-    public void setUserid(String userid) {
-        this.userid = userid;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public void setDeviceId(String deviceId) {
-        this.deviceId = deviceId;
-    }
-
-    public void setLoginTime(Long loginTime) {
-        this.loginTime = loginTime;
-    }
-
-    public void setExpireTime(Long expireTime) {
-        this.expireTime = expireTime;
-    }
-
-    public void setIpaddr(String ipaddr) {
-        this.ipaddr = ipaddr;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
 }

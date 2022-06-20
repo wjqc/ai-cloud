@@ -4,6 +4,8 @@ package com.cloud.user.param;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.math.BigDecimal;
 
@@ -13,6 +15,8 @@ import java.math.BigDecimal;
  * @author ai-cloud
  */
 @Data
+@Getter
+@Setter
 @ApiModel("提现申请参数")
 public class WalletWithdrawParam {
 

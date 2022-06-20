@@ -3,6 +3,8 @@ package com.cloud.user.param;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 
 /**
@@ -11,6 +13,8 @@ import lombok.Data;
  * @author ai-cloud
  */
 @Data
+@Getter
+@Setter
 @ApiModel("钱包设置密码参数")
 public class WalletSetPasswordParam {
 

@@ -12,7 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
  *
  * @author ai-cloud
  */
-@Primary
+//@Primary
 @Service
 public class LocalFileServiceImpl implements IFileService {
     /**

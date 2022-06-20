@@ -23,12 +23,12 @@ import java.util.Objects;
  */
 public class FileUploadUtils {
     /**
-     * 默认大小 50M
+     * 默认大小 10G
      */
     public static final long DEFAULT_MAX_SIZE = 10240 * 1024 * 1024;
 
     /**
-     * 默认的文件名最大长度 100
+     * 默认的文件名最大长度 1000
      */
     public static final int DEFAULT_FILE_NAME_LENGTH = 1000;
 

@@ -1,5 +1,10 @@
 package com.cloud.common.web.page;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -8,27 +13,34 @@ import java.util.List;
  *
  * @author ai-cloud
  */
+@Getter
+@Setter
+@ApiModel("分页数据对象")
 public class PageList implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
      * 总记录数
      */
+    @ApiModelProperty(value = "总记录数", example = "long")
     private long total;
 
     /**
      * 列表数据
      */
+    @ApiModelProperty(value = "列表数据", example = "List")
     private List<?> rows;
 
     /**
      * 消息状态码
      */
+    @ApiModelProperty(value = "消息状态码", example = "200")
     private int code;
 
     /**
      * 消息内容
      */
+    @ApiModelProperty(value = "消息内容", example = "请求成功")
     private String msg;
 
     /**
@@ -48,35 +60,4 @@ public class PageList implements Serializable {
         this.total = total;
     }
 
-    public long getTotal() {
-        return total;
-    }
-
-    public void setTotal(long total) {
-        this.total = total;
-    }
-
-    public List<?> getRows() {
-        return rows;
-    }
-
-    public void setRows(List<?> rows) {
-        this.rows = rows;
-    }
-
-    public int getCode() {
-        return code;
-    }
-
-    public void setCode(int code) {
-        this.code = code;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
 }
