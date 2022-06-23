@@ -3,19 +3,17 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>ai-cloud-app</artifactId>
+        <artifactId>ai-cloud-elk</artifactId>
         <groupId>com.cloud</groupId>
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
-    <artifactId>ai-cloud-api</artifactId>
-    <packaging>pom</packaging>
-
-    <modules>
-        <module>ai-cloud-auth-api</module>
-        <module>ai-cloud-file-api</module>
-        <module>ai-cloud-elk-api</module>
-    </modules>
+    
+    <artifactId>ai-cloud-elasticsearch</artifactId>
+    
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
 
 </project>

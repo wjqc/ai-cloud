@@ -18,7 +18,7 @@ import lombok.Setter;
 @ApiModel("账单请求参数")
 public class WalletBillDetailParam {
 
-    @ApiModelProperty(value = "String", example = "e1e4c24876514fc999d043ae0f496752")
+    @ApiModelProperty(value = "id", example = "e1e4c24876514fc999d043ae0f496752")
     private String detailId;
 
 }

@@ -18,18 +18,12 @@
 ## 简介
 
 ~~~
-* 基于SpringBoot  SpringCloud & Alibaba,
-* 注册中心、配置中心Nacos,
-* 统一认证授权使用Security,Jwt，Redis,
-* 流量控制框架Sentinel,
-* 分布式事务Seata,
-* 封装了常用的工具类,
-* 全局异常处理,
-* 多数据源,
-* Swagger文档,
-* FastDFS,Minio文件上传,
-* 搭建的一套分布式微服务架构，代码干净整洁，注释清晰，适合新项目开发,
-* 后续会持续封装，用户账户服务，支付服务，短信服务，邮箱服务，oos对象存储，等等，以及产品原型，ui原型，前端代码更新
+* 基于SpringBoot SpringCloud & Alibaba
+* 注册中心,配置中心Nacos,统一认证授权使用Security,Jwt,Redis
+* 流量控制框架Sentinel,分布式事务Seata,日志管理Elasticsearch,Kibana,Logstash
+* 封装了常用的工具类,全局异常处理,多数据源,Swagger2文档,FastDFS,Minio文件上传
+* 搭建的一套分布式微服务架构,代码干净整洁,注释清晰,适合新项目开发
+* 后续会持续封装,用户账户服务,支付服务,短信服务,邮箱服务,oos对象存储,等等,以及产品原型,ui原型,前端代码更新
 ~~~
 
 ## 目录结构
@@ -40,7 +34,12 @@ ai-cloud-app
 ├── ai-cloud-auth       --认证服务 [8800]
 ├── ai-cloud-api        --内网接口
 │       └── ai-cloud-auth-api        --授权对内接口
+│       └── ai-cloud-elk-api         --日志对内接口
 │       └── ai-cloud-file-api        --文件对内接口
+├── ai-cloud-elk        --elk日志管理模块
+│       └── ai-cloud-elasticsearch   --存储日志数据[8004]
+│       └── ai-cloud-kibana          --收集日志   [8005]
+│       └── ai-cloud-logstash        --显示日志数据[8006]
 ├── ai-cloud-framework  --核心模块
 │       └── ai-cloud-common          --通用模块
 │       └── ai-cloud-datasource      --多数据源

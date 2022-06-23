@@ -13,7 +13,10 @@
     <packaging>pom</packaging>
 
     <modules>
-
+    
+        <module>ai-cloud-elasticsearch</module>
+        <module>ai-cloud-logstash</module>
+        <module>ai-cloud-kibana</module>
     </modules>
 
 </project>
