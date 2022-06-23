@@ -9,10 +9,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>ai-cloud-api-auth</artifactId>
+    <artifactId>ai-cloud-auth-api</artifactId>
 
     <description>
-        cloud-api-auth授权对内接口模块
+        cloud-auth-api对内接口模块
     </description>
 
     <dependencies>

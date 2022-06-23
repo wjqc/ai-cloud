@@ -3,36 +3,24 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>ai-cloud-framework</artifactId>
+        <artifactId>ai-cloud-api</artifactId>
         <groupId>com.cloud</groupId>
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>ai-cloud-security</artifactId>
+    <artifactId>ai-cloud-file-api</artifactId>
 
     <description>
-        cloud-security安全模块
+        cloud-file-api对内接口模块
     </description>
 
     <dependencies>
-
-        <!-- Spring Web -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-        </dependency>
 
         <!-- 通用工具-->
         <dependency>
             <groupId>com.cloud</groupId>
             <artifactId>ai-cloud-common</artifactId>
-        </dependency>
-
-        <!-- auth对内接口模块 -->
-        <dependency>
-            <groupId>com.cloud</groupId>
-            <artifactId>ai-cloud-auth-api</artifactId>
         </dependency>
 
     </dependencies>

@@ -13,8 +13,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>ai-cloud-api-auth</module>
-        <module>ai-cloud-api-file</module>
+        <module>ai-cloud-auth-api</module>
+        <module>ai-cloud-file-api</module>
     </modules>
 
 </project>

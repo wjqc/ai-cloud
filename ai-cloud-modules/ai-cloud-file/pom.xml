@@ -68,7 +68,7 @@
         <!-- file对内接口模块 -->
         <dependency>
             <groupId>com.cloud</groupId>
-            <artifactId>ai-cloud-api-file</artifactId>
+            <artifactId>ai-cloud-file-api</artifactId>
         </dependency>
 
     </dependencies>

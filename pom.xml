@@ -239,17 +239,17 @@
                 <version>${ai-cloud.version}</version>
             </dependency>
 
-            <!-- auth授权对内接口模块 -->
+            <!-- auth对内接口模块 -->
             <dependency>
                 <groupId>com.cloud</groupId>
-                <artifactId>ai-cloud-api-auth</artifactId>
+                <artifactId>ai-cloud-auth-api</artifactId>
                 <version>${ai-cloud.version}</version>
             </dependency>
 
             <!-- file对内接口模块 -->
             <dependency>
                 <groupId>com.cloud</groupId>
-                <artifactId>ai-cloud-api-file</artifactId>
+                <artifactId>ai-cloud-file-api</artifactId>
                 <version>${ai-cloud.version}</version>
             </dependency>
 
@@ -263,6 +263,7 @@
         <module>ai-cloud-api</module>
         <module>ai-cloud-modules</module>
         <module>ai-cloud-web</module>
+        <module>ai-cloud-elk</module>
     </modules>
     <packaging>pom</packaging>
 

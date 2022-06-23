@@ -39,8 +39,8 @@ ai-cloud-app
 ├── ai-cloud-gateway    --网关服务 [8088]
 ├── ai-cloud-auth       --认证服务 [8800]
 ├── ai-cloud-api        --内网接口
-│       └── ai-cloud-api-auth        --授权对内接口
-│       └── ai-cloud-api-file        --文件对内接口
+│       └── ai-cloud-auth-api        --授权对内接口
+│       └── ai-cloud-file-api        --文件对内接口
 ├── ai-cloud-framework  --核心模块
 │       └── ai-cloud-common          --通用模块
 │       └── ai-cloud-datasource      --多数据源
