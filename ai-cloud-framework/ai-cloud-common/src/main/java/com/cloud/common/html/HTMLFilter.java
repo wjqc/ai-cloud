@@ -161,10 +161,6 @@ public final class HTMLFilter {
         alwaysMakeTags = conf.containsKey("alwaysMakeTags") ? (Boolean) conf.get("alwaysMakeTags") : true;
     }
 
-    private void reset() {
-        vTagCounts.clear();
-    }
-
     /**
      * my versions of some PHP library functions
      **/
@@ -181,7 +177,25 @@ public final class HTMLFilter {
         return result;
     }
 
+    private static String regexReplace(final Pattern regex_pattern, final String replacement, final String s) {
+        Matcher m = regex_pattern.matcher(s);
+        return m.replaceAll(replacement);
+    }
+
     // ---------------------------------------------------------------
+
+    private static boolean inArray(final String s, final String[] array) {
+        for (String item : array) {
+            if (item != null && item.equals(s)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void reset() {
+        vTagCounts.clear();
+    }
 
     /**
      * given a user submitted input String, filter out any invalid or restricted html.
@@ -293,11 +307,6 @@ public final class HTMLFilter {
         }
 
         return result;
-    }
-
-    private static String regexReplace(final Pattern regex_pattern, final String replacement, final String s) {
-        Matcher m = regex_pattern.matcher(s);
-        return m.replaceAll(replacement);
     }
 
     private String processTag(final String s) {
@@ -490,15 +499,6 @@ public final class HTMLFilter {
 
     private boolean isValidEntity(final String entity) {
         return inArray(entity, vAllowedEntities);
-    }
-
-    private static boolean inArray(final String s, final String[] array) {
-        for (String item : array) {
-            if (item != null && item.equals(s)) {
-                return true;
-            }
-        }
-        return false;
     }
 
     private boolean allowed(final String name) {

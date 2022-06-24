@@ -86,6 +86,15 @@ public class StructGroupStat extends StructBase {
     protected int currentTrunkFileId; //current trunk file id
 
     /**
+     * get fields total size
+     *
+     * @return fields total size
+     */
+    public static int getFieldsTotalSize() {
+        return fieldsTotalSize;
+    }
+
+    /**
      * get group name
      *
      * @return group name
@@ -212,14 +221,5 @@ public class StructGroupStat extends StructBase {
         this.storePathCount = intValue(bs, offset, fieldsArray[FIELD_INDEX_STORE_PATH_COUNT]);
         this.subdirCountPerPath = intValue(bs, offset, fieldsArray[FIELD_INDEX_SUBDIR_COUNT_PER_PATH]);
         this.currentTrunkFileId = intValue(bs, offset, fieldsArray[FIELD_INDEX_CURRENT_TRUNK_FILE_ID]);
-    }
-
-    /**
-     * get fields total size
-     *
-     * @return fields total size
-     */
-    public static int getFieldsTotalSize() {
-        return fieldsTotalSize;
     }
 }

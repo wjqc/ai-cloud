@@ -39,15 +39,6 @@ public class FileInfo {
     }
 
     /**
-     * set the source ip address of the file uploaded to
-     *
-     * @param source_ip_addr the source ip address
-     */
-    public void setSourceIpAddr(String source_ip_addr) {
-        this.source_ip_addr = source_ip_addr;
-    }
-
-    /**
      * get the source ip address of the file uploaded to
      *
      * @return the source ip address of the file uploaded to
@@ -57,12 +48,12 @@ public class FileInfo {
     }
 
     /**
-     * set the file size
+     * set the source ip address of the file uploaded to
      *
-     * @param file_size the file size
+     * @param source_ip_addr the source ip address
      */
-    public void setFileSize(long file_size) {
-        this.file_size = file_size;
+    public void setSourceIpAddr(String source_ip_addr) {
+        this.source_ip_addr = source_ip_addr;
     }
 
     /**
@@ -75,12 +66,12 @@ public class FileInfo {
     }
 
     /**
-     * set the create timestamp of the file
+     * set the file size
      *
-     * @param create_timestamp create timestamp in seconds
+     * @param file_size the file size
      */
-    public void setCreateTimestamp(int create_timestamp) {
-        this.create_timestamp = new Date(create_timestamp * 1000L);
+    public void setFileSize(long file_size) {
+        this.file_size = file_size;
     }
 
     /**
@@ -95,10 +86,10 @@ public class FileInfo {
     /**
      * set the create timestamp of the file
      *
-     * @param crc32 the crc32 signature
+     * @param create_timestamp create timestamp in seconds
      */
-    public void setCrc32(int crc32) {
-        this.crc32 = crc32;
+    public void setCreateTimestamp(int create_timestamp) {
+        this.create_timestamp = new Date(create_timestamp * 1000L);
     }
 
     /**
@@ -108,6 +99,15 @@ public class FileInfo {
      */
     public long getCrc32() {
         return this.crc32;
+    }
+
+    /**
+     * set the create timestamp of the file
+     *
+     * @param crc32 the crc32 signature
+     */
+    public void setCrc32(int crc32) {
+        this.crc32 = crc32;
     }
 
     /**

@@ -79,8 +79,8 @@
                uwl.alipay_name    AS alipayName,
                uad.create_time    AS createTime
         FROM user_account_detail uad
-        LEFT JOIN user_account ua ON uad.account_id = ua.id
-        LEFT JOIN user_withdraw_apply uwl ON uwl.deal_serial_number = uad.deal_serial_number
+                 LEFT JOIN user_account ua ON uad.account_id = ua.id
+                 LEFT JOIN user_withdraw_apply uwl ON uwl.deal_serial_number = uad.deal_serial_number
         WHERE ua.status_flag = 0
           AND ua.delete_flag = 0
           AND uad.delete_flag = 0

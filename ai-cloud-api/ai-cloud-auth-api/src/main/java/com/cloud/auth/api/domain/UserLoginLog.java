@@ -75,5 +75,4 @@ public class UserLoginLog {
     private Date loginTime;
 
 
-
 }

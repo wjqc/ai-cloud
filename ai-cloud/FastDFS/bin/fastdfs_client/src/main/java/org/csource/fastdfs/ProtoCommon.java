@@ -25,37 +25,10 @@ import org.csource.common.NameValuePair;
  * @version Version 1.18
  */
 public class ProtoCommon {
-    /**
-     * receive package info
-     */
-    public static class RecvPackageInfo {
-        public byte errno;
-        public byte[] body;
-
-        public RecvPackageInfo(byte errno, byte[] body) {
-            this.errno = errno;
-            this.body = body;
-        }
-    }
-
-    /**
-     * receive header info
-     */
-    public static class RecvHeaderInfo {
-        public byte errno;
-        public long body_len;
-
-        public RecvHeaderInfo(byte errno, long body_len) {
-            this.errno = errno;
-            this.body_len = body_len;
-        }
-    }
-
     public static final byte FDFS_PROTO_CMD_QUIT = 82;
     public static final byte TRACKER_PROTO_CMD_SERVER_LIST_GROUP = 91;
     public static final byte TRACKER_PROTO_CMD_SERVER_LIST_STORAGE = 92;
     public static final byte TRACKER_PROTO_CMD_SERVER_DELETE_STORAGE = 93;
-
     public static final byte TRACKER_PROTO_CMD_SERVICE_QUERY_STORE_WITHOUT_GROUP_ONE = 101;
     public static final byte TRACKER_PROTO_CMD_SERVICE_QUERY_FETCH_ONE = 102;
     public static final byte TRACKER_PROTO_CMD_SERVICE_QUERY_UPDATE = 103;
@@ -76,9 +49,7 @@ public class ProtoCommon {
     public static final byte STORAGE_PROTO_CMD_APPEND_FILE = 24;  //append file
     public static final byte STORAGE_PROTO_CMD_MODIFY_FILE = 34;  //modify appender file
     public static final byte STORAGE_PROTO_CMD_TRUNCATE_FILE = 36;  //truncate appender file
-
     public static final byte STORAGE_PROTO_CMD_RESP = TRACKER_PROTO_CMD_RESP;
-
     public static final byte FDFS_STORAGE_STATUS_INIT = 0;
     public static final byte FDFS_STORAGE_STATUS_WAIT_SYNC = 1;
     public static final byte FDFS_STORAGE_STATUS_SYNCING = 2;
@@ -88,17 +59,14 @@ public class ProtoCommon {
     public static final byte FDFS_STORAGE_STATUS_ONLINE = 6;
     public static final byte FDFS_STORAGE_STATUS_ACTIVE = 7;
     public static final byte FDFS_STORAGE_STATUS_NONE = 99;
-
     /**
      * for overwrite all old metadata
      */
     public static final byte STORAGE_SET_METADATA_FLAG_OVERWRITE = 'O';
-
     /**
      * for replace, insert when the meta item not exist, otherwise update it
      */
     public static final byte STORAGE_SET_METADATA_FLAG_MERGE = 'M';
-
     public static final int FDFS_PROTO_PKG_LEN_SIZE = 8;
     public static final int FDFS_PROTO_CMD_SIZE = 1;
     public static final int FDFS_GROUP_NAME_MAX_LEN = 16;
@@ -106,24 +74,17 @@ public class ProtoCommon {
     public static final int FDFS_DOMAIN_NAME_MAX_SIZE = 128;
     public static final int FDFS_VERSION_SIZE = 6;
     public static final int FDFS_STORAGE_ID_MAX_SIZE = 16;
-
     public static final String FDFS_RECORD_SEPERATOR = "\u0001";
     public static final String FDFS_FIELD_SEPERATOR = "\u0002";
-
     public static final int TRACKER_QUERY_STORAGE_FETCH_BODY_LEN = FDFS_GROUP_NAME_MAX_LEN
             + FDFS_IPADDR_SIZE - 1 + FDFS_PROTO_PKG_LEN_SIZE;
     public static final int TRACKER_QUERY_STORAGE_STORE_BODY_LEN = FDFS_GROUP_NAME_MAX_LEN
             + FDFS_IPADDR_SIZE + FDFS_PROTO_PKG_LEN_SIZE;
-
-    protected static final int PROTO_HEADER_CMD_INDEX = FDFS_PROTO_PKG_LEN_SIZE;
-    protected static final int PROTO_HEADER_STATUS_INDEX = FDFS_PROTO_PKG_LEN_SIZE + 1;
-
     public static final byte FDFS_FILE_EXT_NAME_MAX_LEN = 6;
     public static final byte FDFS_FILE_PREFIX_MAX_LEN = 16;
     public static final byte FDFS_FILE_PATH_LEN = 10;
     public static final byte FDFS_FILENAME_BASE64_LENGTH = 27;
     public static final byte FDFS_TRUNK_FILE_INFO_LEN = 16;
-
     public static final byte ERR_NO_ENOENT = 2;
     public static final byte ERR_NO_EIO = 5;
     public static final byte ERR_NO_EBUSY = 16;
@@ -131,13 +92,13 @@ public class ProtoCommon {
     public static final byte ERR_NO_ENOSPC = 28;
     public static final byte ECONNREFUSED = 61;
     public static final byte ERR_NO_EALREADY = 114;
-
     public static final long INFINITE_FILE_SIZE = 256 * 1024L * 1024 * 1024 * 1024 * 1024L;
     public static final long APPENDER_FILE_SIZE = INFINITE_FILE_SIZE;
     public static final long TRUNK_FILE_MARK_SIZE = 512 * 1024L * 1024 * 1024 * 1024 * 1024L;
     public static final long NORMAL_LOGIC_FILENAME_LENGTH = FDFS_FILE_PATH_LEN + FDFS_FILENAME_BASE64_LENGTH + FDFS_FILE_EXT_NAME_MAX_LEN + 1;
     public static final long TRUNK_LOGIC_FILENAME_LENGTH = NORMAL_LOGIC_FILENAME_LENGTH + FDFS_TRUNK_FILE_INFO_LEN;
-
+    protected static final int PROTO_HEADER_CMD_INDEX = FDFS_PROTO_PKG_LEN_SIZE;
+    protected static final int PROTO_HEADER_STATUS_INDEX = FDFS_PROTO_PKG_LEN_SIZE + 1;
     private ProtoCommon() {
     }
 
@@ -510,6 +471,32 @@ public class ProtoCommon {
             return master_filename + prefix_name + true_ext_name;
         } else {
             return master_filename.substring(0, dotIndex) + prefix_name + true_ext_name;
+        }
+    }
+
+    /**
+     * receive package info
+     */
+    public static class RecvPackageInfo {
+        public byte errno;
+        public byte[] body;
+
+        public RecvPackageInfo(byte errno, byte[] body) {
+            this.errno = errno;
+            this.body = body;
+        }
+    }
+
+    /**
+     * receive header info
+     */
+    public static class RecvHeaderInfo {
+        public byte errno;
+        public long body_len;
+
+        public RecvHeaderInfo(byte errno, long body_len) {
+            this.errno = errno;
+            this.body_len = body_len;
         }
     }
 }

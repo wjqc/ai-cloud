@@ -11,18 +11,15 @@ import java.io.Serializable;
  */
 public class Response<T> implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-
     /**
      * 成功
      */
     public static final int SUCCESS = Constants.SUCCESS;
-
     /**
      * 失败
      */
     public static final int FAIL = Constants.FAIL;
-
+    private static final long serialVersionUID = 1L;
     private int code;
 
     private String msg;

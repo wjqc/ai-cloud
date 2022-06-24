@@ -12,7 +12,12 @@
     <img src="https://img.shields.io/badge/SpringCloud-2021.0.1 -blue.svg" alt="SpringCloud">
     <img src="https://img.shields.io/badge/Alibaba-2021.0.1.0 -blue.svg" alt="Alibaba">
     <img src="https://img.shields.io/badge/Nacos-2.1.0 -blue.svg" alt="Nacos">
+    <img src="https://img.shields.io/badge/Sentinel-1.8.4 -blue.svg" alt="Sentinel">
+    <img src="https://img.shields.io/badge/Seata-1.5.1 -blue.svg" alt="Seata">
+    <img src="https://img.shields.io/badge/ELK-8.2.0 -blue.svg" alt="ELK">
+    <img src="https://img.shields.io/badge/FastJson-2.0.4 -blue.svg" alt="FastJson">
     <img src="https://img.shields.io/badge/MybatisPlus-3.5.1 -blue.svg" alt="Mybatis-Plus">
+    <img src="https://img.shields.io/badge/Swagger-3.0.0 -blue.svg" alt="Swagger">
 </p>
 
 ## 简介
@@ -91,6 +96,7 @@ ai-cloud-app
 <img src="https://lawcontract.oss-cn-beijing.aliyuncs.com/3d6qj57lwc1zwdn6rlzt.png"/>
 
 ## 接口文档地址
+
 http://127.0.0.1:8088/swagger-ui/index.html
 
 ## 微服务交流群

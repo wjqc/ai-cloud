@@ -30,6 +30,42 @@ public class TestLoad {
     public static int success_upload_count = 0;
     public static int upload_thread_count = 0;
 
+    private TestLoad() {
+    }
+
+    /**
+     * entry point
+     *
+     * @param args comand arguments
+     *             <ul><li>args[0]: config filename</li></ul>
+     */
+    public static void main(String args[]) {
+        if (args.length < 1) {
+            System.out.println("Error: Must have 1 parameter: config filename");
+            return;
+        }
+
+        System.out.println("java.version=" + System.getProperty("java.version"));
+
+        try {
+            ClientGlobal.init(args[0]);
+            System.out.println("network_timeout=" + ClientGlobal.g_network_timeout + "ms");
+            System.out.println("charset=" + ClientGlobal.g_charset);
+
+            file_ids = new java.util.concurrent.ConcurrentLinkedQueue();
+
+            for (int i = 0; i < 10; i++) {
+                (new UploadThread(i)).start();
+            }
+
+            for (int i = 0; i < 20; i++) {
+                (new DownloadThread(i)).start();
+            }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
     /**
      * discard file content callback class when download file
      *
@@ -167,8 +203,8 @@ public class TestLoad {
      * @version Version 1.0
      */
     public static class DownloadThread extends Thread {
-        private int thread_index;
         private static Integer counter_lock = new Integer(0);
+        private int thread_index;
 
         public DownloadThread(int index) {
             this.thread_index = index;
@@ -227,42 +263,6 @@ public class TestLoad {
                     + " exit, total_download_count: " + TestLoad.total_download_count
                     + ", success_download_count: " + TestLoad.success_download_count
                     + ", fail_download_count: " + TestLoad.fail_download_count);
-        }
-    }
-
-    private TestLoad() {
-    }
-
-    /**
-     * entry point
-     *
-     * @param args comand arguments
-     *             <ul><li>args[0]: config filename</li></ul>
-     */
-    public static void main(String args[]) {
-        if (args.length < 1) {
-            System.out.println("Error: Must have 1 parameter: config filename");
-            return;
-        }
-
-        System.out.println("java.version=" + System.getProperty("java.version"));
-
-        try {
-            ClientGlobal.init(args[0]);
-            System.out.println("network_timeout=" + ClientGlobal.g_network_timeout + "ms");
-            System.out.println("charset=" + ClientGlobal.g_charset);
-
-            file_ids = new java.util.concurrent.ConcurrentLinkedQueue();
-
-            for (int i = 0; i < 10; i++) {
-                (new UploadThread(i)).start();
-            }
-
-            for (int i = 0; i < 20; i++) {
-                (new DownloadThread(i)).start();
-            }
-        } catch (Exception ex) {
-            ex.printStackTrace();
         }
     }
 }

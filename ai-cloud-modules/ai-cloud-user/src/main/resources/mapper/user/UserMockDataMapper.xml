@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cloud.user.mapper.UserMockDataMapper">
-    
+
     <resultMap type="com.cloud.user.domain.UserMockData" id="UserMockDataResult">
         <result property="id" column="id"/>
         <result property="type" column="type"/>
@@ -15,7 +15,7 @@
         <result property="updateBy" column="update_by"/>
         <result property="updateTime" column="update_time"/>
     </resultMap>
-    
+
     <select id="selectUserMockDataList" resultType="com.cloud.user.domain.UserMockData">
         SELECT id,
                type,

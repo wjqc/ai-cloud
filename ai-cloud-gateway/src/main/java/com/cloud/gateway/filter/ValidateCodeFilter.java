@@ -26,16 +26,12 @@ import java.util.concurrent.atomic.AtomicReference;
 @Component
 public class ValidateCodeFilter extends AbstractGatewayFilterFactory<Object> {
     private final static String[] VALIDATE_URL = new String[]{"/auth/login", "/auth/register"};
-
+    private static final String CODE = "code";
+    private static final String UUID = "uuid";
     @Autowired
     private ValidateCodeService validateCodeService;
-
     @Autowired
     private CaptchaProperties captchaProperties;
-
-    private static final String CODE = "code";
-
-    private static final String UUID = "uuid";
 
     @Override
     public GatewayFilter apply(Object config) {

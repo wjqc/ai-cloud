@@ -21,9 +21,9 @@ import org.csource.common.*;
  * @version Version 1.17
  */
 public class TrackerGroup {
-    protected Integer lock;
     public int tracker_server_index;
     public InetSocketAddress[] tracker_servers;
+    protected Integer lock;
 
     /**
      * Constructor

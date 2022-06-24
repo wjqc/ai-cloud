@@ -341,6 +341,15 @@ public class StructStorageStat extends StructBase {
     protected boolean ifTrunkServer;
 
     /**
+     * get fields total size
+     *
+     * @return fields total size
+     */
+    public static int getFieldsTotalSize() {
+        return fieldsTotalSize;
+    }
+
+    /**
      * get storage status
      *
      * @return storage status
@@ -969,14 +978,5 @@ public class StructStorageStat extends StructBase {
         this.lastSyncedTimestamp = dateValue(bs, offset, fieldsArray[FIELD_INDEX_LAST_SYNCED_TIMESTAMP]);
         this.lastHeartBeatTime = dateValue(bs, offset, fieldsArray[FIELD_INDEX_LAST_HEART_BEAT_TIME]);
         this.ifTrunkServer = booleanValue(bs, offset, fieldsArray[FIELD_INDEX_IF_TRUNK_FILE]);
-    }
-
-    /**
-     * get fields total size
-     *
-     * @return fields total size
-     */
-    public static int getFieldsTotalSize() {
-        return fieldsTotalSize;
     }
 }

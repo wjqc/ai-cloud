@@ -16,16 +16,15 @@ import java.io.File;
 @Configuration
 public class ResourcesConfig implements WebMvcConfigurer {
     /**
-     * 上传文件存储在本地的根路径
-     */
-    @Value("${file.path}")
-    private String localFilePath;
-
-    /**
      * 资源映射路径 前缀
      */
     @Value("${file.prefix}")
     public String localFilePrefix;
+    /**
+     * 上传文件存储在本地的根路径
+     */
+    @Value("${file.path}")
+    private String localFilePath;
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {

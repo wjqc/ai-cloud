@@ -296,5 +296,4 @@ public class User extends BaseEntity {
     private Long deleteFlag;
 
 
-
 }

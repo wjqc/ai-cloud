@@ -18,18 +18,6 @@ import java.util.Date;
  * @version Version 1.17
  */
 public abstract class StructBase {
-    protected static class FieldInfo {
-        protected String name;
-        protected int offset;
-        protected int size;
-
-        public FieldInfo(String name, int offset, int size) {
-            this.name = name;
-            this.offset = offset;
-            this.size = size;
-        }
-    }
-
     /**
      * set fields
      *
@@ -69,5 +57,17 @@ public abstract class StructBase {
 
     protected Date dateValue(byte[] bs, int offset, FieldInfo filedInfo) {
         return new Date(ProtoCommon.buff2long(bs, offset + filedInfo.offset) * 1000);
+    }
+
+    protected static class FieldInfo {
+        protected String name;
+        protected int offset;
+        protected int size;
+
+        public FieldInfo(String name, int offset, int size) {
+            this.name = name;
+            this.offset = offset;
+            this.size = size;
+        }
     }
 }

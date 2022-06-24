@@ -3,7 +3,6 @@ package com.cloud.file.service.impl;
 import com.cloud.file.service.IFileService;
 import com.cloud.file.utils.FileUploadUtils;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 

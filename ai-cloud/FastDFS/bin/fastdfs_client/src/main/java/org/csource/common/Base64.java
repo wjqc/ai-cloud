@@ -56,22 +56,30 @@ import java.io.IOException;
 public class Base64 {
 
     /**
+     * Marker value for chars we just ignore, e.g. \n \r high ascii
+     */
+    static final int IGNORE = -1;
+    /**
+     * Marker for = trailing pad
+     */
+    static final int PAD = -2;
+    /**
+     * used to disable test driver
+     */
+    private static final boolean debug = true;
+    /**
      * how we separate lines, e.g. \n, \r\n, \r etc.
      */
     private String lineSeparator = System.getProperty("line.separator");
-
     /**
      * max chars per line, excluding lineSeparator.  A multiple of 4.
      */
     private int lineLength = 72;
-
     private char[] valueToChar = new char[64];
-
     /**
      * binary value encoded by a given letter of the alphabet 0..63
      */
     private int[] charToValue = new int[256];
-
     private int[] charToPad = new int[4];
 
     /* constructor */
@@ -87,6 +95,118 @@ public class Base64 {
 
     public Base64(int lineLength) {
         this.lineLength = lineLength;
+    }
+
+    /**
+     * debug display array
+     */
+    public static void show(byte[] b) {
+        int count = 0;
+        int rows = 0;
+
+
+        for (int i = 0; i < b.length; i++) {
+            if (count == 8) {
+                System.out.print("  ");
+            } else if (count == 16) {
+                System.out.println("");
+                count = 0;
+                continue;
+            }
+            System.out.print(Integer.toHexString(b[i] & 0xFF).toUpperCase() + " ");
+            count++;
+
+        }
+        System.out.println();
+    }
+
+    /**
+     * debug display array
+     */
+    public static void display(byte[] b) {
+        for (int i = 0; i < b.length; i++) {
+            System.out.print((char) b[i]);
+        }
+        System.out.println();
+    }
+
+    /**
+     * test driver
+     */
+    public static void main(String[] args) {
+        test();
+        System.exit(1);
+
+        if (debug) {
+            try {
+                Base64 b64 = new Base64();
+                String str = "agfrtu��etʲ1234�ٴ�erty��234����2344ʲ��";
+                String str64 = "";
+
+                //encode
+                str64 = b64.encode(str.getBytes());
+                System.out.println(str64);
+
+                //decode
+                byte[] theBytes = b64.decode(str64);
+                show(theBytes);
+                String rst = new String(theBytes);
+                System.out.println(rst);
+                System.out.println(str);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            //getBytes(String charsetName);
+/*
+         byte[] a = { (byte)0xfc, (byte)0x0f, (byte)0xc0};
+         byte[] b = { (byte)0x03, (byte)0xf0, (byte)0x3f};
+         byte[] c = { (byte)0x00, (byte)0x00, (byte)0x00};
+         byte[] d = { (byte)0xff, (byte)0xff, (byte)0xff};
+         byte[] e = { (byte)0xfc, (byte)0x0f, (byte)0xc0, (byte)1};
+         byte[] f = { (byte)0xfc, (byte)0x0f, (byte)0xc0, (byte)1, (byte)2};
+         byte[] g = { (byte)0xfc, (byte)0x0f, (byte)0xc0, (byte)1, (byte)2, (byte)3};
+         byte[] h = "AAAAAAAAAAB".getBytes();
+
+
+
+         show(a);
+         show(b);
+         show(c);
+         show(d);
+         show(e);
+         show(f);
+         show(g);
+         show(h);
+         Base64 b64 = new Base64();
+         show(b64.decode(b64.encode(a)));
+         show(b64.decode(b64.encode(b)));
+         show(b64.decode(b64.encode(c)));
+         show(b64.decode(b64.encode(d)));
+         show(b64.decode(b64.encode(e)));
+         show(b64.decode(b64.encode(f)));
+         show(b64.decode(b64.encode(g)));
+         show(b64.decode(b64.encode(h)));
+         b64.setLineLength(8);
+         show((b64.encode(h)).getBytes());
+*/
+        }
+    }// end main
+
+    public static void test() {
+        try {
+            Base64 b64 = new Base64();
+
+            //encode
+            //str64 = b64.encode(str.getBytes());
+            //System.out.println(str64);
+
+            String str64 = "CwUEFYoAAAADjQMC7ELJiY6w05267ELJiY6w05267ELJiY6w05267ELJiY6w05267ELJiY6w05267ELJiY6w05267ELJiY6w05267ELJiY6w05267ELJiY6w05267ELJiY6w05267ELJiY6w05267ELJiY6w05267ELJiY6w05267ELJiY6w05267EI=";
+            //decode
+            byte[] theBytes = b64.decode(str64);
+            show(theBytes);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /* initialise defaultValueToChar and defaultCharToValue tables */
@@ -366,133 +486,6 @@ public class Base64 {
      */
     public void setLineSeparator(String lineSeparator) {
         this.lineSeparator = lineSeparator;
-    }
-
-    /**
-     * Marker value for chars we just ignore, e.g. \n \r high ascii
-     */
-    static final int IGNORE = -1;
-
-    /**
-     * Marker for = trailing pad
-     */
-    static final int PAD = -2;
-
-    /**
-     * used to disable test driver
-     */
-    private static final boolean debug = true;
-
-    /**
-     * debug display array
-     */
-    public static void show(byte[] b) {
-        int count = 0;
-        int rows = 0;
-
-
-        for (int i = 0; i < b.length; i++) {
-            if (count == 8) {
-                System.out.print("  ");
-            } else if (count == 16) {
-                System.out.println("");
-                count = 0;
-                continue;
-            }
-            System.out.print(Integer.toHexString(b[i] & 0xFF).toUpperCase() + " ");
-            count++;
-
-        }
-        System.out.println();
-    }
-
-    /**
-     * debug display array
-     */
-    public static void display(byte[] b) {
-        for (int i = 0; i < b.length; i++) {
-            System.out.print((char) b[i]);
-        }
-        System.out.println();
-    }
-
-    /**
-     * test driver
-     */
-    public static void main(String[] args) {
-        test();
-        System.exit(1);
-
-        if (debug) {
-            try {
-                Base64 b64 = new Base64();
-                String str = "agfrtu��etʲ1234�ٴ�erty��234����2344ʲ��";
-                String str64 = "";
-
-                //encode
-                str64 = b64.encode(str.getBytes());
-                System.out.println(str64);
-
-                //decode
-                byte[] theBytes = b64.decode(str64);
-                show(theBytes);
-                String rst = new String(theBytes);
-                System.out.println(rst);
-                System.out.println(str);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            //getBytes(String charsetName);
-/*
-         byte[] a = { (byte)0xfc, (byte)0x0f, (byte)0xc0};
-         byte[] b = { (byte)0x03, (byte)0xf0, (byte)0x3f};
-         byte[] c = { (byte)0x00, (byte)0x00, (byte)0x00};
-         byte[] d = { (byte)0xff, (byte)0xff, (byte)0xff};
-         byte[] e = { (byte)0xfc, (byte)0x0f, (byte)0xc0, (byte)1};
-         byte[] f = { (byte)0xfc, (byte)0x0f, (byte)0xc0, (byte)1, (byte)2};
-         byte[] g = { (byte)0xfc, (byte)0x0f, (byte)0xc0, (byte)1, (byte)2, (byte)3};
-         byte[] h = "AAAAAAAAAAB".getBytes();
-
-
-
-         show(a);
-         show(b);
-         show(c);
-         show(d);
-         show(e);
-         show(f);
-         show(g);
-         show(h);
-         Base64 b64 = new Base64();
-         show(b64.decode(b64.encode(a)));
-         show(b64.decode(b64.encode(b)));
-         show(b64.decode(b64.encode(c)));
-         show(b64.decode(b64.encode(d)));
-         show(b64.decode(b64.encode(e)));
-         show(b64.decode(b64.encode(f)));
-         show(b64.decode(b64.encode(g)));
-         show(b64.decode(b64.encode(h)));
-         b64.setLineLength(8);
-         show((b64.encode(h)).getBytes());
-*/
-        }
-    }// end main
-
-    public static void test() {
-        try {
-            Base64 b64 = new Base64();
-
-            //encode
-            //str64 = b64.encode(str.getBytes());
-            //System.out.println(str64);
-
-            String str64 = "CwUEFYoAAAADjQMC7ELJiY6w05267ELJiY6w05267ELJiY6w05267ELJiY6w05267ELJiY6w05267ELJiY6w05267ELJiY6w05267ELJiY6w05267ELJiY6w05267ELJiY6w05267ELJiY6w05267ELJiY6w05267ELJiY6w05267ELJiY6w05267EI=";
-            //decode
-            byte[] theBytes = b64.decode(str64);
-            show(theBytes);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 } // end Base64
 

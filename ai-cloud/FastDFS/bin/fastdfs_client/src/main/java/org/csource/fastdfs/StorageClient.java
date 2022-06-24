@@ -28,47 +28,10 @@ import org.csource.common.Base64;
  * @version Version 1.24
  */
 public class StorageClient {
-    /**
-     * Upload file by file buff
-     *
-     * @author Happy Fish / YuQing
-     * @version Version 1.12
-     */
-    public static class UploadBuff implements UploadCallback {
-        private byte[] fileBuff;
-        private int offset;
-        private int length;
-
-        /**
-         * constructor
-         *
-         * @param fileBuff the file buff for uploading
-         */
-        public UploadBuff(byte[] fileBuff, int offset, int length) {
-            super();
-            this.fileBuff = fileBuff;
-            this.offset = offset;
-            this.length = length;
-        }
-
-        /**
-         * send file content callback function, be called only once when the file uploaded
-         *
-         * @param out output stream for writing file content
-         * @return 0 success, return none zero(errno) if fail
-         */
-        public int send(OutputStream out) throws IOException {
-            out.write(this.fileBuff, this.offset, this.length);
-
-            return 0;
-        }
-    }
-
     public final static Base64 base64 = new Base64('-', '_', '.', 0);
     protected TrackerServer trackerServer;
     protected StorageServer storageServer;
     protected byte errno;
-
     /**
      * constructor using global settings in class ClientGlobal
      */
@@ -238,7 +201,6 @@ public class StorageClient {
         return this.do_upload_file(ProtoCommon.STORAGE_PROTO_CMD_UPLOAD_FILE, group_name, null, null, file_ext_name,
                 file_buff.length, new UploadBuff(file_buff, 0, file_buff.length), meta_list);
     }
-
 
     /**
      * upload file to storage server (by callback)
@@ -1788,5 +1750,41 @@ public class StorageClient {
         System.arraycopy(groupBytes, 0, wholePkg, header.length + bsOffset.length + bsDownBytes.length, groupBytes.length);
         System.arraycopy(filenameBytes, 0, wholePkg, header.length + bsOffset.length + bsDownBytes.length + groupBytes.length, filenameBytes.length);
         this.storageServer.getSocket().getOutputStream().write(wholePkg);
+    }
+
+    /**
+     * Upload file by file buff
+     *
+     * @author Happy Fish / YuQing
+     * @version Version 1.12
+     */
+    public static class UploadBuff implements UploadCallback {
+        private byte[] fileBuff;
+        private int offset;
+        private int length;
+
+        /**
+         * constructor
+         *
+         * @param fileBuff the file buff for uploading
+         */
+        public UploadBuff(byte[] fileBuff, int offset, int length) {
+            super();
+            this.fileBuff = fileBuff;
+            this.offset = offset;
+            this.length = length;
+        }
+
+        /**
+         * send file content callback function, be called only once when the file uploaded
+         *
+         * @param out output stream for writing file content
+         * @return 0 success, return none zero(errno) if fail
+         */
+        public int send(OutputStream out) throws IOException {
+            out.write(this.fileBuff, this.offset, this.length);
+
+            return 0;
+        }
     }
 }

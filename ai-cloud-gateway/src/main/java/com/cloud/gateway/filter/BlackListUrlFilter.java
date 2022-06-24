@@ -16,6 +16,10 @@ import java.util.regex.Pattern;
  */
 @Component
 public class BlackListUrlFilter extends AbstractGatewayFilterFactory<BlackListUrlFilter.Config> {
+    public BlackListUrlFilter() {
+        super(Config.class);
+    }
+
     @Override
     public GatewayFilter apply(Config config) {
         return (exchange, chain) -> {
@@ -27,10 +31,6 @@ public class BlackListUrlFilter extends AbstractGatewayFilterFactory<BlackListUr
 
             return chain.filter(exchange);
         };
-    }
-
-    public BlackListUrlFilter() {
-        super(Config.class);
     }
 
     public static class Config {

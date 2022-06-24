@@ -21,6 +21,8 @@ import org.csource.common.*;
  * @version Version 1.11
  */
 public class ClientGlobal {
+    public static final int DEFAULT_CONNECT_TIMEOUT = 5;  //second
+    public static final int DEFAULT_NETWORK_TIMEOUT = 30; //second
     public static int g_connect_timeout; //millisecond
     public static int g_network_timeout; //millisecond
     public static String g_charset;
@@ -28,9 +30,6 @@ public class ClientGlobal {
     public static boolean g_anti_steal_token;  //if anti-steal token
     public static String g_secret_key;   //generage token secret key
     public static TrackerGroup g_tracker_group;
-
-    public static final int DEFAULT_CONNECT_TIMEOUT = 5;  //second
-    public static final int DEFAULT_NETWORK_TIMEOUT = 30; //second
 
     private ClientGlobal() {
     }
