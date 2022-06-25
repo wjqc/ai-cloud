@@ -69,31 +69,25 @@ ai-cloud-app
 
 <table>
     <tr>
-        <td><img src="https://lawcontract.oss-cn-beijing.aliyuncs.com/pi1r07pytiqgjvycqfby.png"/></td>
+        <td><img src="https://lawcontract.oss-cn-beijing.aliyuncs.com/39ar122owskm3krqgdtj.png"/></td>
     </tr>
     <tr>
-        <td><img src="https://lawcontract.oss-cn-beijing.aliyuncs.com/ivs81fr4lo04yctn599u.png"/></td>
+        <td><img src="https://lawcontract.oss-cn-beijing.aliyuncs.com/6lsbt9q4xfrh8yb1q3kx.png"/></td>
     </tr>
     <tr>
-        <td><img src="https://lawcontract.oss-cn-beijing.aliyuncs.com/q4020mr731qmtrrd75mp.png"/></td>
+        <td><img src="https://lawcontract.oss-cn-beijing.aliyuncs.com/ic4v04rky5ut637jfkdq.png"/></td>
     </tr>
     <tr>
-        <td><img src="https://lawcontract.oss-cn-beijing.aliyuncs.com/1ggte01jst4vww0aucu1.png"/></td>
+        <td><img src="https://lawcontract.oss-cn-beijing.aliyuncs.com/pbx0raxv26uvpzrr5bvz.png"/></td>
     </tr>
     <tr>
-        <td><img src="https://lawcontract.oss-cn-beijing.aliyuncs.com/28i1j6awgo6gznqnryih.png"/></td>
-    </tr>
-    <tr>
-        <td><img src="https://lawcontract.oss-cn-beijing.aliyuncs.com/0477g98abeybyjr5hwes.png"/></td>
-    </tr>
-    <tr>
-        <td><img src="https://lawcontract.oss-cn-beijing.aliyuncs.com/g58ymqtwylsvurvhuhyc.png"/></td>
+        <td><img src="https://lawcontract.oss-cn-beijing.aliyuncs.com/48n5t00klhs7bv45hday.png"/></td>
     </tr>
 </table>
 
 ## sql表结构
 
-<img src="https://lawcontract.oss-cn-beijing.aliyuncs.com/3d6qj57lwc1zwdn6rlzt.png"/>
+<img src="https://lawcontract.oss-cn-beijing.aliyuncs.com/1jcfml1vgwy48q679yeh.png"/>
 
 ## 接口文档地址
 
